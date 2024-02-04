@@ -7,7 +7,16 @@
     text-decoration: unset;
 }
 
+
+:root {
+    --background-black: rgb(17 24 39);
+    --background-red: rgb(239 68 68);
+    --text-white: rgb(255 255 255);
+    --text-red: rgb(239 68 68);
+    --text-gray: rgb(107 114 128);
+}
+
 html {
     font-size: 62.5%;
-    /* 1rem = 10px; */
+    /* 1rem = 10px */
 }
