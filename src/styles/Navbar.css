@@ -1,0 +1,74 @@
+.nav-list {
+    font-family: 'Montserrat', sans-serif;
+    height: 56px;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.ul-list {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    display: flex;
+    gap: 2rem;
+    margin-top: 5px;
+}
+
+.nav-link {
+    color: #fafafa;
+    font-size: 1.6rem;
+
+}
+
+.nav-link:hover {
+    color: var(--text-gray);
+}
+
+.container-Logo {
+    padding: 5px 10px;
+    height: auto;
+    margin-left: -24px;
+    margin-bottom: 0px;
+
+}
+
+.logoVascos {
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.container-Donar {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    position: i;
+    margin: 27px 0px;
+
+}
+
+
+.button-Donar {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: absolute;
+    right: 10px;
+    background-color: var(--background-red);
+    padding: 9px 24px;
+    color: var(--text-white);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.2rem;
+
+}
+
+.button-Donar:hover {
+    background-color: rgb(170, 17, 17);
+}
