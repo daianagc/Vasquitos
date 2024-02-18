@@ -1,6 +1,41 @@
-footer {
+.footer {
     display: flex;
-    justify-content: space-between;
-    margin: 27px 43px;
+    background-color: var(--background-black);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    color: white;
+
+}
+
+.container-Icons {
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+
+}
+
+.Icon-instagram,
+.Icon-facebook,
+.Icon-tiktok {
+    width: 40px;
+    margin: 10px;
+
+}
+
+.texto-Footer {
+    margin: 42px 20% 30px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.Parrafo-Footer {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    font-size: 1.5rem;
+
 
 }

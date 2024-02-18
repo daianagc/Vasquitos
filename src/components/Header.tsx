@@ -3,9 +3,11 @@ import "../styles/Header.css";
 
 const Header = () => {
   return (
-    <header>
-      <Navbar />
-    </header>
+    <>
+      <header>
+        <Navbar />
+      </header>
+    </>
   );
 };
 
