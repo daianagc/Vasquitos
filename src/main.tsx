@@ -5,6 +5,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/home/Home.tsx";
+import { Donations } from "./pages/donations/Donations.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "home",
+        index: true,
         element: <Home />,
+      },
+      {
+        path: "donations",
+        element: <Donations />,
       },
     ],
   },
