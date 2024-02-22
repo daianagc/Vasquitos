@@ -1,9 +1,15 @@
 header {
     width: 100%;
+    position: fixed;
     background-color: var(--background-black);
     color: var(--text-white);
     padding: 0 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
 }
+
+
+/*MEDIA QUERIES*/
