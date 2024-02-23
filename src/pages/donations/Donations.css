@@ -1,20 +1,29 @@
 .container {
   display: flex;
-  flex-direction: column;
   gap: 2rem;
-  padding: 20rem;
+  flex-direction: column;
   text-align: center;
+  width: 70%;
 }
 
 .title-h3 {
-  color: whitesmoke;
+  color: var(--text-white);
   font-size: 5rem;
 }
 
+.title-h4 {
+  color: var(--text-white);
+  font-size: 3rem;
+}
+
 .paragraph {
-  color: whitesmoke;
+  color: var(--text-white);
   font-size: 2rem;
   max-width: 141rem;
+}
+
+.loading-text {
+  font-size: 2rem !important;
 }
 
 .buttons-wrapper {
@@ -24,10 +33,10 @@
   justify-content: center;
 
   button {
-    background-color: cornflowerblue;
-    border: 0.2rem solid whitesmoke;
+    background-color: var(--background-yellow);
+    border: 0.2rem solid var(--text-white);
     border-radius: 100px;
-    color: whitesmoke;
+    color: var(--text-white);
     cursor: pointer;
     font-size: 3rem;
     font-weight: bold;
@@ -37,7 +46,7 @@
   }
 
   button:hover {
-    background-color: darkblue;
+    background-color: var(--background-black);
   }
 }
 
@@ -81,12 +90,12 @@
   }
 
   button:not(:disabled) {
-    background-color: darkblue;
-    border: 0.2rem solid whitesmoke;
-    color: whitesmoke;
+    background-color: var(--background-black);
+    border: 0.2rem solid var(--text-white);
+    color: var(--text-white);
   }
 
   button:not(:disabled):hover {
-    background-color: cornflowerblue;
+    background-color: var(--background-yellow);
   }
 }

@@ -8,16 +8,18 @@
 }
 
 :root {
-  --background-black: rgb(17 24 39);
-  --background-red: rgb(239 68 68);
+  --background-primary: #3f88c5;
+  --background-black: #140f2d;
+  --background-red: #f22b29;
+  --background-yellow: #f49d37;
   --text-white: rgb(255 255 255);
-  --text-red: rgb(239 68 68);
+  --text-red: #d72638;
   --text-gray: rgb(107 114 128);
 }
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
-  background-color: slategrey;
+  background-color: var(--background-primary);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }

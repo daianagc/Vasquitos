@@ -1,15 +1,46 @@
 import { useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
+import { useMutation } from "@tanstack/react-query";
+import { useDebouncedCallback } from "use-debounce";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
+  const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
+  const { mutate, isPending } = useMutation({
+    mutationFn: setPreference,
+  });
+  const donationsButtons = [
+    {
+      id: "VASQUITOS-3000",
+      unit_price: 3000,
+      tagTitle: "Donar tres mil pesos",
+    },
+    {
+      id: "VASQUITOS-5000",
+      unit_price: 5000,
+      tagTitle: "Donar cinco mil pesos",
+    },
+    {
+      id: "VASQUITOS-10000",
+      unit_price: 10000,
+      tagTitle: "Donar diez mil pesos",
+    },
+    {
+      id: "VASQUITOS-15000",
+      unit_price: 15000,
+      tagTitle: "Donar quince mil pesos",
+    },
+  ];
 
-  const handleFlexibleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+  const handleFlexibleAmount = useDebouncedCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
 
-    value ? setFlexibleAmount(+value) : setFlexibleAmount(0);
-  };
+      value ? setFlexibleAmount(+value) : setFlexibleAmount(0);
+    },
+    500
+  );
 
   const handlePreference = async ({
     id,
@@ -19,15 +50,30 @@ export const Donations = () => {
     unit_price: number;
   }) => {
     const title = "Donación";
-    const url: string = await setPreference({ id, title, unit_price });
 
-    window.location.href = url;
+    setLoadingButtonId(id);
+
+    mutate(
+      { id, title, unit_price },
+      {
+        onSuccess: (data) => {
+          window.location.href = data;
+        },
+        onError: (error) => {
+          // Handle the error here
+          console.error(error);
+        },
+        onSettled: () => {
+          setLoadingButtonId(null);
+        },
+      }
+    );
   };
 
   return (
     <>
       <div className="container">
-        <h3 className="title-h3">Donaciones</h3>
+        <h3 className="title-h3">Doná a los Vasquitos 🐶</h3>
         <p className="paragraph">
           Este dinero, tan necesario para el refugio, será utilizado para
           medicamentos, alimentos, mantención edilicia, y para todas las mejoras
@@ -36,78 +82,17 @@ export const Donations = () => {
           <strong>Para ellos es muy valioso.</strong>
         </p>
         <div className="buttons-wrapper">
-          <button
-            type="button"
-            title="Donar mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-1000",
-                unit_price: 1000,
-              })
-            }
-          >
-            $1000
-          </button>
-          <button
-            type="button"
-            title="Donar tres mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-3000",
-                unit_price: 3000,
-              })
-            }
-          >
-            $3000
-          </button>
-          <button
-            type="button"
-            title="Donar cinco mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-5000",
-                unit_price: 5000,
-              })
-            }
-          >
-            $5000
-          </button>
-          <button
-            type="button"
-            title="Donar diez mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-10000",
-                unit_price: 10000,
-              })
-            }
-          >
-            $10000
-          </button>
-          <button
-            type="button"
-            title="Donar quince mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-15000",
-                unit_price: 15000,
-              })
-            }
-          >
-            $15000
-          </button>
-          <button
-            type="button"
-            title="Donar veinte mil pesos"
-            onClick={() =>
-              handlePreference({
-                id: "VASQUITOS-20000",
-                unit_price: 20000,
-              })
-            }
-          >
-            $20000
-          </button>
+          {donationsButtons.map(({ id, unit_price, tagTitle }) => (
+            <button
+              type="button"
+              className={isPending ? "loading-text" : ""}
+              title={tagTitle}
+              key={id}
+              onClick={() => handlePreference({ id, unit_price })}
+            >
+              {loadingButtonId === id ? "Cargando..." : `$${unit_price}`}
+            </button>
+          ))}
         </div>
         <div className="donation-container">
           <div className="input-wrapper">
