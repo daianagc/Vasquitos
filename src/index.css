@@ -10,6 +10,10 @@
 
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 :root {
     --background-black: rgb(17 24 39);
@@ -22,4 +26,5 @@
 html {
     font-size: 62.5%;
     /* 1rem = 10px */
+
 }

@@ -1,15 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="nav-list">
-      <div className="div">
-        <div className="container-Logo">
-          <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
-        </div>
-        <ul className="ul-list">
+      <div className="container-Logo">
+        <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
+      </div>
+      <div className={`nav-items ${isOpen && "open"}`}>
+        <ul className="ul-list" style={{ display: isOpen ? "" : "none" }}>
           <li>
             <Link className="nav-link" to="/">
               Inicio
@@ -47,6 +49,14 @@ const Navbar = () => {
           <p>DONAR AHORA</p>
         </NavLink>
       </button>
+      <div
+        className={`nav-toggle ${isOpen && "open"}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   );
 };
