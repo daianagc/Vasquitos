@@ -1,4 +1,5 @@
 import { Map, Marker } from "pigeon-maps";
+import { DogIcon } from "../public/icons/DogIcon";
 
 interface Props {
   height: number;
@@ -23,7 +24,9 @@ export function MyMap({
       defaultCenter={defaultCenter}
       defaultZoom={defaultZoom}
     >
-      <Marker width={markerWidth} anchor={anchor} />
+      <Marker width={markerWidth} anchor={anchor}>
+        <DogIcon />
+      </Marker>
     </Map>
   );
 }
