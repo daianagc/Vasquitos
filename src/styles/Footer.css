@@ -55,8 +55,35 @@ p {
     margin: 20px;
   }
 
+  .container-Icons {
+
+    margin: 0px 9%;
+  }
+
+  .Icon-instagram,
+  .Icon-facebook,
+  .Icon-tiktok {
+    width: 30px;
+    margin: 20px;
+
+  }
+
   .texto-Footer {
     flex-direction: column;
     position: inherit;
+
   }
+
+  .button-Donar {
+    display: none;
+  }
+
+  header {
+    padding: 0 2rem;
+  }
+
+  .nav-list {
+    justify-content: space-between;
+  }
+
 }
