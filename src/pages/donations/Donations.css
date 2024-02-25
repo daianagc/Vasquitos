@@ -99,3 +99,56 @@
     background-color: var(--background-yellow);
   }
 }
+
+/* MOBILE */
+
+@media (width < 899px) {
+  .container {
+    margin: 3rem 0;
+    width: 90%;
+  }
+
+  .title-h3 {
+    font-size: 3rem;
+  }
+
+  .paragraph {
+    font-size: 2rem;
+  }
+
+  .buttons-wrapper {
+    flex-direction: column;
+
+    button {
+      font-size: 3rem;
+      height: 6rem;
+      width: 80%;
+    }
+  }
+
+  .donation-container {
+    align-items: center;
+    flex-direction: column;
+
+    .input-wrapper {
+      font-size: 2.5rem;
+      width: 80%;
+
+      .dollar-icon {
+        top: 1.2rem;
+      }
+
+      .donation-input {
+        height: 6rem;
+        &::placeholder {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    button {
+      height: 6rem;
+      width: 80%;
+    }
+  }
+}

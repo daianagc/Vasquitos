@@ -2,7 +2,6 @@ import { useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
-import { useDebouncedCallback } from "use-debounce";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
@@ -33,14 +32,11 @@ export const Donations = () => {
     },
   ];
 
-  const handleFlexibleAmount = useDebouncedCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
+  const handleFlexibleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
 
-      value ? setFlexibleAmount(+value) : setFlexibleAmount(0);
-    },
-    500
-  );
+    value ? setFlexibleAmount(+value) : setFlexibleAmount(0);
+  };
 
   const handlePreference = async ({
     id,
