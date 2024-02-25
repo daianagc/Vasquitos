@@ -3,4 +3,5 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 7.439rem;
 }
