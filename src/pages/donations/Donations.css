@@ -1,26 +1,10 @@
-.container {
+.donations-container {
   display: flex;
   gap: 2rem;
   flex-direction: column;
   margin: 3rem 0;
   text-align: center;
   width: 70%;
-}
-
-.title-h3 {
-  color: var(--text-black);
-  font-size: 5rem;
-}
-
-.title-h4 {
-  color: var(--text-black);
-  font-size: 3rem;
-}
-
-.paragraph {
-  color: var(--text-black);
-  font-size: 2rem;
-  max-width: 141rem;
 }
 
 .loading-text {
@@ -43,7 +27,7 @@
     font-weight: bold;
     height: 9rem;
     padding: 1rem 2rem;
-    width: 14%;
+    width: 20%;
   }
 
   button:hover {
@@ -51,7 +35,7 @@
   }
 }
 
-.donation-container {
+.input-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -105,16 +89,8 @@
 /* MOBILE */
 
 @media (width < 899px) {
-  .container {
+  .donations-container {
     width: 90%;
-  }
-
-  .title-h3 {
-    font-size: 3rem;
-  }
-
-  .paragraph {
-    font-size: 2rem;
   }
 
   .buttons-wrapper {
@@ -128,7 +104,7 @@
     }
   }
 
-  .donation-container {
+  .input-container {
     align-items: center;
     flex-direction: column;
 

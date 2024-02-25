@@ -40,7 +40,7 @@ const Navbar = () => {
         </ul>
       </div>
       <button className="button-Donar">
-        <NavLink to="/donations">
+        <NavLink to="/donaciones">
           <p>DONAR AHORA</p>
         </NavLink>
       </button>

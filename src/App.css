@@ -13,8 +13,51 @@ main {
   padding-top: 7.339rem;
 }
 
+.title-h3 {
+  color: var(--text-black);
+  font-size: 5rem;
+}
+
+.title-h4 {
+  color: var(--text-black);
+  font-size: 3rem;
+}
+
+.paragraph {
+  color: var(--text-black);
+  font-size: 2rem;
+  max-width: 141rem;
+}
+.title-h3 {
+  color: var(--text-black);
+  font-size: 5rem;
+}
+
+.title-h4 {
+  color: var(--text-black);
+  font-size: 3rem;
+}
+
+.paragraph {
+  color: var(--text-black);
+  font-size: 2rem;
+  max-width: 141rem;
+}
+
+.strong-text {
+  font-weight: bold;
+}
+
 @media (width < 899px) {
   main {
     flex-grow: unset;
+  }
+
+  .title-h3 {
+    font-size: 3rem;
+  }
+
+  .paragraph {
+    font-size: 2rem;
   }
 }

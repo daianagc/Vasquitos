@@ -70,7 +70,7 @@ export const Donations = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="donations-container">
         <h3 className="title-h3">Doná a los Vasquitos 🐶</h3>
         <p className="paragraph">
           Este dinero, tan necesario para el refugio, será utilizado para
@@ -88,11 +88,11 @@ export const Donations = () => {
               key={id}
               onClick={() => handlePreference({ id, unit_price })}
             >
-              {loadingButtonId === id ? "Cargando..." : `$${unit_price}`}
+              {loadingButtonId === id ? "Redirigiendo..." : `$${unit_price}`}
             </button>
           ))}
         </div>
-        <div className="donation-container">
+        <div className="input-container">
           <div className="input-wrapper">
             <p
               className="dollar-icon"
