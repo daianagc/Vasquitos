@@ -2,10 +2,12 @@ import { useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
+import useIsMobile from "../../hooks/is-mobile";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
+  const isMobile = useIsMobile();
   const { mutate, isPending } = useMutation({
     mutationFn: setPreference,
   });
@@ -102,7 +104,11 @@ export const Donations = () => {
               className="donation-input"
               type="number"
               min={0}
-              placeholder="¿Te gustaría donar otro monto? ¡Hacelo acá!"
+              placeholder={
+                isMobile
+                  ? "Podes donar otro monto acá"
+                  : "¿Te gustaría donar otro monto? ¡Hacelo acá!"
+              }
               onChange={handleFlexibleAmount}
             />
           </div>

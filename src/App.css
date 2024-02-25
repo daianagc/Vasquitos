@@ -1,7 +1,20 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
-  padding-top: 7.439rem;
+  padding-top: 7.339rem;
+}
+
+@media (width < 899px) {
+  main {
+    flex-grow: unset;
+  }
 }

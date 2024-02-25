@@ -8,13 +8,13 @@
 }
 
 :root {
-  --background-primary: #3f88c5;
-  --background-black: #140f2d;
+  --background-primary: #ffe6e6;
+  --background-black: #000000;
   --background-red: #f22b29;
-  --background-yellow: #f49d37;
   --text-white: rgb(255 255 255);
-  --text-red: #d72638;
+  --text-red: #bd1616;
   --text-gray: rgb(107 114 128);
+  --text-black: #140f2d;
 
   --mobile-max-width: 899px;
 }
@@ -24,8 +24,4 @@ html {
   background-color: var(--background-primary);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-}
-
-::-webkit-scrollbar {
-  display: none;
 }

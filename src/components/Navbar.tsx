@@ -11,7 +11,7 @@ const Navbar = () => {
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
-    { to: "/padrinos", label: "Padrinos" },
+    { to: "/padrinos", label: "Patrocinadores" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -40,7 +40,7 @@ const Navbar = () => {
         </ul>
       </div>
       <button className="button-Donar">
-        <NavLink to="/">
+        <NavLink to="/donations">
           <p>DONAR AHORA</p>
         </NavLink>
       </button>

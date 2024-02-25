@@ -9,7 +9,7 @@
   color: white;
 }
 
-.container {
+.footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,5 +58,14 @@ p {
   .texto-Footer {
     flex-direction: column;
     position: inherit;
+  }
+
+  .footer-container {
+    gap: unset;
+    margin: unset;
+
+    .container-Icons {
+      padding: unset;
+    }
   }
 }
