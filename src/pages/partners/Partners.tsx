@@ -7,6 +7,19 @@ export const Partners = () => {
     mutationFn: setSubscription,
   });
 
+  const onSubscription = () => {
+    const payer_email = "test_user_327558032@testuser.com";
+
+    mutate(payer_email, {
+      onSuccess: (response) => {
+        window.location.href = response.url;
+      },
+      onError: (error) => {
+        console.error(error);
+      },
+    });
+  };
+
   return (
     <div className="partners-container">
       <h3 className="title-h3">Convertite en socio</h3>
@@ -41,8 +54,9 @@ export const Partners = () => {
         className="partner-button"
         type="button"
         title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
+        onClick={onSubscription}
       >
-        ¡Quiero ser socio!
+        {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
       </button>
     </div>
   );
