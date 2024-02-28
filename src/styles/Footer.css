@@ -1,0 +1,78 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--background-black);
+  padding: 2.5rem;
+  width: 100%;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-Icons {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+}
+
+.Icon-instagram,
+.Icon-facebook,
+.Icon-tiktok {
+  width: 40px;
+  margin: 10px;
+}
+
+.texto-Footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+p {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 550;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 899px) {
+  .footer {
+    flex-direction: column;
+    padding: 0 0 3rem 0;
+  }
+
+  .Icon-instagram,
+  .Icon-facebook,
+  .Icon-tiktok {
+    width: 30px;
+    margin: 20px;
+  }
+
+  .container-Icons {
+
+    margin: 0px 9%;
+  }
+
+  .Icon-instagram,
+  .Icon-facebook,
+  .Icon-tiktok {
+    width: 30px;
+    margin: 20px;
+
+  }
+
+  .texto-Footer {
+    flex-direction: column;
+    position: inherit;
+
+  }
+
+
+}
