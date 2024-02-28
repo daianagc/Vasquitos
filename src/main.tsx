@@ -5,11 +5,10 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/home/Home.tsx";
-import NosotrosSection from "./pages/navbarSections/NosotrosSection.tsx";
-import NuestrosVasquitos from "./pages/navbarSections/NuestrosVasquitos.tsx";
-import Socios from "./pages/navbarSections/Socios.tsx";
-import Padrinos from "./pages/navbarSections/Padrinos.tsx";
-import Contacto from "./pages/navbarSections/Contacto.tsx";
+import PresentationSection from "./pages/home/components/PresentationSection.tsx";
+import OurDogsSection from "./pages/home/components/OurDogsSection.tsx";
+import SponsorsSection from "./pages/home/components/SponsorsSection.tsx";
+import DonationsSection from "./pages/home/components/DonationsSection.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,23 +22,22 @@ const router = createBrowserRouter([
       },
       {
         path: "nosotros",
-        element: <NosotrosSection />,
+        element: <PresentationSection />,
       },
       {
         path: "nuestrosvasquitos",
-        element: <NuestrosVasquitos />,
+        element: <OurDogsSection />,
       },
       {
         path: "socios",
-        element: <Socios />,
+        element: <SponsorsSection />,
       },
       {
         path: "padrinos",
-        element: <Padrinos />,
+        element: <DonationsSection />,
       },
       {
         path: "contacto",
-        element: <Contacto />,
       },
     ],
   },

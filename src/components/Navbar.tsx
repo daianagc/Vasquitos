@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
@@ -30,6 +30,11 @@ const Navbar = () => {
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <ul className="ul-list" style={setDisplay()}>
+          <li className="list-item-mobile">
+            <button className="button-mobile">
+              <p>DONAR AHORA</p>
+            </button>
+          </li>
           {items.map((item, index) => (
             <li key={index}>
               <Link className="nav-link" to={item.to}>
@@ -40,9 +45,7 @@ const Navbar = () => {
         </ul>
       </div>
       <button className="button-Donar">
-        <NavLink to="/">
-          <p>DONAR AHORA</p>
-        </NavLink>
+        <p>DONAR AHORA</p>
       </button>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

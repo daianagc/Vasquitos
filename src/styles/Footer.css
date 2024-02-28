@@ -74,16 +74,5 @@ p {
 
   }
 
-  .button-Donar {
-    display: none;
-  }
-
-  header {
-    padding: 0 2rem;
-  }
-
-  .nav-list {
-    justify-content: space-between;
-  }
 
 }
