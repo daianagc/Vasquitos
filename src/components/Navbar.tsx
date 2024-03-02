@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className="nav-list">
-      <div className="container-Logo">
+      <div className="container-logo">
         <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
@@ -44,7 +44,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <button className="button-Donar">
+      <button className="button-donar">
         <p>DONAR AHORA</p>
       </button>
       <div

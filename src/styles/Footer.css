@@ -16,20 +16,20 @@
   align-items: center;
 }
 
-.container-Icons {
+.container-icons {
   display: flex;
   align-items: center;
   padding: 6px 20px;
 }
 
-.Icon-instagram,
-.Icon-facebook,
-.Icon-tiktok {
+.icon-instagram,
+.icon-facebook,
+.icon-tiktok {
   width: 40px;
   margin: 10px;
 }
 
-.texto-Footer {
+.texto-footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -48,27 +48,27 @@ p {
     padding: 0 0 3rem 0;
   }
 
-  .Icon-instagram,
-  .Icon-facebook,
-  .Icon-tiktok {
+  .icon-instagram,
+  .icon-facebook,
+  .icon-tiktok {
     width: 30px;
     margin: 20px;
   }
 
-  .container-Icons {
+  .container-icons {
 
     margin: 0px 9%;
   }
 
-  .Icon-instagram,
-  .Icon-facebook,
-  .Icon-tiktok {
+  .icon-instagram,
+  .icon-facebook,
+  .icon-tiktok {
     width: 30px;
     margin: 20px;
 
   }
 
-  .texto-Footer {
+  .texto-footer {
     flex-direction: column;
     position: inherit;
 

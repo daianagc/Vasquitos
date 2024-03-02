@@ -12,24 +12,24 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="container-Icons">
+        <div className="container-icons">
           <i>
             <Link className="instagram" to="https://www.instagram.com/">
-              <img className="Icon-instagram" src={iconInstagram} alt="Icon" />
+              <img className="icon-instagram" src={iconInstagram} alt="Icon" />
             </Link>
           </i>
           <i>
             <Link className="facebook" to="https://www.facebook.com/">
-              <img className="Icon-facebook" src={iconFacebook} alt="Icon" />
+              <img className="icon-facebook" src={iconFacebook} alt="Icon" />
             </Link>
           </i>
           <i>
             <Link className="tiktok" to="https://www.tiktok.com/es/">
-              <img className="Icon-tiktok" src={iconTiktok} alt="Icon" />
+              <img className="icon-tiktok" src={iconTiktok} alt="Icon" />
             </Link>
           </i>
         </div>
-        <div className="texto-Footer">
+        <div className="texto-footer">
           <p>📍 Av. 14 n°2598</p>
           <p>📩 vascosanimalistas@gmail.com</p>
           <p>☎️ 2255-2324546</p>
@@ -42,7 +42,7 @@ const Footer = () => {
           defaultZoom={16}
           width={!isMobile ? 370 : 230}
           anchor={[-37.27046112725326, -56.993164051984074]}
-          markerWidth={!isMobile ? 60 : 40}
+          markerWidth={!isMobile ? 30 : 40}
         />
       </div>
     </footer>

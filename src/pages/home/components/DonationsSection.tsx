@@ -1,7 +1,9 @@
 const DonationsSection = () => {
   return (
     <section>
-      <div>DonationsSection</div>
+      <div>
+        <h3>Make a Donation</h3>
+      </div>
     </section>
   );
 };

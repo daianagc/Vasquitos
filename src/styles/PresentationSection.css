@@ -1,4 +1,4 @@
-.principal-Section {
+.principal-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,46 +9,46 @@
     color: #060A24;
 }
 
-.container-Principal h1 {
+.container-principal h1 {
     font-family: "Montserrat", sans-serif;
     padding: 11px 0px;
     gap: 1rem;
     text-align: center;
     font-weight: 700;
-    font-size: 5rem;
+    font-size: 6rem;
 }
 
-.container-Parrafo p {
+.container-parrafo p {
     display: grid;
     gap: 1rem;
     font-family: "Montserrat",
         sans-serif;
-    color: #060A24;
+    color: var(--text-gray);
     font-size: 1.7rem;
-    font-weight: 550;
+    font-weight: 450;
 }
 
-.container-Parrafo p::after {
+.container-parrafo p::after {
 
     font-family: "Montserrat", sans-serif;
     content: " Join us in making a difference in these dogs' lives.";
 }
 
-.container-Principal h1::after {
+.container-principal h1::after {
     font-family: "Montserrat", sans-serif;
     content: " Los Vasquitos";
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 700;
     color: #ec0014;
 }
 
-.container-Button {
+.container-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.button-Ver {
+.button-ver {
     width: 10%;
     height: 4rem;
     font-family: "Montserrat", sans-serif;
@@ -61,6 +61,8 @@
     margin-top: 7.5rem;
 }
 
-.button-Ver:hover {
+.button-ver:hover {
     background-color: var(--text-gray);
 }
+
+@media (max-width: 899px) {}

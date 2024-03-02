@@ -1,0 +1,82 @@
+.section-principal {
+    display: grid;
+    padding: 1.5rem;
+    grid-template-columns: repeat(2, 50%);
+    gap: 50px;
+}
+
+.container-dogs-principal h2 {
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    padding: 69px 0px;
+    margin-left: 1rem;
+    height: 13rem;
+    font-size: 5rem;
+}
+
+
+
+.button-ver-vasquitos {
+    font-family: "Montserrat", sans-serif;
+    width: 18%;
+    height: 4.5rem;
+    font-size: 1.3rem;
+    font-weight: 550;
+    right: 10px;
+    background-color: var(--background-red);
+    padding: 9px 24px;
+    color: #fafafa;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.2rem;
+}
+
+.parrafo-dogs-principal {
+    text-align: start;
+    width: 89%;
+    padding: 11px 0px;
+    margin-left: 1rem;
+    font-family: "Montserrat",
+        sans-serif;
+    color: var(--text-gray);
+    font-size: 1.8rem;
+    font-weight: 450;
+}
+
+.container-vasquitos,
+.vasquito-uno,
+.vasquito-dos,
+.vasquito-tres,
+.vasquito-cuatro,
+.vasquito-cinco,
+.vasquito-seis {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px 2px;
+    width: 89%;
+    border-radius: 44px
+}
+
+
+.button-ver-vasquitos {
+    font-family: "Montserrat", sans-serif;
+    width: 90%;
+    margin-left: 1rem;
+    height: 4.5rem;
+    font-size: 1.7rem;
+    font-weight: 550;
+    background-color: var(--background-red);
+    color: #fafafa;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+
+
+
+
+
+
+@media (max-width: 899px) {}

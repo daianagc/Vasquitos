@@ -15,7 +15,7 @@ export function MyMap({
   defaultZoom,
   width,
   anchor,
-  markerWidth = 30,
+  markerWidth,
 }: Props) {
   return (
     <Map

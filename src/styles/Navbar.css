@@ -39,7 +39,7 @@
   border-radius: 50%;
 }
 
-.button-Donar,
+.button-donar,
 .button-mobile {
   font-family: "Montserrat", sans-serif;
   width: 18%;
@@ -62,7 +62,7 @@
   right: unset;
 }
 
-.button-Donar:hover,
+.button-donar:hover,
 .button-mobile:hover {
   background-color: rgb(170, 17, 17);
 }
@@ -119,11 +119,11 @@ p {
     transform: translateX(-100%);
   }
 
-  .container-Logo {
+  .container-logo {
     margin-left: 1rem;
   }
 
-  .button-Donar {
+  .button-donar {
     display: none;
   }
 
