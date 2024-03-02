@@ -3,12 +3,14 @@ import "./Partners.css";
 import { setSubscription } from "../../api/subscriptions/subscriptions";
 import { useState } from "react";
 import { EmailIcon } from "../../public/icons/EmailIcon";
+import useIsMobile from "../../hooks/is-mobile";
 
 export const Partners = () => {
   const [payerEmail, setPayerEmail] = useState("");
   const { mutate, isPending } = useMutation({
     mutationFn: setSubscription,
   });
+  const isMobile = useIsMobile();
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
@@ -63,14 +65,19 @@ export const Partners = () => {
       <div className="form-wrapper">
         <div className="input-wrapper">
           <div className="icon-wrapper">
-            <EmailIcon />
+            <EmailIcon
+              width={isMobile ? "30" : "40"}
+              height={isMobile ? "30" : "40"}
+            />
           </div>
           <input
             className="form-input"
             type="email"
             name="payerEmail"
             id="payer_email"
-            placeholder="Primero ingresa tu email aquí"
+            placeholder={
+              isMobile ? "Ingresa tu email" : "Primero ingresa tu email aquí"
+            }
             onChange={handleEmail}
           />
         </div>

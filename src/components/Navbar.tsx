@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
@@ -32,9 +32,14 @@ const Navbar = () => {
         <ul className="ul-list" style={setDisplay()}>
           {items.map((item, index) => (
             <li key={index}>
-              <Link className="nav-link" to={item.to}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to={item.to}
+              >
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -44,6 +44,7 @@
       left: 3rem;
       position: absolute;
       top: 1.5rem;
+      z-index: -1;
     }
 
     .form-input {
@@ -51,8 +52,10 @@
       font-size: 2.5rem;
       height: 7rem;
       padding: 2rem 2rem 2rem 7rem;
+      position: relative;
       text-align: center;
       width: 100%;
+      z-index: -2;
 
       &::placeholder {
         position: relative;
@@ -79,6 +82,45 @@
 
     &:not(:disabled):hover {
       background-color: var(--background-black);
+    }
+  }
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+  .partners-container {
+    width: 90%;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+
+    .card {
+      width: 100%;
+    }
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+
+    .input-wrapper {
+      margin-top: 2rem;
+      width: 100%;
+
+      .icon-wrapper {
+        top: 2rem;
+      }
+
+      .form-input {
+        font-size: 2rem;
+        padding-left: 6rem;
+      }
+    }
+
+    .partner-button {
+      margin: unset;
+      width: 100%;
     }
   }
 }

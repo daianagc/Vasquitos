@@ -79,6 +79,7 @@ p {
     text-align: center;
     top: 12px;
     width: 100%;
+    z-index: 1000;
   }
 
   .nav-list {
@@ -93,6 +94,10 @@ p {
     display: flex;
     justify-content: center;
     margin: 10px 0;
+  }
+
+  .active {
+    color: var(--background-red);
   }
 
   .nav-items {
