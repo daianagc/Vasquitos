@@ -11,7 +11,6 @@ const Navbar = () => {
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
-    { to: "/padrinos", label: "Patrocinadores" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -37,9 +36,12 @@ const Navbar = () => {
           </li>
           {items.map((item, index) => (
             <li key={index}>
-              <NavLink  className={({ isActive }) =>
+              <NavLink
+                className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
-                } to={item.to}>
+                }
+                to={item.to}
+              >
                 {item.label}
               </NavLink>
             </li>
