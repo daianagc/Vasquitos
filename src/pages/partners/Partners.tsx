@@ -1,14 +1,24 @@
 import { useMutation } from "@tanstack/react-query";
 import "./Partners.css";
 import { setSubscription } from "../../api/subscriptions/subscriptions";
+import { useState } from "react";
+import { EmailIcon } from "../../public/icons/EmailIcon";
 
 export const Partners = () => {
+  const [payerEmail, setPayerEmail] = useState("");
   const { mutate, isPending } = useMutation({
     mutationFn: setSubscription,
   });
 
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const email = e.target.value;
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    isValidEmail ? setPayerEmail(email) : setPayerEmail("");
+  };
+
   const onSubscription = () => {
-    const payer_email = "test_user_327558032@testuser.com";
+    const payer_email = payerEmail.trim(); //"test_user_327558032@testuser.com";
 
     mutate(payer_email, {
       onSuccess: (response) => {
@@ -50,14 +60,30 @@ export const Partners = () => {
           </p>
         </div>
       </div>
-      <button
-        className="partner-button"
-        type="button"
-        title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
-        onClick={onSubscription}
-      >
-        {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
-      </button>
+      <div className="form-wrapper">
+        <div className="input-wrapper">
+          <div className="icon-wrapper">
+            <EmailIcon />
+          </div>
+          <input
+            className="form-input"
+            type="email"
+            name="payerEmail"
+            id="payer_email"
+            placeholder="Primero ingresa tu email aquí"
+            onChange={handleEmail}
+          />
+        </div>
+        <button
+          className="partner-button"
+          type="button"
+          title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
+          disabled={!payerEmail}
+          onClick={onSubscription}
+        >
+          {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
+        </button>
+      </div>
     </div>
   );
 };
