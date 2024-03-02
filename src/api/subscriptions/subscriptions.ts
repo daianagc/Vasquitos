@@ -10,7 +10,5 @@ export const setSubscription = async (payer_email: string) => {
     }
   );
 
-  console.log("RESPUESTA: ", response.json);
-
   return response.json();
 };

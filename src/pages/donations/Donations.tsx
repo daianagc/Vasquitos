@@ -47,7 +47,7 @@ export const Donations = () => {
     id: string;
     unit_price: number;
   }) => {
-    const title = "Donación";
+    const title = "Donación a Vascos Animalistas";
 
     setLoadingButtonId(id);
 
