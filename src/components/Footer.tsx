@@ -1,8 +1,8 @@
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
-import iconInstagram from "../img/icon-instagram.ico";
-import iconFacebook from "../img/icon-facebook.ico";
-import iconTiktok from "../img/icon-tiktok.ico";
+import iconInstagram from "../public/img/icon-instagram.ico";
+import iconFacebook from "../public/img/icon-facebook.ico";
+import iconTiktok from "../public/img/icon-tiktok.ico";
 import { MyMap } from "./Map";
 import useIsMobile from "../hooks/is-mobile";
 

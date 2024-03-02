@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
-import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
+import logoVascos from "../public/img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
 import useIsMobile from "../hooks/is-mobile";
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
   const items = [
+    { to: "/", label: "Inicio" },
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
@@ -25,7 +26,9 @@ const Navbar = () => {
   return (
     <nav className="nav-list">
       <div className="container-Logo">
-        <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
+        <Link to="/">
+          <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
+        </Link>
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <ul className="ul-list" style={setDisplay()}>

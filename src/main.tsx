@@ -35,10 +35,6 @@ const router = createBrowserRouter([
         element: <Partners />,
       },
       // {
-      //   path: "padrinos",
-      //   element: <Padrinos />,
-      // },
-      // {
       //   path: "contacto",
       //   element: <Contacto />,
       // },
