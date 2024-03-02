@@ -7,21 +7,50 @@
   text-decoration: unset;
 }
 
-::-webkit-scrollbar {
-  display: none;
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./public/fonts/Montserrat-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./public/fonts/Montserrat-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-style: normal;
+  src: url("./public/fonts/Montserrat-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: normal;
+  src: url("./public/fonts/Montserrat-ExtraBold.woff2") format("woff2");
 }
 
 :root {
-  --background-black: rgb(17 24 39);
-  --background-red: rgb(239 68 68);
+  --background-primary: #ffe6e6;
+  --background-black: #000000;
+  --background-white: #ffffff;
+  --background-red: #f22b29;
   --text-white: rgb(255 255 255);
-  --text-red: rgb(239 68 68);
+  --text-red: #bd1616;
   --text-gray: rgb(107 114 128);
+  --text-black: #140f2d;
 
   --mobile-max-width: 899px;
 }
 
 html {
-  font-size: 62.5%;
-  /* 1rem = 10px */
+  font-size: 62.5%; /* 1rem = 10px */
+  background-color: var(--background-primary);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 }

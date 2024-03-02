@@ -1,0 +1,126 @@
+.partners-container {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin: 3rem 0;
+  text-align: center;
+  width: 70%;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--background-white);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  width: 30%;
+}
+
+.card-icon {
+  font-size: 5rem;
+}
+
+.form-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  .input-wrapper {
+    position: relative;
+    width: 50%;
+
+    .icon-wrapper {
+      font-size: 3rem;
+      left: 3rem;
+      position: absolute;
+      top: 1.5rem;
+      z-index: -1;
+    }
+
+    .form-input {
+      border-radius: 100px;
+      font-size: 2.5rem;
+      height: 7rem;
+      padding: 2rem 2rem 2rem 7rem;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      z-index: -2;
+
+      &::placeholder {
+        position: relative;
+        right: 2rem;
+      }
+    }
+  }
+
+  .partner-button {
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: bold;
+    height: 7rem;
+    margin: 3rem 0;
+    padding: 1rem 2rem;
+    width: 27%;
+
+    &:not(:disabled) {
+      background-color: var(--background-red);
+      border: 0.2rem solid var(--text-black);
+      color: var(--text-white);
+    }
+
+    &:not(:disabled):hover {
+      background-color: var(--background-black);
+    }
+  }
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+  .partners-container {
+    width: 90%;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+
+    .card {
+      width: 100%;
+    }
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+
+    .input-wrapper {
+      margin-top: 2rem;
+      width: 100%;
+
+      .icon-wrapper {
+        top: 2rem;
+      }
+
+      .form-input {
+        font-size: 2rem;
+        padding-left: 6rem;
+      }
+    }
+
+    .partner-button {
+      margin: unset;
+      width: 100%;
+    }
+  }
+}

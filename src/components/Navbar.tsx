@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
@@ -11,7 +11,7 @@ const Navbar = () => {
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
-    { to: "/padrinos", label: "Padrinos" },
+    { to: "/padrinos", label: "Patrocinadores" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -37,15 +37,19 @@ const Navbar = () => {
           </li>
           {items.map((item, index) => (
             <li key={index}>
-              <Link className="nav-link" to={item.to}>
+              <NavLink  className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                } to={item.to}>
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
       </div>
       <button className="button-Donar">
-        <p>DONAR AHORA</p>
+        <NavLink to="/donaciones">
+          <p>DONAR AHORA</p>
+        </NavLink>
       </button>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

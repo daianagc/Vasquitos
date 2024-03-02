@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container">
         <div className="container-Icons">
           <i>
             <Link className="instagram" to="https://www.instagram.com/">
