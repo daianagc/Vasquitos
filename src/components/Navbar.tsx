@@ -30,14 +30,16 @@ const Navbar = () => {
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <ul className="ul-list" style={setDisplay()}>
+          <li className="list-item-mobile">
+            <button className="button-mobile">
+              <p>DONAR AHORA</p>
+            </button>
+          </li>
           {items.map((item, index) => (
             <li key={index}>
-              <NavLink
-                className={({ isActive }) =>
+              <NavLink  className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
-                }
-                to={item.to}
-              >
+                } to={item.to}>
                 {item.label}
               </NavLink>
             </li>

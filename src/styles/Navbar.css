@@ -17,8 +17,12 @@
   text-decoration: none;
 }
 
+.active {
+  color: var(--text-red) !important;
+}
+
 .nav-link {
-  color: #fbf9f9;
+  color: var(--text-white);
   font-size: 1.6rem;
   position: relative;
   text-decoration: none;
@@ -39,7 +43,8 @@
   border-radius: 50%;
 }
 
-.button-Donar {
+.button-Donar,
+.button-mobile {
   font-family: "Montserrat", sans-serif;
   width: 18%;
   height: 4.5rem;
@@ -55,36 +60,45 @@
   margin-bottom: 0.2rem;
 }
 
-.button-Donar:hover {
-  background-color: rgb(170, 17, 17);
+.button-mobile {
+  width: unset;
+  position: relative;
+  right: unset;
+}
+
+.button-Donar:hover,
+.button-mobile:hover {
+  background-color: var(--background-red);
 }
 
 p {
   font-size: 15px;
   font-family: "Montserrat", sans-serif;
-  color: #fafafa;
+  color: var(--text-white);
+}
+
+.list-item-mobile {
+  display: none;
 }
 
 /*MENU HAMBURGESA*/
 
 @media (max-width: 899px) {
-  .ul-list {
-    background-color: var(--background-black);
-    color: rgb(242, 237, 237);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 2rem;
-    position: absolute;
-    text-align: center;
-    top: 12px;
-    width: 100%;
-    z-index: 1000;
-  }
-
   .nav-list {
     justify-content: space-between;
     padding: unset;
+  }
+
+  .ul-list {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    text-align: center;
+    color: var(--text-white);
+    background-color: var(--background-black);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
   }
 
   .nav-link {
@@ -94,10 +108,6 @@ p {
     display: flex;
     justify-content: center;
     margin: 10px 0;
-  }
-
-  .active {
-    color: var(--background-red);
   }
 
   .nav-items {
@@ -120,9 +130,15 @@ p {
     display: none;
   }
 
+  .list-item-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+  }
+
   .nav-items.open {
     transform: translateX(0) !important;
-    z-index: -2;
   }
 
   .nav-toggle {
@@ -134,7 +150,7 @@ p {
   .nav-toggle span {
     width: 30px;
     height: 4px;
-    background: rgb(245, 241, 241);
+    background: var(--background-white);
     margin-bottom: 5px;
     border-radius: 2px;
     transform-origin: 5px 0px;
@@ -153,5 +169,3 @@ p {
     transform: rotate(-45deg) translate(-5px, 1px);
   }
 }
-
-/********************************************************************/

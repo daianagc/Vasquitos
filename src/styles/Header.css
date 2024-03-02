@@ -13,6 +13,6 @@ header {
 
 @media (max-width: 899px) {
   header {
-    padding: 1rem 0;
+    padding: 1rem 0rem;
   }
 }
