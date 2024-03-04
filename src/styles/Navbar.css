@@ -17,15 +17,15 @@
   text-decoration: none;
 }
 
-.active {
-  color: var(--text-red) !important;
-}
-
 .nav-link {
   color: var(--text-white);
   font-size: 1.6rem;
   position: relative;
   text-decoration: none;
+}
+
+.active {
+  color: var(--text-red) !important;
 }
 
 .nav-link:hover {
@@ -61,9 +61,12 @@
 }
 
 .button-mobile {
-  width: unset;
+  align-items: center;
+  display: flex;
+  margin-bottom: unset;
   position: relative;
   right: unset;
+  width: unset;
 }
 
 .button-Donar:hover,

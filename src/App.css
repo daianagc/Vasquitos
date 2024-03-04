@@ -28,24 +28,9 @@ main {
   font-size: 2rem;
   max-width: 141rem;
 }
-.title-h3 {
-  color: var(--text-black);
-  font-size: 5rem;
-}
-
-.title-h4 {
-  color: var(--text-black);
-  font-size: 3rem;
-}
-
-.paragraph {
-  color: var(--text-black);
-  font-size: 2rem;
-  max-width: 141rem;
-}
 
 .strong-text {
-  font-weight: bold;
+  font-weight: 900;
 }
 
 @media (width < 899px) {
