@@ -1,0 +1,67 @@
+.donations-title h3 {
+
+    font-family: "Montserrat", sans-serif;
+    padding-top: 7rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.donations-parrafo p {
+    text-align: center;
+    padding: 10px 19%;
+    font-family: "Montserrat",
+        sans-serif;
+    color: var(--text-gray);
+    font-size: 1.7rem;
+    font-weight: 450;
+}
+
+.donations-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+
+
+}
+
+.button-texto-donar {
+    width: 13%;
+    height: 4rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: #ffffff;
+    background-color: var(--background-black);
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 2.9rem;
+    margin-right: 1rem;
+
+}
+
+.button-texto-donar:hover {
+    background-color: rgb(17 24 39 / 82%);
+}
+
+
+.button-texto-mas {
+    width: 13%;
+    height: 4rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: var(--background-black);
+    background-color: #fffcfc;
+    ;
+    cursor: pointer;
+    border: 1px solid rgb(206, 201, 201);
+    border-radius: 7px;
+    margin-top: 2.9rem;
+
+}
+
+.button-texto-mas:hover {
+    background-color: rgb(240, 240, 240);
+}

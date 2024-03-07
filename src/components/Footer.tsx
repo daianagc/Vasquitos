@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="texto-footer">
           <p>📍 Av. 14 n°2598</p>
           <p>📩 vascosanimalistas@gmail.com</p>
-          <p>☎️ 2255-2324546</p>
+          <p>☎️ 2255-232454</p>
         </div>
       </div>
       <div className="Mapa">

@@ -10,7 +10,7 @@ const OurDogsSection = () => {
   return (
     <section className="section-principal">
       <div className="container-dogs-principal">
-        <h2>Meet Our Dogs</h2>
+        <h2>Conoce a Nuestros Vasquitos</h2>
         <p className="parrafo-dogs-principal">
           Browse through our list of adorable dogs waiting for their forever
           homes.

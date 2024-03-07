@@ -1,16 +1,16 @@
 .section-principal {
+    background-color: rgb(107 114 128 / 12%);
     display: grid;
     padding: 1.5rem;
+    padding-top: 6rem;
     grid-template-columns: repeat(2, 50%);
     gap: 50px;
 }
 
 .container-dogs-principal h2 {
-    width: 100%;
     font-family: "Montserrat", sans-serif;
-    padding: 69px 0px;
+    padding-top: 10px;
     margin-left: 1rem;
-    height: 13rem;
     font-size: 5rem;
 }
 
@@ -34,7 +34,7 @@
 .parrafo-dogs-principal {
     text-align: start;
     width: 89%;
-    padding: 11px 0px;
+    padding: 18px 0px;
     margin-left: 1rem;
     font-family: "Montserrat",
         sans-serif;
@@ -53,7 +53,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 10px 2px;
+    padding: 3px 2px;
     width: 89%;
     border-radius: 44px
 }
@@ -72,6 +72,10 @@
     cursor: pointer;
     margin-bottom: 5rem;
     margin-top: 3rem;
+}
+
+.button-ver-vasquitos:hover {
+    background-color: rgb(170, 17, 17);
 }
 
 
