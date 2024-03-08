@@ -80,52 +80,56 @@ export const Donations = () => {
             merecen, de la mejor forma posible. Desde ya MUCHÍSIMAS GRACIAS por
             tu esfuerzo. <strong>Para ellos es muy valioso.</strong>
           </p>
-          <div className="buttons-wrapper">
-            {donationsButtons.map(({ id, unit_price, tagTitle }) => (
+          <div className="donations-main-section">
+            <div className="buttons-wrapper">
+              {donationsButtons.map(({ id, unit_price, tagTitle }) => (
+                <button
+                  type="button"
+                  className={isPending ? "loading-text" : ""}
+                  title={tagTitle}
+                  key={id}
+                  onClick={() => handlePreference({ id, unit_price })}
+                >
+                  {loadingButtonId === id
+                    ? "Redirigiendo..."
+                    : `$${unit_price}`}
+                </button>
+              ))}
+            </div>
+            <div className="input-container">
+              <div className="input-wrapper">
+                <p
+                  className="dollar-icon"
+                  style={{ display: flexibleAmount ? "unset" : "none" }}
+                >
+                  $
+                </p>
+                <input
+                  className="donation-input"
+                  type="number"
+                  min={0}
+                  placeholder={
+                    isMobile
+                      ? "Podes donar otro monto acá"
+                      : "¿Te gustaría donar otro monto? ¡Hacelo acá!"
+                  }
+                  onChange={handleFlexibleAmount}
+                />
+              </div>
               <button
                 type="button"
-                className={isPending ? "loading-text" : ""}
-                title={tagTitle}
-                key={id}
-                onClick={() => handlePreference({ id, unit_price })}
-              >
-                {loadingButtonId === id ? "Redirigiendo..." : `$${unit_price}`}
-              </button>
-            ))}
-          </div>
-          <div className="input-container">
-            <div className="input-wrapper">
-              <p
-                className="dollar-icon"
-                style={{ display: flexibleAmount ? "unset" : "none" }}
-              >
-                $
-              </p>
-              <input
-                className="donation-input"
-                type="number"
-                min={0}
-                placeholder={
-                  isMobile
-                    ? "Podes donar otro monto acá"
-                    : "¿Te gustaría donar otro monto? ¡Hacelo acá!"
+                disabled={!flexibleAmount}
+                title="¡Hace click para donar y hacer felices a los vasquitos!"
+                onClick={() =>
+                  handlePreference({
+                    id: "VASQUITOS-1000",
+                    unit_price: flexibleAmount,
+                  })
                 }
-                onChange={handleFlexibleAmount}
-              />
+              >
+                Donar
+              </button>
             </div>
-            <button
-              type="button"
-              disabled={!flexibleAmount}
-              title="¡Hace click para donar y hacer felices a los vasquitos!"
-              onClick={() =>
-                handlePreference({
-                  id: "VASQUITOS-1000",
-                  unit_price: flexibleAmount,
-                })
-              }
-            >
-              Donar
-            </button>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
 }
 
 .main-paragraph {
-  color: #951d1d;
+  color: var(--text-secondary-red);
   font-style: italic;
   text-align: center;
   width: 60%;

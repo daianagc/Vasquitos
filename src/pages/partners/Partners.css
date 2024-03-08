@@ -1,3 +1,7 @@
+.partners-special-paragraph {
+  color: var(--text-secondary-red);
+}
+
 .partners-content {
   gap: 2rem;
   padding: 3rem;
@@ -71,6 +75,10 @@
     margin: 3rem 0;
     padding: 1rem 2rem;
     width: 27%;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
 
     &:not(:disabled) {
       background-color: var(--background-red);

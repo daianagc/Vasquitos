@@ -1,5 +1,6 @@
 import "./AboutUs.css";
 import imagenNosotros from "../../public/img/about-us.jpg";
+import user from "../../public/img/user.jpg";
 import rescued1 from "../../public/img/rescued-1.jpg";
 import rescued2 from "../../public/img/rescued-2.jpg";
 import rescued3 from "../../public/img/rescued-3.jpg";
@@ -29,57 +30,46 @@ export const AboutUs = () => {
     {
       name: "Marcelo Morales",
       role: "Presidente",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Julieta Morales",
       role: "Tesorera",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Mauricio Cucco",
       role: "Vicepresidente",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Diego Maradona",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Juan Domingo Perón",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Diego Capusotto",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Pedro Saborido",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Axel Kicillof",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Marcelo Tinelli",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Juan Roman Riquelme",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
     {
       name: "Tini Stoeseel",
       role: "Vocal",
-      image: "https://via.placeholder.com/150",
     },
   ];
 
@@ -150,7 +140,7 @@ export const AboutUs = () => {
               <div className="member" key={member.name}>
                 <img
                   className="member-image"
-                  src={member.image}
+                  src={user}
                   alt="Nombre del miembro"
                 />
                 <h5 className="member-name">{member.name}</h5>

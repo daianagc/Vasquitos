@@ -1,11 +1,22 @@
 .donations-content {
   gap: 2rem;
-  padding: 3rem;
+  padding: 3rem 3rem 5rem 3rem;
   width: 100%;
 }
 
 .loading-text {
   font-size: 2rem !important;
+}
+
+.donations-main-section {
+  align-items: center;
+  background-image: url("/src/public/img/dogs-running.jpg");
+  background-size: cover;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem;
+  width: 100%;
 }
 
 .buttons-wrapper {
@@ -75,6 +86,10 @@
     width: 14%;
   }
 
+  button:disabled {
+    cursor: not-allowed;
+  }
+
   button:not(:disabled) {
     background-color: var(--background-black);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -96,6 +111,12 @@
 
   .donations-content {
     gap: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .donations-main-section {
+    padding: 2rem;
   }
 
   .buttons-wrapper {

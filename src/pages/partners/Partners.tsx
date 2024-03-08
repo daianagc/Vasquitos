@@ -38,7 +38,7 @@ export const Partners = () => {
     <div className="container">
       <div className="content partners-content">
         <h1 className="title-h1">Convertite en socio</h1>
-        <p className="paragraph">
+        <p className="paragraph partners-special-paragraph">
           Con tu aporte mensual, nos ayudás a seguir rescatando y cuidando a los
           perritos que más lo necesitan.
         </p>
