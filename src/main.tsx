@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/home/Home.tsx";
 import { Donations } from "./pages/donations/Donations.tsx";
 import { Partners } from "./pages/partners/Partners.tsx";
+import { Contact } from "./pages/contact/Contact.tsx";
 
 const router = createBrowserRouter([
   {
@@ -34,10 +35,10 @@ const router = createBrowserRouter([
         path: "socios",
         element: <Partners />,
       },
-      // {
-      //   path: "contacto",
-      //   element: <Contacto />,
-      // },
+      {
+        path: "contacto",
+        element: <Contact />,
+      },
     ],
   },
 ]);

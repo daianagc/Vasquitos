@@ -42,7 +42,7 @@ const Footer = () => {
           defaultZoom={16}
           width={!isMobile ? 370 : 230}
           anchor={[-37.27046112725326, -56.993164051984074]}
-          markerWidth={!isMobile ? 60 : 40}
+          markerWidth={!isMobile ? 30 : 40}
         />
       </div>
     </footer>

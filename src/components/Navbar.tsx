@@ -26,16 +26,20 @@ const Navbar = () => {
   return (
     <nav className="nav-list">
       <div className="container-Logo">
-        <Link to="/">
+        <Link to="/" onClick={() => setIsOpen(false)}>
           <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
         </Link>
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <ul className="ul-list" style={setDisplay()}>
           <li className="list-item-mobile">
-            <button className="button-mobile">
+            <NavLink
+              to="/donaciones"
+              className="button-mobile"
+              onClick={() => setIsOpen(false)}
+            >
               <p>DONAR AHORA</p>
-            </button>
+            </NavLink>
           </li>
           {items.map((item, index) => (
             <li key={index}>
@@ -44,6 +48,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
                 to={item.to}
+                onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </NavLink>
