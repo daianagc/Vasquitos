@@ -1,10 +1,20 @@
 .donations-container {
   display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  margin: 3rem 0;
-  text-align: center;
-  width: 70%;
+  justify-content: center;
+  padding: 3rem 6rem;
+  width: 100%;
+
+  .donations-content {
+    align-items: center;
+    display: flex;
+    background-color: var(--background-white);
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    width: 100%;
+  }
 }
 
 .loading-text {
@@ -16,10 +26,11 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+  width: 85%;
 
   button {
     background-color: var(--background-red);
-    border: 0.2rem solid var(--text-black);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     border-radius: 100px;
     color: var(--text-white);
     cursor: pointer;
@@ -40,6 +51,7 @@
   justify-content: center;
   gap: 1rem;
   margin: 2rem 0;
+  width: 100%;
 
   .input-wrapper {
     position: relative;
@@ -55,6 +67,7 @@
 
     .donation-input {
       border-radius: 30px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       font-size: 3rem;
       padding: 2rem;
       text-align: center;
@@ -77,6 +90,7 @@
 
   button:not(:disabled) {
     background-color: var(--background-black);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     border: 0.2rem solid var(--text-white);
     color: var(--text-white);
   }

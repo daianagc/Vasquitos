@@ -13,12 +13,12 @@ main {
   padding-top: 7.339rem;
 }
 
-.title-h3 {
+.title-h1 {
   color: var(--text-black);
   font-size: 5rem;
 }
 
-.title-h4 {
+.title-h2 {
   color: var(--text-black);
   font-size: 3rem;
 }
@@ -38,7 +38,7 @@ main {
     flex-grow: unset;
   }
 
-  .title-h3 {
+  .title-h1 {
     font-size: 3rem;
   }
 

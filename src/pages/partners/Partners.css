@@ -1,11 +1,23 @@
 .partners-container {
   align-items: center;
   display: flex;
-  gap: 2rem;
   flex-direction: column;
-  margin: 3rem 0;
+  gap: 2rem;
   text-align: center;
-  width: 70%;
+  padding: 3rem 6rem;
+  width: 100%;
+
+  .partners-content {
+    align-items: center;
+    display: flex;
+    background-color: var(--background-white);
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    width: 100%;
+  }
 }
 
 .cards-wrapper {
@@ -20,7 +32,8 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  justify-content: space-between;
   padding: 3rem;
   width: 30%;
 }
@@ -76,7 +89,7 @@
 
     &:not(:disabled) {
       background-color: var(--background-red);
-      border: 0.2rem solid var(--text-black);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       color: var(--text-white);
     }
 
@@ -84,6 +97,12 @@
       background-color: var(--background-black);
     }
   }
+}
+
+.rescued-partner-image {
+  height: 27rem !important;
+  object-fit: cover;
+  width: 100% !important;
 }
 
 /* MOBILE */

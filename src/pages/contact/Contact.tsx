@@ -28,64 +28,70 @@ export const Contact = () => {
 
   return (
     <>
-      <div className="partners-container">
-        <h3 className="title-h3">Contactate con nosotros</h3>
-        <p className="paragraph">
-          Cualquier aporte, mensaje y/o dudas que tengas, hacelo a través del
-          siguiente formulario.
-        </p>
-        <p className="paragraph strong-text">Gracias por tu interés.</p>
+      <div className="contact-container">
+        <div className="contact-content">
+          <div className="partners-container">
+            <h1 className="title-h1">Contactate con nosotros</h1>
+            <p className="paragraph">
+              Cualquier aporte, mensaje y/o dudas que tengas, hacelo a través
+              del siguiente formulario.
+            </p>
+            <p className="paragraph strong-text">Gracias por tu interés.</p>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="left-wrapper">
+              <div className="input-wrapper">
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="Ingresa tu nombre y apellido"
+                  {...register("fullName", { required })}
+                />
+                {errors.fullName && (
+                  <span className="error-message">
+                    {errors.fullName.message}
+                  </span>
+                )}
+              </div>
+
+              <div className="input-wrapper">
+                <input
+                  className="form-input"
+                  type="email"
+                  placeholder="Ingresa tu email"
+                  {...register("email", {
+                    required,
+                    pattern,
+                  })}
+                />
+                {errors.email && (
+                  <span className="error-message">{errors.email.message}</span>
+                )}
+              </div>
+
+              <div className="input-wrapper">
+                <textarea
+                  className="form-textarea"
+                  placeholder="Ingresa tu mensaje"
+                  {...register("contactMessage", { required, minLength })}
+                />
+                {errors.contactMessage && (
+                  <span className="error-message">
+                    {errors.contactMessage.message}
+                  </span>
+                )}
+              </div>
+
+              <button className="form-button" type="submit">
+                Enviar
+              </button>
+            </div>
+            <div className="right-wrapper">
+              <img src={imagenContacto} alt="Imagen de un refugio con perros" />
+            </div>
+          </form>
+        </div>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="left-wrapper">
-          <div className="input-wrapper">
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Ingresa tu nombre y apellido"
-              {...register("fullName", { required })}
-            />
-            {errors.fullName && (
-              <span className="error-message">{errors.fullName.message}</span>
-            )}
-          </div>
-
-          <div className="input-wrapper">
-            <input
-              className="form-input"
-              type="email"
-              placeholder="Ingresa tu email"
-              {...register("email", {
-                required,
-                pattern,
-              })}
-            />
-            {errors.email && (
-              <span className="error-message">{errors.email.message}</span>
-            )}
-          </div>
-
-          <div className="input-wrapper">
-            <textarea
-              className="form-textarea"
-              placeholder="Ingresa tu mensaje"
-              {...register("contactMessage", { required, minLength })}
-            />
-            {errors.contactMessage && (
-              <span className="error-message">
-                {errors.contactMessage.message}
-              </span>
-            )}
-          </div>
-
-          <button className="form-button" type="submit">
-            Enviar
-          </button>
-        </div>
-        <div className="right-wrapper">
-          <img src={imagenContacto} alt="Imagen de un refugio con perros" />
-        </div>
-      </form>
     </>
   );
 };

@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import "../styles/Navbar.css";
-import logoVascos from "../public/img/VASCOS-ANIMALISTAS.ico";
+import "./Navbar.css";
+import logoVascos from "../../../public/img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
-import useIsMobile from "../hooks/is-mobile";
+import useIsMobile from "../../../hooks/is-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

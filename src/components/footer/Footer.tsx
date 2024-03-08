@@ -1,10 +1,10 @@
-import "../styles/Footer.css";
+import "./Footer.css";
 import { Link } from "react-router-dom";
-import iconInstagram from "../public/img/icon-instagram.ico";
-import iconFacebook from "../public/img/icon-facebook.ico";
-import iconTiktok from "../public/img/icon-tiktok.ico";
-import { MyMap } from "./Map";
-import useIsMobile from "../hooks/is-mobile";
+import iconInstagram from "../../public/img/icon-instagram.ico";
+import iconFacebook from "../../public/img/icon-facebook.ico";
+import iconTiktok from "../../public/img/icon-tiktok.ico";
+import { MyMap } from "../map/Map";
+import useIsMobile from "../../hooks/is-mobile";
 
 const Footer = () => {
   const isMobile = useIsMobile();
