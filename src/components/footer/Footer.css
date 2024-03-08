@@ -9,7 +9,7 @@
   color: white;
 }
 
-.container {
+.footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,24 +55,17 @@ p {
     margin: 20px;
   }
 
-  .container-icons {
-
-    margin: 0px 9%;
-  }
-
-  .icon-instagram,
-  .icon-facebook,
-  .icon-tiktok {
-    width: 30px;
-    margin: 20px;
-
-  }
-
-  .texto-footer {
+  .texto-Footer {
     flex-direction: column;
     position: inherit;
-
   }
 
+  .footer-container {
+    gap: unset;
+    margin: unset;
 
+    .container-Icons {
+      padding: unset;
+    }
+  }
 }

@@ -1,0 +1,150 @@
+.paragraph {
+  max-width: unset;
+  text-align: justify;
+}
+
+.main-section {
+  align-items: center;
+  justify-content: center;
+}
+
+.main-paragraph {
+  color: var(--text-secondary-red);
+  font-style: italic;
+  text-align: center;
+  width: 60%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.about-us-content {
+  gap: 4rem;
+  padding: 3rem 5rem;
+  width: 100%;
+
+  .about-us-cover {
+    border-radius: 2rem;
+    height: 35rem;
+    margin-top: 1rem;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.values-wrapper {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 3rem 3rem 0 3rem;
+
+  .value {
+    align-items: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    width: 30%;
+
+    .value-title {
+      color: var(--text-red);
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .value-paragraph {
+      color: var(--text-gray);
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.members-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 3rem 0 3rem;
+
+  .member {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+    width: 14%;
+
+    .member-image {
+      border-radius: 50%;
+      height: 10rem;
+      object-fit: cover;
+      width: 10rem;
+    }
+
+    .member-name {
+      color: var(--text-red);
+      font-size: 1.8rem;
+    }
+
+    .member-role {
+      color: var(--text-gray);
+    }
+  }
+}
+
+.rescued-image {
+  border-radius: 1rem;
+  height: 19rem;
+  object-fit: cover;
+  width: 90%;
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+  .about-us-content {
+    gap: 3rem;
+    padding: 3rem 2rem 5rem 2rem;
+
+    .about-us-cover {
+      height: 22rem;
+    }
+  }
+
+  .values-wrapper {
+    padding: unset;
+    flex-direction: column;
+    align-items: center;
+
+    .value {
+      width: 100%;
+    }
+  }
+
+  .members-wrapper {
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow: scroll;
+    padding: unset;
+
+    .member {
+      justify-content: space-between;
+      padding-bottom: unset;
+      width: 100%;
+
+      .member-image {
+        height: 14rem;
+        width: 14rem;
+      }
+    }
+  }
+}

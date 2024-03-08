@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import "../styles/Header.css";
+import Navbar from "./navbar/Navbar";
+import "./Header.css";
 
 const Header = () => {
   return (

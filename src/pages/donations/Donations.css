@@ -1,0 +1,160 @@
+.donations-content {
+  gap: 2rem;
+  padding: 3rem 3rem 5rem 3rem;
+  width: 100%;
+}
+
+.loading-text {
+  font-size: 2rem !important;
+}
+
+.donations-main-section {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url("/src/public/img/dogs-running.jpg");
+  background-size: cover;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem;
+  width: 100%;
+}
+
+.buttons-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 85%;
+
+  button {
+    background-color: var(--background-red);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    color: var(--text-white);
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 9rem;
+    padding: 1rem 2rem;
+    width: 20%;
+  }
+
+  button:hover {
+    background-color: var(--background-black);
+  }
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+
+  .input-wrapper {
+    position: relative;
+    width: 45%;
+
+    .dollar-icon {
+      color: var(--background-black);
+      font-size: 3rem;
+      left: 3rem;
+      position: absolute;
+      top: 1.8rem;
+    }
+
+    .donation-input {
+      border-radius: 30px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      font-size: 3rem;
+      padding: 2rem;
+      text-align: center;
+      width: 100%;
+
+      &::placeholder {
+        bottom: 0.4rem;
+        font-size: 2rem;
+        position: relative;
+      }
+    }
+  }
+
+  button {
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 2rem;
+    width: 14%;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  button:not(:disabled) {
+    background-color: var(--background-black);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: 0.2rem solid var(--text-white);
+    color: var(--text-white);
+  }
+
+  button:not(:disabled):hover {
+    background-color: var(--background-red);
+  }
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+  .donations-container {
+    width: 90%;
+  }
+
+  .donations-content {
+    gap: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .donations-main-section {
+    padding: 2rem;
+  }
+
+  .buttons-wrapper {
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+
+    button {
+      font-size: 3rem;
+      height: 6rem;
+      width: 100%;
+    }
+  }
+
+  .input-container {
+    align-items: center;
+    flex-direction: column;
+
+    .input-wrapper {
+      font-size: 2.5rem;
+      width: 100%;
+
+      .dollar-icon {
+        top: 1.1rem;
+      }
+
+      .donation-input {
+        height: 6rem;
+        &::placeholder {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    button {
+      height: 6rem;
+      width: 100%;
+    }
+  }
+}

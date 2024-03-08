@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
-import logoVascos from "../img/VASCOS-ANIMALISTAS.ico";
+import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css";
+import logoVascos from "../../../public/img/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
-import useIsMobile from "../hooks/is-mobile";
+import useIsMobile from "../../../hooks/is-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
   const items = [
+    { to: "/", label: "Inicio" },
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
-    { to: "/padrinos", label: "Padrinos" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -25,27 +25,41 @@ const Navbar = () => {
 
   return (
     <nav className="nav-list">
-      <div className="container-logo">
-        <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
+      <div className="container-Logo">
+        <Link to="/" onClick={() => setIsOpen(false)}>
+          <img className="logoVascos" src={logoVascos} alt="LogoVascos" />
+        </Link>
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <ul className="ul-list" style={setDisplay()}>
           <li className="list-item-mobile">
-            <button className="button-mobile">
+            <NavLink
+              to="/donaciones"
+              className="button-mobile"
+              onClick={() => setIsOpen(false)}
+            >
               <p>DONAR AHORA</p>
-            </button>
+            </NavLink>
           </li>
           {items.map((item, index) => (
             <li key={index}>
-              <Link className="nav-link" to={item.to}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to={item.to}
+                onClick={() => setIsOpen(false)}
+              >
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
       </div>
-      <button className="button-donar">
-        <p>DONAR AHORA</p>
+      <button className="button-Donar">
+        <NavLink to="/donaciones">
+          <p>DONAR AHORA</p>
+        </NavLink>
       </button>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

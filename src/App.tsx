@@ -1,24 +1,22 @@
-import { Outlet, useNavigate } from "react-router-dom";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import "./App.css";
-import { useEffect } from "react";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import "./styles/App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 const App = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/home");
-  }, [navigate]);
+  const queryClient = new QueryClient();
 
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <QueryClientProvider client={queryClient}>
+        <Header />
+        <main>
+          <Outlet />
+          <ScrollRestoration />
+        </main>
+        <Footer />
+      </QueryClientProvider>
     </>
   );
 };

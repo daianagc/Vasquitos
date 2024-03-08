@@ -1,18 +1,18 @@
-import "../styles/Footer.css";
+import "./Footer.css";
 import { Link } from "react-router-dom";
-import iconInstagram from "../img/icon-instagram.ico";
-import iconFacebook from "../img/icon-facebook.ico";
-import iconTiktok from "../img/icon-tiktok.ico";
-import { MyMap } from "./Map";
-import useIsMobile from "../hooks/is-mobile";
+import iconInstagram from "../../public/img/icon-instagram.ico";
+import iconFacebook from "../../public/img/icon-facebook.ico";
+import iconTiktok from "../../public/img/icon-tiktok.ico";
+import { MyMap } from "../map/Map";
+import useIsMobile from "../../hooks/is-mobile";
 
 const Footer = () => {
   const isMobile = useIsMobile();
 
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="container-icons">
+      <div className="footer-container">
+        <div className="container-Icons">
           <i>
             <Link className="instagram" to="https://www.instagram.com/">
               <img className="icon-instagram" src={iconInstagram} alt="Icon" />

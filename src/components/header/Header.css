@@ -2,10 +2,12 @@ header {
   width: 100%;
   background-color: var(--background-black);
   color: var(--text-white);
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  z-index: 10000;
 }
 
 /*MEDIA QUERIES*/
