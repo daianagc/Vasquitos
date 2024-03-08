@@ -12,7 +12,7 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<Inputs>();
   const required = "Este campo es requerido";
   const pattern = {
