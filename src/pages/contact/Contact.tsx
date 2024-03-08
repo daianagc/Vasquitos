@@ -28,9 +28,9 @@ export const Contact = () => {
 
   return (
     <>
-      <div className="contact-container">
-        <div className="contact-content">
-          <div className="partners-container">
+      <div className="container">
+        <div className="content contact-content">
+          <div className="header-wrapper">
             <h1 className="title-h1">Contactate con nosotros</h1>
             <p className="paragraph">
               Cualquier aporte, mensaje y/o dudas que tengas, hacelo a través

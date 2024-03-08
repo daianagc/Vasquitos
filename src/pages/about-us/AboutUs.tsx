@@ -84,8 +84,8 @@ export const AboutUs = () => {
   ];
 
   return (
-    <div className="about-us-container">
-      <div className="about-us-content">
+    <div className="container">
+      <div className="content about-us-content">
         <div className="section main-section">
           <h1 className="title-h1">Vascos Animalistas VG</h1>
           <p className="paragraph main-paragraph">

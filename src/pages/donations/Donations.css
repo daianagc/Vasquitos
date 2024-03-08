@@ -1,20 +1,7 @@
-.donations-container {
-  display: flex;
-  justify-content: center;
-  padding: 3rem 6rem;
+.donations-content {
+  gap: 2rem;
+  padding: 3rem;
   width: 100%;
-
-  .donations-content {
-    align-items: center;
-    display: flex;
-    background-color: var(--background-white);
-    border-radius: 2rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem;
-    width: 100%;
-  }
 }
 
 .loading-text {
@@ -107,14 +94,19 @@
     width: 90%;
   }
 
+  .donations-content {
+    gap: 1rem;
+  }
+
   .buttons-wrapper {
     flex-direction: column;
+    margin-top: 1rem;
     width: 100%;
 
     button {
       font-size: 3rem;
       height: 6rem;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -124,7 +116,7 @@
 
     .input-wrapper {
       font-size: 2.5rem;
-      width: 80%;
+      width: 100%;
 
       .dollar-icon {
         top: 1.1rem;
@@ -140,7 +132,7 @@
 
     button {
       height: 6rem;
-      width: 80%;
+      width: 100%;
     }
   }
 }

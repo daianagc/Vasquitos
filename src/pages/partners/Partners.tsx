@@ -35,8 +35,8 @@ export const Partners = () => {
   };
 
   return (
-    <div className="partners-container">
-      <div className="partners-content">
+    <div className="container">
+      <div className="content partners-content">
         <h1 className="title-h1">Convertite en socio</h1>
         <p className="paragraph">
           Con tu aporte mensual, nos ayudás a seguir rescatando y cuidando a los

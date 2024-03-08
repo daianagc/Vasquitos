@@ -70,8 +70,8 @@ export const Donations = () => {
 
   return (
     <>
-      <div className="donations-container">
-        <div className="donations-content">
+      <div className="container">
+        <div className="content donations-content">
           <h1 className="title-h1">Doná a los Vasquitos 🐶</h1>
           <p className="paragraph">
             Este dinero, tan necesario para el refugio, será utilizado para
