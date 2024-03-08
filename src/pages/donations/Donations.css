@@ -10,6 +10,7 @@
 
 .donations-main-section {
   align-items: center;
+  background-attachment: fixed;
   background-image: url("/src/public/img/dogs-running.jpg");
   background-size: cover;
   border-radius: 1.5rem;
