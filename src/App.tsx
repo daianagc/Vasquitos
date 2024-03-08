@@ -13,9 +13,9 @@ const App = () => {
         <Header />
         <main>
           <Outlet />
-          <ScrollRestoration />
         </main>
         <Footer />
+        <ScrollRestoration />
       </QueryClientProvider>
     </>
   );
