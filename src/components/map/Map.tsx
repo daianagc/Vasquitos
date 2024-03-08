@@ -1,5 +1,5 @@
 import { Map, Marker } from "pigeon-maps";
-import { DogIcon } from "../public/icons/DogIcon";
+import { DogIcon } from "../../public/icons/DogIcon";
 
 interface Props {
   height: number;
