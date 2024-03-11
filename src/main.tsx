@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
+import "./styles/index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/home/Home.tsx";
-import PresentationSection from "./pages/home/components/PresentationSection.tsx";
-import OurDogsSection from "./pages/home/components/OurDogsSection.tsx";
-import SponsorsSection from "./pages/home/components/SponsorsSection.tsx";
-import DonationsSection from "./pages/home/components/DonationsSection.tsx";
+import { Donations } from "./pages/donations/Donations.tsx";
+import { Partners } from "./pages/partners/Partners.tsx";
+import { Contact } from "./pages/contact/Contact.tsx";
+import { AboutUs } from "./pages/about-us/AboutUs.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,27 +17,28 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "home",
+        index: true,
         element: <Home />,
       },
       {
-        path: "nosotros",
-        element: <PresentationSection />,
+        path: "donaciones",
+        element: <Donations />,
       },
       {
-        path: "nuestrosvasquitos",
-        element: <OurDogsSection />,
+        path: "nosotros",
+        element: <AboutUs />,
       },
+      // {
+      //   path: "nuestrosvasquitos",
+      //   element: <NuestrosVasquitos />,
+      // },
       {
         path: "socios",
-        element: <SponsorsSection />,
-      },
-      {
-        path: "padrinos",
-        element: <DonationsSection />,
+        element: <Partners />,
       },
       {
         path: "contacto",
+        element: <Contact />,
       },
     ],
   },
