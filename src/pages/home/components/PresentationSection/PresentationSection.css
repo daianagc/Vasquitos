@@ -1,0 +1,107 @@
+.principal-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(107 114 128 / 12%);
+    padding: 11rem 1rem 12rem;
+    width: 100%;
+    color: #060A24;
+    background-attachment: fixed;
+    background-image: url(/src/public/img/refugio.webp);
+    background-size: cover;
+    opacity: 0.94;
+}
+
+.container-principal h1 {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 6rem;
+    color: #000000;
+    text-shadow: 0 0 9px #ffffff;
+
+}
+
+.container-parrafo p {
+    color: #000000;
+    text-shadow: 0 0 8px #ffffff;
+
+    display: grid;
+    gap: 1rem;
+    font-family: "Montserrat",
+        sans-serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-top: 40px;
+
+}
+
+.container-parrafo p::after {
+    color: #000000;
+    text-shadow: 0 0 8px #ffffff;
+
+    font-family: "Montserrat", sans-serif;
+    content: " Join us in making a difference in these dogs' lives.";
+}
+
+.container-principal h1::after {
+
+    font-family: "Montserrat", sans-serif;
+    content: " Los Vasquitos";
+    font-size: 6rem;
+    font-weight: 700;
+    color: #ec0014;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-ver {
+    width: 25%;
+    height: 5rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 550;
+    color: #ffffff;
+    background-color: var(--background-black);
+    cursor: pointer;
+    border-radius: 1.5rem;
+    margin-top: 7.5rem;
+}
+
+.button-ver:hover {
+
+    background-color: rgb(17 24 39 / 82%);
+}
+
+
+
+@media (max-width: 899px) {
+
+    .container-principal h1 {
+        font-size: 4rem;
+    }
+
+    .container-principal h1::after {
+        font-size: 4rem;
+        text-align: justify;
+    }
+
+    .button-ver {
+        width: 38%;
+        font-size: 1.7rem;
+    }
+
+    .container-parrafo p,
+    .container-parrafo p::after {
+        text-align: center;
+        font-size: 1.9rem;
+        gap: 0.2rem;
+    }
+
+
+}
