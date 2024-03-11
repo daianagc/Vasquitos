@@ -5,6 +5,7 @@ import iconFacebook from "../../public/img/icon-facebook.ico";
 import iconTiktok from "../../public/img/icon-tiktok.ico";
 import { MyMap } from "../map/Map";
 import useIsMobile from "../../hooks/is-mobile";
+import Logo from "../../public/img/logo-dai.png";
 
 const Footer = () => {
   const isMobile = useIsMobile();
@@ -15,24 +16,24 @@ const Footer = () => {
         <div className="container-Icons">
           <i>
             <Link className="instagram" to="https://www.instagram.com/">
-              <img className="Icon-instagram" src={iconInstagram} alt="Icon" />
+              <img className="icon-instagram" src={iconInstagram} alt="Icon" />
             </Link>
           </i>
           <i>
             <Link className="facebook" to="https://www.facebook.com/">
-              <img className="Icon-facebook" src={iconFacebook} alt="Icon" />
+              <img className="icon-facebook" src={iconFacebook} alt="Icon" />
             </Link>
           </i>
           <i>
             <Link className="tiktok" to="https://www.tiktok.com/es/">
-              <img className="Icon-tiktok" src={iconTiktok} alt="Icon" />
+              <img className="icon-tiktok" src={iconTiktok} alt="Icon" />
             </Link>
           </i>
         </div>
-        <div className="texto-Footer">
+        <div className="texto-footer">
           <p>📍 Av. 14 n°2598</p>
           <p>📩 vascosanimalistas@gmail.com</p>
-          <p>☎️ 2255-2324546</p>
+          <p>☎️ 2255-232454</p>
         </div>
       </div>
       <div className="Mapa">
@@ -44,6 +45,9 @@ const Footer = () => {
           anchor={[-37.27046112725326, -56.993164051984074]}
           markerWidth={!isMobile ? 30 : 40}
         />
+      </div>
+      <div className="container-logo">
+        <img className="logo-dai" src={Logo} alt="logo" />
       </div>
     </footer>
   );

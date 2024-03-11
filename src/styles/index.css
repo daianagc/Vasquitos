@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   text-decoration: unset;
+
 }
 
 @font-face {
@@ -50,7 +51,8 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
   background-color: var(--background-primary);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
