@@ -42,6 +42,20 @@ p {
   font-size: 1.5rem;
 }
 
+.container-logo {
+  margin-top: 11rem;
+  margin-left: 8rem;
+}
+
+
+
+.logo-dai {
+  width: 6.4rem;
+
+}
+
+
+
 @media (max-width: 899px) {
   .footer {
     flex-direction: column;

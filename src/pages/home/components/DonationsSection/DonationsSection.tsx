@@ -13,9 +13,9 @@ const DonationsSection = () => {
         </p>
       </div>
       <div className="donations-buttons-container">
-        <button className="button-texto-donar">Donar Ahora</button>
-
-        <button className="button-texto-mas">Conocer más</button>
+        <button className="button-texto-donar">
+          Tu donación nos ayuda mucho
+        </button>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import iconFacebook from "../../public/img/icon-facebook.ico";
 import iconTiktok from "../../public/img/icon-tiktok.ico";
 import { MyMap } from "../map/Map";
 import useIsMobile from "../../hooks/is-mobile";
+import Logo from "../../public/img/logo-dai.png";
 
 const Footer = () => {
   const isMobile = useIsMobile();
@@ -44,6 +45,9 @@ const Footer = () => {
           anchor={[-37.27046112725326, -56.993164051984074]}
           markerWidth={!isMobile ? 30 : 40}
         />
+      </div>
+      <div className="container-logo">
+        <img className="logo-dai" src={Logo} alt="logo" />
       </div>
     </footer>
   );

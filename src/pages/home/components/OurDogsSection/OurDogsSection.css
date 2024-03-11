@@ -6,10 +6,16 @@
     grid-template-columns: repeat(2, 50%);
 }
 
+.container-dogs-principal {
+    padding: 0px 19px 0px 4px;
+
+}
+
 .container-dogs-principal h2 {
     font-family: "Montserrat", sans-serif;
-    padding-top: 50px;
-    margin-left: 1rem;
+    text-align: -webkit-center;
+    padding-top: 60px;
+    margin-left: 2rem;
     font-size: 5rem;
 }
 
@@ -17,7 +23,7 @@
 
 .button-ver-vasquitos {
     font-family: "Montserrat", sans-serif;
-    width: 18%;
+    width: 40%;
     height: 4.5rem;
     font-size: 1.3rem;
     font-weight: 550;
@@ -31,10 +37,10 @@
 }
 
 .parrafo-dogs-principal {
-    text-align: start;
+    text-align: -webkit-center;
     width: 89%;
     padding: 18px 0px;
-    margin-left: 1rem;
+    margin-left: 3rem;
     font-family: "Montserrat",
         sans-serif;
     color: var(--text-gray);
@@ -58,19 +64,25 @@
     object-fit: cover;
     border-radius: 3rem;
     gap: 10px;
+
 }
 
 
+.container-button-vasquitos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .button-ver-vasquitos {
     font-family: "Montserrat", sans-serif;
-    width: 90%;
-    margin-left: 1rem;
+    width: 48%;
     height: 4.5rem;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 550;
     background-color: var(--background-red);
     color: #fafafa;
-    border-radius: 8px;
+    border-radius: 1.5rem;
     cursor: pointer;
     margin-bottom: 5rem;
     margin-top: 3rem;
@@ -88,7 +100,7 @@
 @media (max-width: 899px) {
 
     .section-principal {
-        padding: 3rem 3rem 1rem;
+        padding: 9rem 3rem 1rem;
         display: flex;
         flex-direction: column;
 
@@ -107,4 +119,9 @@
         text-align: center;
     }
 
+    .button-ver-vasquitos {
+        width: 46%;
+        height: 5rem;
+        font-size: 1.4rem;
+    }
 }
