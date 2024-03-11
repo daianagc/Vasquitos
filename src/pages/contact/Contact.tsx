@@ -1,12 +1,12 @@
-import { useForm, SubmitHandler } from "react-hook-form";
 import "./Contact.css";
+import "react-toastify/dist/ReactToastify.min.css";
+import { useForm, SubmitHandler } from "react-hook-form";
 import imagenContacto from "../../public/img/imagen-contacto.jpg";
-
-type Inputs = {
-  fullName: string;
-  email: string;
-  contactMessage: string;
-};
+import { useMutation } from "@tanstack/react-query";
+import { sendEmail } from "../../api/contact/contact";
+import { Inputs } from "./types/inputs.type";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Contact = () => {
   const {
@@ -14,6 +14,10 @@ export const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
+  const { mutate, isPending, isSuccess } = useMutation({
+    mutationFn: sendEmail,
+  });
+  const navigate = useNavigate();
   const required = "Este campo es requerido";
   const pattern = {
     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -24,7 +28,27 @@ export const Contact = () => {
     message: "El mensaje debe tener al menos 10 caracteres",
   };
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    mutate(data, {
+      onSuccess: () => {
+        toast.success("Mensaje enviado con éxito. Gracias por tu contacto.", {
+          position: "bottom-right",
+          className: "toast-success",
+          autoClose: 3000,
+          onClose: () => navigate("/"),
+        });
+      },
+      onError: () => {
+        toast.error(
+          "Ocurrió un error al enviar el mensaje. Inténtelo nuevamente más tarde.",
+          {
+            position: "bottom-right",
+            className: "toast-success",
+          }
+        );
+      },
+    });
+  };
 
   return (
     <>
@@ -82,8 +106,12 @@ export const Contact = () => {
                 )}
               </div>
 
-              <button className="form-button" type="submit">
-                Enviar
+              <button
+                className="form-button"
+                type="submit"
+                disabled={isSuccess}
+              >
+                {isPending ? "Enviando..." : "Enviar"}
               </button>
             </div>
             <div className="right-wrapper">
@@ -91,6 +119,7 @@ export const Contact = () => {
             </div>
           </form>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

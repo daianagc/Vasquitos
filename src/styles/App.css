@@ -51,6 +51,10 @@ main {
   justify-content: center;
 }
 
+.toast-success {
+  font-size: 1.5rem;
+}
+
 @media (width < 899px) {
   main {
     flex-grow: unset;
@@ -69,6 +73,10 @@ main {
   .paragraph {
     font-size: 1.5rem;
     text-align: center !important;
+  }
+
+  .toast-success {
+    font-size: 1rem;
   }
 
   .container {
