@@ -4,7 +4,7 @@ const DonationsSection = () => {
   return (
     <section className="donations-section">
       <div className="donations-title">
-        <h3>Hacer una Donación</h3>
+        <h2>Podes realizar una donación</h2>
       </div>
       <div className="donations-parrafo">
         <p>

@@ -43,18 +43,16 @@ p {
 }
 
 .container-logo {
-  margin-top: 11rem;
-  margin-left: 8rem;
+  align-items: center;
+  background-color: var(--background-black);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
-
-
 
 .logo-dai {
   width: 6.4rem;
-
 }
-
-
 
 @media (max-width: 899px) {
   .footer {

@@ -5,18 +5,22 @@ import vasquito3 from "../../../../public/img-dogs/tres.jpg";
 import vasquito4 from "../../../../public/img-dogs/cuatro.jpg";
 import vasquito5 from "../../../../public/img-dogs/cinco.jpg";
 import vasquito6 from "../../../../public/img-dogs/seis.jpg";
+import { PetIcon } from "../../../../public/icons/PetIcon";
 
 const OurDogsSection = () => {
   return (
     <section className="section-principal">
       <div className="container-dogs-principal">
-        <h2>Conoce a Nuestros Vasquitos</h2>
+        <h2>Conoce a nuestros Vasquitos</h2>
         <p className="parrafo-dogs-principal">
           Browse through our list of adorable dogs waiting for their forever
           homes.
         </p>
         <div className="container-button-vasquitos">
-          <button className="button-ver-vasquitos">Nuestros Vasquitos </button>
+          <button className="button-ver-vasquitos">
+            Nuestros Vasquitos
+            <PetIcon />
+          </button>
         </div>
       </div>
       <div className="container-vasquitos">
