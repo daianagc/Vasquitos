@@ -42,7 +42,7 @@
   font-size: 1.6rem;
   font-weight: 550;
   color: #ffffff;
-  background-color: var(--text-red);
+  background-color: var(--background-red);
   cursor: pointer;
   border-radius: 1.5rem;
   margin-right: 1rem;
@@ -50,7 +50,7 @@
 }
 
 .button-texto-donar:hover {
-  background-color: rgb(17 24 39 / 82%);
+  background-color: var(--text-secondary-red);
 }
 
 .button-texto-mas:hover {
@@ -68,6 +68,6 @@
 
   .button-texto-donar {
     font-size: 1.6rem;
-    padding: 2rem;
+    padding: 1.5rem 3rem;
   }
 }

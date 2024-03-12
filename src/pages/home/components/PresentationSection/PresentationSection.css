@@ -1,11 +1,39 @@
 .principal-section {
+  background-color: var(--background-black);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 3rem;
+  gap: 3rem;
+  flex-direction: column;
+  padding: 6rem;
   width: 100%;
-  background-image: url(/src/public/img/presentation.jpeg);
-  background-size: contain;
+
+  h1 {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 6rem;
+    text-shadow: 0 0 8px var(--text-white);
+
+    &::after {
+      font-family: "Montserrat", sans-serif;
+      content: "Vascos Animalistas VG";
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--text-red);
+      text-shadow: 0 0 8px var(--text-black);
+      text-shadow: 0 0 8px var(--text-red);
+    }
+  }
+}
+
+.presentation-image {
+  border-radius: 1rem;
+}
+
+.presentation-main {
+  display: flex;
+  gap: 3rem;
+  padding: 0 8rem;
 }
 
 .container-principal {
@@ -17,12 +45,6 @@
   justify-content: center;
   text-align: center;
 
-  h1 {
-    color: var(--text-white);
-    font-weight: 600;
-    font-size: 6.5rem;
-  }
-
   img {
     border-radius: 50%;
   }
@@ -30,30 +52,13 @@
 
 .container-parrafo p {
   color: var(--text-white);
-  text-shadow: 0 0 8px var(--text-black);
+  text-shadow: 0 0 8px var(--text-white);
 
   display: grid;
   gap: 1rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.9rem;
   font-weight: 600;
-}
-
-.container-parrafo p::after {
-  color: var(--text-white);
-  text-shadow: 0 0 8px var(--text-black);
-
-  font-family: "Montserrat", sans-serif;
-  content: " Join us in making a difference in these dogs' lives.";
-}
-
-.container-principal h1::after {
-  font-family: "Montserrat", sans-serif;
-  content: "Vascos Animalistas VG";
-  font-size: 6.5rem;
-  font-weight: 700;
-  color: #ec0014;
-  text-shadow: 0 0 8px var(--text-black);
 }
 
 .container-button {
@@ -67,37 +72,50 @@
   font-size: 1.7rem;
   font-weight: 550;
   color: #ffffff;
-  background-color: var(--background-black);
+  background-color: var(--background-red);
   cursor: pointer;
   border-radius: 1.5rem;
   padding: 2rem 4rem;
 }
 
 .button-ver:hover {
-  background-color: rgb(17 24 39 / 82%);
+  background-color: var(--text-secondary-red);
 }
 
 @media (max-width: 899px) {
   .principal-section {
     padding: 3rem 1rem;
+    text-align: center;
+
+    h1 {
+      font-size: 4rem;
+
+      &::after {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .presentation-main {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .presentation-image {
+    width: 100%;
   }
 
   .container-principal {
-    h1 {
-      font-size: 4rem;
-    }
-    img {
-      width: 40%;
-    }
-  }
+    order: 2;
 
-  .container-principal h1::after {
-    font-size: 4rem;
-    text-align: justify;
+    img {
+      display: none;
+    }
   }
 
   .button-ver {
     font-size: 1.7rem;
+    padding: 1.5rem 2rem;
   }
 
   .container-parrafo p,

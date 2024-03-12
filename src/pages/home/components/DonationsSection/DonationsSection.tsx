@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./DonationsSection.css";
 
 const DonationsSection = () => {
@@ -13,9 +14,9 @@ const DonationsSection = () => {
         </p>
       </div>
       <div className="donations-buttons-container">
-        <button className="button-texto-donar">
+        <NavLink to="/donaciones" className="button-texto-donar">
           Tu donación nos ayuda mucho
-        </button>
+        </NavLink>
       </div>
     </section>
   );
