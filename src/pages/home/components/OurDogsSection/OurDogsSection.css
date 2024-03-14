@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  order: 2;
 }
 
 .container-dogs-principal h2 {
@@ -45,10 +46,14 @@
   gap: 2rem;
 }
 
-.container-vasquitos img {
-  width: 100%;
-  height: 25rem;
-  object-fit: cover;
+.container-vasquitos {
+  order: 1;
+
+  img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  }
 }
 
 .container-button-vasquitos {
@@ -84,15 +89,20 @@
     flex-direction: column;
   }
 
-  .container-dogs-principal h2 {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-size: 4rem;
+  .container-dogs-principal {
+    order: 1;
+
+    h2 {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      font-size: 4rem;
+    }
   }
   .container-vasquitos {
     grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
+    order: 2;
 
     img {
       height: 20rem;

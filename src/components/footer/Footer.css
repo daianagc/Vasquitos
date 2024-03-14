@@ -42,12 +42,13 @@ p {
   font-size: 1.5rem;
 }
 
-.container-logo {
+.container-signature {
   align-items: center;
   background-color: var(--background-black);
   display: flex;
   gap: 1rem;
   justify-content: center;
+  font-style: italic;
 }
 
 .logo-dai {

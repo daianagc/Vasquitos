@@ -52,7 +52,7 @@ const Footer = () => {
           />
         </div>
       </footer>
-      <div className="container-logo">
+      <div className="container-signature">
         <p>Creado con ❤️ por</p>
         <img className="logo-dai" src={Logo} alt="logo" />
       </div>
