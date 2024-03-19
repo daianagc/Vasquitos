@@ -8,9 +8,10 @@ export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
   const isMobile = useIsMobile();
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: setPreference,
   });
+  const specialButtonId = "VASQUITOS-1000";
   const donationsButtons = [
     {
       id: "VASQUITOS-3000",
@@ -68,6 +69,10 @@ export const Donations = () => {
     );
   };
 
+  const checkLoading = (id: string) => {
+    return (isPending || isSuccess) && loadingButtonId === id;
+  };
+
   return (
     <>
       <div className="container">
@@ -85,7 +90,7 @@ export const Donations = () => {
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
-                  className={isPending ? "loading-text" : ""}
+                  className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}
                   onClick={() => handlePreference({ id, unit_price })}
@@ -122,12 +127,14 @@ export const Donations = () => {
                 title="¡Hace click para donar y hacer felices a los vasquitos!"
                 onClick={() =>
                   handlePreference({
-                    id: "VASQUITOS-1000",
+                    id: specialButtonId,
                     unit_price: flexibleAmount,
                   })
                 }
               >
-                Donar
+                {loadingButtonId === specialButtonId
+                  ? "Redirigiendo..."
+                  : "Donar"}
               </button>
             </div>
           </div>
