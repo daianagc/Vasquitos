@@ -6,6 +6,7 @@ import { EmailIcon } from "../../public/icons/EmailIcon";
 import useIsMobile from "../../hooks/is-mobile";
 import rescued4 from "../../public/img/rescued-4.jpg";
 import rescued5 from "../../public/img/rescued-5.webp";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Partners = () => {
   const [payerEmail, setPayerEmail] = useState("");
@@ -26,7 +27,15 @@ export const Partners = () => {
 
     mutate(payer_email, {
       onSuccess: (response) => {
-        window.location.href = response.url;
+        if (response.url) window.location.href = response.url;
+
+        toast.error(
+          "Ocurrió un error al subscribirse. Inténtelo nuevamente más tarde.",
+          {
+            position: "bottom-right",
+            className: "toast-success",
+          }
+        );
       },
       onError: (error) => {
         console.error(error);
@@ -105,6 +114,7 @@ export const Partners = () => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

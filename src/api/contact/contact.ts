@@ -17,13 +17,14 @@ export const sendEmail = async ({
         contactMessage,
       }),
     });
-    const data = await response.json();
 
-    if (!data.ok) {
-      throw data;
+    if (!response.ok) {
+      throw response;
     }
 
-    return;
+    const data = await response.json();
+
+    return data;
   } catch (error) {
     console.error("sendEmail error => ", error);
 

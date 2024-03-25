@@ -5,8 +5,9 @@
   align-items: center;
   gap: 3rem;
   flex-direction: column;
-  padding: 6rem;
+  padding: 6.8rem;
   width: 100%;
+  overflow-x: hidden;
 
   h1 {
     color: var(--text-white);
