@@ -9,16 +9,17 @@ export const VideoPlayer = ({
   width: number;
   height: number;
 }) => {
-  const cloudinaryRef = useRef();
-  const videoRef = useRef();
+  const cloudinaryRef = useRef<any>();
+  const videoRef = useRef<any>();
 
   useEffect(() => {
     if (cloudinaryRef.current) return;
 
-    cloudinaryRef.current = window.cloudinary;
-    cloudinaryRef.current.videoPlayer(videoRef.current, {
-      cloud_name: "dhroaio3h",
-    });
+    cloudinaryRef.current = (window as any).cloudinary;
+    if (cloudinaryRef.current)
+      cloudinaryRef.current.videoPlayer(videoRef.current, {
+        cloud_name: "dhroaio3h",
+      });
   }, []);
 
   return (
