@@ -128,26 +128,36 @@ export const AboutUs = () => {
           <h2 className="title-h2">Objetivos del refugio</h2>
           <ul className="objetives">
             <li>
-              Proporcionar un ambiente seguro y cómodo para perros que han sido
-              abandonados, víctimas de maltrato o con problemas de salud.
+              <span>
+                Proporcionar un ambiente seguro y cómodo para perros que han
+                sido abandonados, víctimas de maltrato o con problemas de salud.
+              </span>
             </li>
             <li>
-              Mejorar la calidad de vida de los perros mediante cuidados
-              médicos, alimentación adecuada y atención individualizada.
+              <span>
+                Mejorar la calidad de vida de los perros mediante cuidados
+                médicos, alimentación adecuada y atención individualizada.
+              </span>
             </li>
             <li>
-              Fomentar la adopción responsable de estos perros y promover la
-              adopción en lugar de la compra.
+              <span>
+                Fomentar la adopción responsable de estos perros y promover la
+                adopción en lugar de la compra.
+              </span>
             </li>
             <li>
-              Ofrecer programas de voluntariado y oportunidades de servicio
-              comunitario para personas interesadas en ayudar y pasar tiempo con
-              ellos.
+              <span>
+                Ofrecer programas de voluntariado y oportunidades de servicio
+                comunitario para personas interesadas en ayudar y pasar tiempo
+                con ellos.
+              </span>
             </li>
             <li>
-              Establecer alianzas con veterinarios, organizaciones de bienestar
-              animal y otros refugios para compartir recursos y apoyar la causa
-              de los perros a nivel local y nacional.
+              <span>
+                Establecer alianzas con veterinarios, organizaciones de
+                bienestar animal y otros refugios para compartir recursos y
+                apoyar la causa de los perros a nivel local y nacional.
+              </span>
             </li>
           </ul>
           <div className="values-wrapper">
