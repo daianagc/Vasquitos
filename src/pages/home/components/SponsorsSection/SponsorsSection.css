@@ -24,7 +24,7 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   color: var(--text-gray);
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 450;
 }
 
@@ -105,6 +105,10 @@
   }
   .sponsors-title h2 {
     font-size: 4rem;
+  }
+
+  .sponsors-parrafo {
+    width: 80%;
   }
 
   .carousel-track {
