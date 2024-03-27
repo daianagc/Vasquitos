@@ -25,6 +25,7 @@ export const VideoPlayer = ({
     <video
       ref={videoRef}
       data-cld-public-id={dataCldPublicId}
+      data-cld-colors='{ "base": "#951d1d", "accent": "#f22b29", "text": "#fff" }'
       width={width}
       height={height}
       controls
