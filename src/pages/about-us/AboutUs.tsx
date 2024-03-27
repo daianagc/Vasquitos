@@ -102,16 +102,10 @@ export const AboutUs = () => {
               src={imagenPatio}
               alt="Imagen del refugio"
             />
-            <p
-              className="paragraph"
-              style={{ whiteSpace: "pre-line", marginBottom: "0.5rem" }}
-            >
+            <p className="paragraph history-paragraph">
               {`En la pintoresca ciudad costera de Villa Gesell, se encuentra un refugio especial que se caracteriza en su mayoría por darle lugar a perros ancianos, como así también casos de abandono y maltrato, conocido como "Vascos Animalistas". Fundado por Irene Gamboa Tapia, este refugio es un faro de esperanza y compasión para los caninos deedad avanzada que han sido abandonados o desplazados. \n`}
             </p>
-            <p
-              className="paragraph"
-              style={{ whiteSpace: "pre-line", marginBottom: "2rem" }}
-            >
+            <p className="paragraph history-paragraph">
               {`La historia de Vascos Animalistas comenzó cuando Irene, una amante de los animales con un profundo amor por los perros, se enfrentó a la triste realidad de muchos de estos compañeros peludos en su comunidad. Determinada a marcar la diferencia decidió tomar medidas y fundar un refugio dedicado exclusivamente a cuidarlos y protegerlos. \n
             Tras el fallecimiento de Irene, Blanca Samprosqui tomó las riendas del refugio, continuando su legado y compromiso con los perros. Con su liderazgo, el refugio siguió siendo un lugar de amor y cuidado para los residentes caninos que necesitaban amparo y protección. \n`}
             </p>

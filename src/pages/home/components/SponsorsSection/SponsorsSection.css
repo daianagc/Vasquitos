@@ -100,6 +100,7 @@
 @media (max-width: 899px) {
   .sponsors-section {
     padding: 3rem 0;
+    height: 50rem;
     width: 100%;
   }
   .sponsors-title h2 {
@@ -110,8 +111,8 @@
     width: 200%;
 
     .carousel-card {
-      height: 18rem;
-      width: 16rem;
+      height: 25rem;
+      width: 22rem;
     }
   }
 
