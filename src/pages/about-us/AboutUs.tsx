@@ -6,6 +6,7 @@ import user from "../../public/img/user.jpg";
 import rescued1 from "../../public/img/rescued-1.jpg";
 import rescued2 from "../../public/img/rescued-2.jpg";
 import rescued3 from "../../public/img/rescued-3.jpg";
+import { VideoPlayer } from "../../components/VideoPlayer/VideoPlayer";
 
 export const AboutUs = () => {
   const values = [
@@ -96,7 +97,7 @@ export const AboutUs = () => {
         </div>
         <div className="section">
           <h2 className="title-h2">Historia</h2>
-          <div>
+          <section>
             <img
               className="backyard-image"
               src={imagenPatio}
@@ -122,7 +123,14 @@ export const AboutUs = () => {
               Esta nueva comisión, formada por individuos comprometidos con la causa de los perros víctimas de abandono y maltrato, problemas de salud y longevidad, se esfuerza por continuar brindando cuidado y protección a los residentes caninos de Vascos Animalistas. A pesar de los desafíos que enfrentan, como la falta de recursos y el duelo por la pérdida de sus líderes anteriores, están decididos a seguir adelante y asegurarse de que el refugio siga siendo un lugar de amor y esperanza para los perros de Villa Gesell y más allá. \n 
             La historia de Vascos Animalistas es un testimonio conmovedor del poder del amor y la compasión para transformar vidas, tanto humanas como caninas, y aunque han enfrentado pérdidas significativas, su compromiso con la causa sigue siendo inquebrantable.`}
             </p>
-          </div>
+          </section>
+          <section className="institucional-video">
+            <VideoPlayer
+              width={800}
+              height={460}
+              dataCldPublicId="institucional-vascos-animalistas-vg"
+            />
+          </section>
         </div>
         <div className="section">
           <h2 className="title-h2">Objetivos del refugio</h2>

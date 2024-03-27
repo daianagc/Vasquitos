@@ -11,7 +11,6 @@ main {
   flex-grow: 1;
   justify-content: center;
   padding-top: 7.339rem;
-
 }
 
 .title-h1 {
@@ -86,5 +85,13 @@ main {
 
   .content {
     padding: 2rem;
+  }
+
+  .vjs_video_3-dimensions {
+    height: 16.2rem !important;
+  }
+
+  .video-js {
+    height: 16.2rem !important;
   }
 }

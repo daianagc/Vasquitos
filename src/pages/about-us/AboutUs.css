@@ -142,6 +142,13 @@
   }
 }
 
+.institucional-video {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .values-wrapper {
   display: flex;
   gap: 3rem;
