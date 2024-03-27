@@ -34,12 +34,12 @@ const OurDogsSection = () => {
           Conocé a nuestros Vasquitos
         </animated.h2>
         <animated.p style={fadeInRight} className="parrafo-dogs-principal">
-          Browse through our list of adorable dogs waiting for their forever
-          homes.
+          Ellxs le dan sentido a nuestro día a día. Ingresá y conocelos, tal vez
+          encuentres a tu próximx mejor amigx.
         </animated.p>
         <div className="container-button-vasquitos">
           <button className="button-ver-vasquitos">
-            Nuestros Vasquitos
+            Conocelos
             <PetIcon />
           </button>
         </div>

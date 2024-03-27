@@ -17,7 +17,7 @@ const SponsorsSection = () => {
   });
 
   return (
-    <section ref={ref} className="sponsors-section">
+    <section ref={ref} className="sponsors-section" id="patrocinadores">
       <div className="sponsors-title">
         <animated.h2 style={fadeInFromLeft}>
           Nuestros Patrocinadores
@@ -25,7 +25,8 @@ const SponsorsSection = () => {
       </div>
       <div className="sponsors-parrafo">
         <animated.p style={fadeInFromLeft}>
-          We are grateful for the generous support of our sponsors.
+          Estamos muy agradecidos por el enorme aporte de nuestros
+          patrocinadores. <b>Su ayuda es fundamental para el refugio.</b>
         </animated.p>
       </div>
       <div className="sponsors-carrusel">

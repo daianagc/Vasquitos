@@ -20,18 +20,18 @@ const DonationsSection = () => {
     <section ref={ref} className="donations-section">
       <div className="donations-title">
         <animated.h2 style={fadeInFromAbove}>
-          Podes realizar una donación
+          Ayudanos con una donación
         </animated.h2>
       </div>
       <div className="donations-parrafo">
         <animated.p style={fadeInFromAbove}>
-          Your generous donation helps us continue our mission to rescue,
-          rehabilitate, and rehome dogs in need.
+          Tu generosa ayuda nos permite continuar con nuestra misión de darles
+          la vida que todo animal se merece.
         </animated.p>
       </div>
       <div className="donations-buttons-container">
         <NavLink to="/donaciones" className="button-texto-donar">
-          Tu donación nos ayuda mucho
+          Tu donación es muy importante
         </NavLink>
       </div>
     </section>

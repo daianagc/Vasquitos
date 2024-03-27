@@ -1,5 +1,7 @@
 import "./AboutUs.css";
-import imagenNosotros from "../../public/img/about-us.jpg";
+import imagenIrene from "../../public/img/irene.jpeg";
+import imagenPatio from "../../public/img/patio.jpeg";
+import imagenBlanca from "../../public/img/blanca.jpeg";
 import user from "../../public/img/user.jpg";
 import rescued1 from "../../public/img/rescued-1.jpg";
 import rescued2 from "../../public/img/rescued-2.jpg";
@@ -10,19 +12,19 @@ export const AboutUs = () => {
     {
       title: "Respeto",
       paragraph:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Para nosotros el respeto hacia los perros implica brindarle amor incondicional, creando un ambiente de confianza y seguridad para ellos y dedicando tiempo a jugar, acariciar y cuidar su bienestar en todo momento.",
       image: rescued1,
     },
     {
       title: "Compromiso",
       paragraph:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Nos comprometemos a continuar la labor iniciada por nuestra fundadora Irene, asegurándonos de seguir brindando atención y buscar hogares que cumplan con las condiciones de adopción para cada uno de nuestros perros.",
       image: rescued2,
     },
     {
       title: "Solidaridad",
       paragraph:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Estamos convencidos de que la solidaridad hacia los perros se expresa a través de la adopción consciente, el voluntariado, las donaciones, la educación sobre sus necesidades y el apoyo a programas de rescate.",
       image: rescued3,
     },
   ];
@@ -32,44 +34,36 @@ export const AboutUs = () => {
       role: "Presidente",
     },
     {
-      name: "Julieta Morales",
-      role: "Tesorera",
-    },
-    {
       name: "Mauricio Cucco",
       role: "Vicepresidente",
     },
     {
-      name: "Diego Maradona",
-      role: "Vocal",
+      name: "Silvia Mónico",
+      role: "Secretaria",
     },
     {
-      name: "Juan Domingo Perón",
-      role: "Vocal",
+      name: "Julieta Morales",
+      role: "Tesorera",
     },
     {
-      name: "Diego Capusotto",
-      role: "Vocal",
+      name: "Constanza Morales",
+      role: "Vocal titular",
     },
     {
-      name: "Pedro Saborido",
-      role: "Vocal",
+      name: "Vanesa Aura",
+      role: "Vocal titular",
     },
     {
-      name: "Axel Kicillof",
-      role: "Vocal",
+      name: "Mario Bidegaray",
+      role: "Vocal suplente",
     },
     {
-      name: "Marcelo Tinelli",
-      role: "Vocal",
+      name: "Ana Tomás",
+      role: "Revisora de cuentas titular",
     },
     {
-      name: "Juan Roman Riquelme",
-      role: "Vocal",
-    },
-    {
-      name: "Tini Stoeseel",
-      role: "Vocal",
+      name: "Gladys Blasco",
+      role: "Revisora de cuentas suplente",
     },
   ];
 
@@ -78,47 +72,90 @@ export const AboutUs = () => {
       <div className="content about-us-content">
         <div className="section main-section">
           <h1 className="title-h1">Vascos Animalistas VG</h1>
-          <p className="paragraph main-paragraph">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          </p>
-          <img
-            className="about-us-cover"
-            src={imagenNosotros}
-            alt="Imagen del refugio"
-          />
+          <div className="phrase-wrapper">
+            <p className="paragraph main-paragraph">
+              "En nuestro refugio de perros, nos dedicamos con pasión y
+              dedicación a brindar amor, cuidado y un hogar temporal a perros
+              sin hogar. Nuestro equipo está comprometido con el bienestar de
+              cada uno de nuestros peludos residentes, proporcionándoles
+              atención veterinaria, alimentación adecuada y mucho cariño
+              mientras esperan encontrar su familia para siempre. En un ambiente
+              cálido y acogedor, trabajamos incansablemente para asegurarnos de
+              que cada cola que llega a nuestro refugio encuentre un final
+              feliz, lleno de amor y comprensión."
+            </p>
+            <div className="image-wrapper">
+              <img
+                className="about-us-cover"
+                src={imagenIrene}
+                alt="Imagen de Irene Gamboa Tapia"
+              />
+              <p>Nuestra fundadora, Irene Gamboa Tapia</p>
+            </div>
+          </div>
         </div>
         <div className="section">
           <h2 className="title-h2">Historia</h2>
-          <p className="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur
-          </p>
+          <div>
+            <img
+              className="backyard-image"
+              src={imagenPatio}
+              alt="Imagen del refugio"
+            />
+            <p
+              className="paragraph"
+              style={{ whiteSpace: "pre-line", marginBottom: "0.5rem" }}
+            >
+              {`En la pintoresca ciudad costera de Villa Gesell, se encuentra un refugio especial que se caracteriza en su mayoría por darle lugar a perros ancianos, como así también casos de abandono y maltrato, conocido como "Vascos Animalistas". Fundado por Irene Gamboa Tapia, este refugio es un faro de esperanza y compasión para los caninos deedad avanzada que han sido abandonados o desplazados. \n`}
+            </p>
+            <p
+              className="paragraph"
+              style={{ whiteSpace: "pre-line", marginBottom: "2rem" }}
+            >
+              {`La historia de Vascos Animalistas comenzó cuando Irene, una amante de los animales con un profundo amor por los perros, se enfrentó a la triste realidad de muchos de estos compañeros peludos en su comunidad. Determinada a marcar la diferencia decidió tomar medidas y fundar un refugio dedicado exclusivamente a cuidarlos y protegerlos. \n
+            Tras el fallecimiento de Irene, Blanca Samprosqui tomó las riendas del refugio, continuando su legado y compromiso con los perros. Con su liderazgo, el refugio siguió siendo un lugar de amor y cuidado para los residentes caninos que necesitaban amparo y protección. \n`}
+            </p>
+            <div className="special-image-wrapper">
+              <img
+                className="blanca-image"
+                src={imagenBlanca}
+                alt="Imagen de Blanca Samprosqui"
+              />
+              <p>Blanca Samprosqui</p>
+            </div>
+            <p className="paragraph" style={{ whiteSpace: "pre-line" }}>
+              {`Recientemente, a principios de febrero, lamentablemente, Blanca también falleció, dejando un vacío en la comunidad de Vascos Animalistas. Sin embargo, la dedicación y el compromiso con la misión del refugio continúan gracias al esfuerzo de una nueva comisión que ha asumido la responsabilidad de mantener vivo el legado de Irene y Blanca. \n
+              Esta nueva comisión, formada por individuos comprometidos con la causa de los perros víctimas de abandono y maltrato, problemas de salud y longevidad, se esfuerza por continuar brindando cuidado y protección a los residentes caninos de Vascos Animalistas. A pesar de los desafíos que enfrentan, como la falta de recursos y el duelo por la pérdida de sus líderes anteriores, están decididos a seguir adelante y asegurarse de que el refugio siga siendo un lugar de amor y esperanza para los perros de Villa Gesell y más allá. \n 
+            La historia de Vascos Animalistas es un testimonio conmovedor del poder del amor y la compasión para transformar vidas, tanto humanas como caninas, y aunque han enfrentado pérdidas significativas, su compromiso con la causa sigue siendo inquebrantable.`}
+            </p>
+          </div>
         </div>
         <div className="section">
           <h2 className="title-h2">Objetivos del refugio</h2>
-          <p className="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur
-          </p>
+          <ul className="objetives">
+            <li>
+              Proporcionar un ambiente seguro y cómodo para perros que han sido
+              abandonados, víctimas de maltrato o con problemas de salud.
+            </li>
+            <li>
+              Mejorar la calidad de vida de los perros mediante cuidados
+              médicos, alimentación adecuada y atención individualizada.
+            </li>
+            <li>
+              Fomentar la adopción responsable de estos perros y promover la
+              adopción en lugar de la compra.
+            </li>
+            <li>
+              Ofrecer programas de voluntariado y oportunidades de servicio
+              comunitario para personas interesadas en ayudar y pasar tiempo con
+              ellos.
+            </li>
+            <li>
+              Establecer alianzas con veterinarios, organizaciones de bienestar
+              animal y otros refugios para compartir recursos y apoyar la causa
+              de los perros a nivel local y nacional.
+            </li>
+          </ul>
           <div className="values-wrapper">
             {values.map((value) => (
               <div className="value" key={value.title}>

@@ -18,19 +18,19 @@ const PresentationSection = () => {
 
   return (
     <section className="principal-section">
-      <animated.h1 style={fadeInLeft}>Bienvenidos al refugio </animated.h1>
+      <animated.h1 style={fadeInLeft}>Bienvenidos a </animated.h1>
       <div className="presentation-main">
         <div className="container-principal">
           <img src={logo} alt="Logo del refugio" />
           <div className="container-parrafo">
             <p>
-              We are a dedicated team of volunteers who rescue, rehabilitate,
-              and rehome dogs in need.
+              Somos un refugio de gran trayectoria que rescata, rehabilita y
+              reubica perros en situación de calle.
             </p>
           </div>
           <div className="container-button">
             <NavLink to="/nosotros" className="button-ver">
-              ¡Hacé click y conocenos!
+              Un poco de nuestra historia
             </NavLink>
           </div>
         </div>

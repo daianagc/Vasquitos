@@ -16,7 +16,12 @@ const Footer = () => {
         <div className="footer-container">
           <div className="container-Icons">
             <i>
-              <Link className="instagram" to="https://www.instagram.com/">
+              <Link
+                className="instagram"
+                to="https://www.instagram.com/vascosanimalistasvg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   className="icon-instagram"
                   src={iconInstagram}
@@ -25,7 +30,12 @@ const Footer = () => {
               </Link>
             </i>
             <i>
-              <Link className="facebook" to="https://www.facebook.com/">
+              <Link
+                className="facebook"
+                to="https://www.facebook.com/groups/4057353810991475"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img className="icon-facebook" src={iconFacebook} alt="Icon" />
               </Link>
             </i>
@@ -36,18 +46,32 @@ const Footer = () => {
             </i>
           </div>
           <div className="texto-footer">
-            <p>📍 Av. 14 n°2598</p>
-            <p>📩 vascosanimalistas@gmail.com</p>
-            <p>☎️ 2255-232454</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Avenida+15+N°2364+-+Villa+Gesell,+Bs.+As."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📍 Avenida 15 N°2364 - Villa Gesell, Bs. As.
+            </a>
+            <a href="mailto:vascosanimalistasvg@gmail.com">
+              📩 vascosanimalistasvg@gmail.com
+            </a>
+            <a
+              href="https://wa.me/542255417409"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ☎️ 02255-417409
+            </a>
           </div>
         </div>
         <div className="Mapa">
           <MyMap
             height={150}
-            defaultCenter={[-37.27046112725326, -56.993164051984074]}
+            defaultCenter={[-37.267562770471166, -56.994550275002275]}
             defaultZoom={16}
             width={!isMobile ? 370 : 230}
-            anchor={[-37.27046112725326, -56.993164051984074]}
+            anchor={[-37.267562770471166, -56.994550275002275]}
             markerWidth={!isMobile ? 30 : 40}
           />
         </div>
