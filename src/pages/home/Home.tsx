@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { Spinner } from "../../components/Spinner/Spinner";
 
 const DonationsSection = lazy(
   () => import("./components/DonationsSection/DonationsSection")
@@ -15,13 +16,7 @@ const SponsorsSection = lazy(
 
 const Home = () => {
   return (
-    <Suspense
-      fallback={
-        <div>
-          <h3>Cargando...</h3>
-        </div>
-      }
-    >
+    <Suspense fallback={<Spinner backgroundColor="#000000" />}>
       <PresentationSection />
       <OurDogsSection />
       <DonationsSection />
