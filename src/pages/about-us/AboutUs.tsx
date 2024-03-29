@@ -3,9 +3,9 @@ import imagenIrene from "../../public/images/irene.jpeg";
 import imagenPatio from "../../public/images/patio.jpeg";
 import imagenBlanca from "../../public/images/blanca.jpeg";
 import user from "../../public/images/user.jpg";
-import rescued1 from "../../public/images/rescued-1.jpg";
-import rescued2 from "../../public/images/rescued-2.jpg";
-import rescued3 from "../../public/images/rescued-3.jpg";
+import rescued1 from "../../public/images/titan.jpg";
+import rescued2 from "../../public/images/angelita.jpg";
+import rescued3 from "../../public/images/charlie.jpg";
 import { VideoPlayer } from "../../components/VideoPlayer/VideoPlayer";
 
 export const AboutUs = () => {

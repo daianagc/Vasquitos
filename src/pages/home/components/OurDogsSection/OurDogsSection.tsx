@@ -1,10 +1,10 @@
 import "./OurDogsSection.css";
-import vasquito1 from "../../../../public/img-dogs/uno.webp";
-import vasquito2 from "../../../../public/img-dogs/dos.webp";
-import vasquito3 from "../../../../public/img-dogs/tres.jpg";
-import vasquito4 from "../../../../public/img-dogs/cuatro.jpg";
-import vasquito5 from "../../../../public/img-dogs/cinco.jpg";
-import vasquito6 from "../../../../public/img-dogs/seis.jpg";
+import vasquito1 from "../../../../public/images/alondra.jpg";
+import vasquito2 from "../../../../public/images/chucky.jpg";
+import vasquito3 from "../../../../public/images/zoe.jpg";
+import vasquito4 from "../../../../public/images/pinina.jpg";
+import vasquito5 from "../../../../public/images/jacinta.jpg";
+import vasquito6 from "../../../../public/images/manolo.jpg";
 import { PetIcon } from "../../../../public/icons/PetIcon";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
