@@ -28,6 +28,7 @@
 }
 
 .presentation-image {
+  aspect-ratio: 16/9;
   border-radius: 1rem;
 }
 
@@ -39,10 +40,6 @@
 }
 
 .container-principal {
-  width: 40%;
-}
-
-.container-principal {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -50,6 +47,7 @@
   gap: 2rem;
   justify-content: center;
   text-align: center;
+  width: 40%;
 
   img {
     border-radius: 50%;
