@@ -10,12 +10,13 @@ export const VideoPlayer = ({
   height: number;
 }) => {
   const cloudinaryRef = useRef<any>();
-  const videoRef = useRef<any>();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (cloudinaryRef.current) return;
 
     cloudinaryRef.current = (window as any).cloudinary;
+
     if (cloudinaryRef.current)
       cloudinaryRef.current.videoPlayer(videoRef.current, {
         cloud_name: "dhroaio3h",

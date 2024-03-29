@@ -1,11 +1,11 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import iconInstagram from "../../public/img/icon-instagram.ico";
-import iconFacebook from "../../public/img/icon-facebook.ico";
-import iconTiktok from "../../public/img/icon-tiktok.ico";
+import iconInstagram from "../../public/images/icon-instagram.ico";
+import iconFacebook from "../../public/images/icon-facebook.ico";
+import iconTiktok from "../../public/images/icon-tiktok.ico";
 import { MyMap } from "../map/Map";
 import useIsMobile from "../../hooks/is-mobile";
-import Logo from "../../public/img/logo-dai.png";
+import Logo from "../../public/images/logo-dai.png";
 
 const Footer = () => {
   const isMobile = useIsMobile();

@@ -8,24 +8,14 @@ import vasquito6 from "../../../../public/img-dogs/seis.jpg";
 import { PetIcon } from "../../../../public/icons/PetIcon";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
+import { fadeInAnimation, fadeInRightAnimation } from "../../../../animations";
 
 const OurDogsSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
-  const fadeInRight = useSpring({
-    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
-    to: {
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translate3d(0%,0,0)" : "translate3d(100%,0,0)",
-    },
-    config: { duration: 1000 }, // Configure the duration of the animation
-  });
-  const fadeIn = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: { duration: 3000 }, // Configure the duration of the animation
-  });
+  const fadeInRight = useSpring(fadeInRightAnimation(inView));
+  const fadeIn = useSpring(fadeInAnimation);
 
   return (
     <section className="section-principal">

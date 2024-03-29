@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logoVascos from "../../../public/img/VASCOS-ANIMALISTAS.ico";
+import logoVascos from "../../../public/images/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
 import useIsMobile from "../../../hooks/is-mobile";
 

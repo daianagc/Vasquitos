@@ -3,28 +3,18 @@ import "./DonationsSection.css";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "@react-spring/web";
 import useIsMobile from "../../../../hooks/is-mobile";
+import {
+  fadeInRightAnimation,
+  fadeInAboveAnimation,
+} from "../../../../animations";
 
 const DonationsSection = () => {
   const isMobile = useIsMobile();
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
-  const fadeInRight = useSpring({
-    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
-    to: {
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translate3d(0%,0,0)" : "translate3d(100%,0,0)",
-    },
-    config: { duration: 1000 }, // Configure the duration of the animation
-  });
-  const fadeInFromAbove = useSpring({
-    from: { opacity: 0, transform: "translate3d(0,-100%,0)" },
-    to: {
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translate3d(0%,0,0)" : "translate3d(0,-100%,0)",
-    },
-    config: { duration: 2000 }, // Configure the duration of the animation
-  });
+  const fadeInRight = useSpring(fadeInRightAnimation(inView));
+  const fadeInFromAbove = useSpring(fadeInAboveAnimation(inView));
 
   return (
     <section ref={ref} className="donations-section">

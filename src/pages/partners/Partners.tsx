@@ -4,8 +4,8 @@ import { setSubscription } from "../../api/subscriptions/subscriptions";
 import { useState } from "react";
 import { EmailIcon } from "../../public/icons/EmailIcon";
 import useIsMobile from "../../hooks/is-mobile";
-import rescued4 from "../../public/img/rescued-4.jpg";
-import rescued5 from "../../public/img/rescued-5.webp";
+import rescued4 from "../../public/images/rescued-4.jpg";
+import rescued5 from "../../public/images/rescued-5.webp";
 import { ToastContainer, toast } from "react-toastify";
 
 export const Partners = () => {

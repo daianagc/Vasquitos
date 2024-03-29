@@ -1,11 +1,11 @@
 import "./AboutUs.css";
-import imagenIrene from "../../public/img/irene.jpeg";
-import imagenPatio from "../../public/img/patio.jpeg";
-import imagenBlanca from "../../public/img/blanca.jpeg";
-import user from "../../public/img/user.jpg";
-import rescued1 from "../../public/img/rescued-1.jpg";
-import rescued2 from "../../public/img/rescued-2.jpg";
-import rescued3 from "../../public/img/rescued-3.jpg";
+import imagenIrene from "../../public/images/irene.jpeg";
+import imagenPatio from "../../public/images/patio.jpeg";
+import imagenBlanca from "../../public/images/blanca.jpeg";
+import user from "../../public/images/user.jpg";
+import rescued1 from "../../public/images/rescued-1.jpg";
+import rescued2 from "../../public/images/rescued-2.jpg";
+import rescued3 from "../../public/images/rescued-3.jpg";
 import { VideoPlayer } from "../../components/VideoPlayer/VideoPlayer";
 
 export const AboutUs = () => {

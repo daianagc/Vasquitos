@@ -1,5 +1,5 @@
-import imagenCevige from "../../public/img/cevige-logo.jpg";
-import imagenMuni from "../../public/img/logo-municipalidad.jpg";
+import imagenCevige from "../../public/images/cevige-logo.jpg";
+import imagenMuni from "../../public/images/logo-municipalidad.jpg";
 
 export interface CardDetail {
   imgUrl: string;
