@@ -8,7 +8,14 @@ const SponsorsSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
-  const fadeInFromLeft = useSpring(fadeInLeftAnimation(inView));
+  const fadeInFromLeft = useSpring({
+    from: { opacity: 0, transform: "translate3d(-100%,0,0)" },
+    to: {
+      opacity: inView ? 1 : 0,
+      transform: inView ? "translate3d(0%,0,0)" : "translate3d(-100%,0,0)",
+    },
+    config: { duration: 2000 }, // Configure the duration of the animation
+  });
 
   return (
     <section ref={ref} className="sponsors-section" id="patrocinadores">
