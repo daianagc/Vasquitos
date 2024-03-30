@@ -117,6 +117,7 @@
   }
 
   .donations-main-section {
+    background-attachment: unset;
     padding: 2rem;
   }
 

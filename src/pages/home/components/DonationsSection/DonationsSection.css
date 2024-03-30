@@ -59,6 +59,7 @@
 
 @media (max-width: 899px) {
   .donations-section {
+    background-attachment: unset;
     padding: 3rem 2rem 5rem 2rem;
   }
 
