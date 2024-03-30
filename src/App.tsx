@@ -15,7 +15,7 @@ const App = () => {
           <Outlet />
         </main>
         <Footer />
-        <ScrollRestoration />
+        {/* <ScrollRestoration /> */}
       </QueryClientProvider>
     </>
   );
