@@ -2,7 +2,6 @@ import { useInView } from "react-intersection-observer";
 import AutoplayCarousel from "../../../../components/Carrusel/AutoplayCarousel";
 import "./SponsorsSection.css";
 import { useSpring, animated } from "@react-spring/web";
-import { fadeInLeftAnimation } from "../../../../animations";
 
 const SponsorsSection = () => {
   const [ref, inView] = useInView({

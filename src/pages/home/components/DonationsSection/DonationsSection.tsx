@@ -3,10 +3,6 @@ import "./DonationsSection.css";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated } from "@react-spring/web";
 import useIsMobile from "../../../../hooks/is-mobile";
-import {
-  fadeInRightAnimation,
-  fadeInAboveAnimation,
-} from "../../../../animations";
 
 const DonationsSection = () => {
   const isMobile = useIsMobile();

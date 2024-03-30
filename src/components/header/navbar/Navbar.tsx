@@ -43,12 +43,14 @@ const Navbar = () => {
             </NavLink>
           </li>
           {items.map((item, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              style={{
+                display:
+                  isMobile && item.label === "Patrocinadores" ? "none" : "",
+              }}
+            >
               <NavLink
-                style={{
-                  display:
-                    isMobile && item.label === "Patrocinadores" ? "none" : "",
-                }}
                 className={({ isActive }) =>
                   isActive && item.label !== "Patrocinadores"
                     ? "nav-link active"
