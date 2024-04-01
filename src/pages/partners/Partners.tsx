@@ -23,7 +23,8 @@ export const Partners = () => {
   };
 
   const onSubscription = () => {
-    const payer_email = payerEmail.trim(); //"test_user_327558032@testuser.com";
+    //"test_user_327558032@testuser.com";
+    const payer_email = payerEmail.trim();
 
     mutate(payer_email, {
       onSuccess: (response) => {
