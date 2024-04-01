@@ -29,7 +29,8 @@ export const Partners = () => {
 
     mutate(payer_email, {
       onSuccess: (response) => {
-        inputRef ? (inputRef.current!.value = "") : null;
+        if (inputRef) inputRef.current!.value = "";
+
         if (response.url) window.location.href = response.url;
       },
       onError: (error) => {

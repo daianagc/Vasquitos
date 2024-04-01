@@ -58,7 +58,8 @@ export const Donations = () => {
       { id, title, unit_price },
       {
         onSuccess: (data) => {
-          inputRef ? (inputRef.current!.value = "") : null;
+          if (inputRef) inputRef.current!.value = "";
+
           window.location.href = data;
         },
         onError: (error) => {
