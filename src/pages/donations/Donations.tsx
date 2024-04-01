@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
 import useIsMobile from "../../hooks/is-mobile";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
   const isMobile = useIsMobile();
   const { mutate, isPending, isSuccess } = useMutation({
@@ -56,11 +58,19 @@ export const Donations = () => {
       { id, title, unit_price },
       {
         onSuccess: (data) => {
+          inputRef ? (inputRef.current!.value = "") : null;
           window.location.href = data;
         },
         onError: (error) => {
-          // Handle the error here
           console.error(error);
+
+          toast.error(
+            "Ocurrió un error al realizar la donación Inténtelo nuevamente más tarde.",
+            {
+              position: "bottom-right",
+              className: "toast-success",
+            }
+          );
         },
         onSettled: () => {
           setLoadingButtonId(null);
@@ -90,6 +100,7 @@ export const Donations = () => {
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
+                  disabled={isPending || isSuccess}
                   className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}
@@ -111,6 +122,7 @@ export const Donations = () => {
                 </p>
                 <input
                   className="donation-input"
+                  ref={inputRef}
                   type="number"
                   min={0}
                   placeholder={
@@ -123,7 +135,7 @@ export const Donations = () => {
               </div>
               <button
                 type="button"
-                disabled={!flexibleAmount}
+                disabled={!flexibleAmount || isPending || isSuccess}
                 title="¡Hace click para donar y hacer felices a los vasquitos!"
                 onClick={() =>
                   handlePreference({
@@ -139,6 +151,7 @@ export const Donations = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

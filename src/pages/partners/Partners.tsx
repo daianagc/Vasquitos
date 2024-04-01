@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import "./Partners.css";
 import { setSubscription } from "../../api/subscriptions/subscriptions";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { EmailIcon } from "../../public/icons/EmailIcon";
 import useIsMobile from "../../hooks/is-mobile";
 import rescued4 from "../../public/images/uma.jpg";
@@ -9,8 +9,9 @@ import rescued5 from "../../public/images/gaspar.jpg";
 import { ToastContainer, toast } from "react-toastify";
 
 export const Partners = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [payerEmail, setPayerEmail] = useState("");
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: setSubscription,
   });
   const isMobile = useIsMobile();
@@ -28,7 +29,11 @@ export const Partners = () => {
 
     mutate(payer_email, {
       onSuccess: (response) => {
+        inputRef ? (inputRef.current!.value = "") : null;
         if (response.url) window.location.href = response.url;
+      },
+      onError: (error) => {
+        console.error(error);
 
         toast.error(
           "Ocurrió un error al subscribirse. Inténtelo nuevamente más tarde.",
@@ -37,9 +42,6 @@ export const Partners = () => {
             className: "toast-success",
           }
         );
-      },
-      onError: (error) => {
-        console.error(error);
       },
     });
   };
@@ -95,6 +97,7 @@ export const Partners = () => {
             </div>
             <input
               className="form-input"
+              ref={inputRef}
               type="email"
               name="payerEmail"
               id="payer_email"
@@ -108,7 +111,7 @@ export const Partners = () => {
             className="partner-button"
             type="button"
             title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
-            disabled={!payerEmail}
+            disabled={!payerEmail || isPending || isSuccess}
             onClick={onSubscription}
           >
             {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
