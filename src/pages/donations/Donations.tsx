@@ -110,7 +110,7 @@ export const Donations = () => {
           <h1 className="title-h1">Doná a los Vasquitos 🐶</h1>
           <p className="paragraph">
             Este dinero, tan necesario para el refugio, será utilizado para
-            medicamentos, alimentos, mantención edilicia, y para todas las
+            medicamentos, alimentos, mantención edilicia y para todas las
             mejoras necesarias para que los vasquitos puedan vivir como se
             merecen, de la mejor forma posible. Desde ya MUCHÍSIMAS GRACIAS por
             tu esfuerzo. <strong>Para ellos es muy valioso.</strong>

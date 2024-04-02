@@ -9,6 +9,7 @@ import { PetIcon } from "../../../../public/icons/PetIcon";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
 import { fadeInAnimation, fadeInRightAnimation } from "../../../../animations";
+import { NavLink } from "react-router-dom";
 
 const OurDogsSection = () => {
   const [ref, inView] = useInView({
@@ -28,10 +29,10 @@ const OurDogsSection = () => {
           encuentres a tu próximx mejor amigx.
         </animated.p>
         <div className="container-button-vasquitos">
-          <button className="button-ver-vasquitos">
+          <NavLink to="/nuestros-vasquitos" className="button-ver-vasquitos">
             Conocelos
             <PetIcon />
-          </button>
+          </NavLink>
         </div>
       </div>
       <animated.div style={fadeIn} className="container-vasquitos">
