@@ -17,7 +17,7 @@
 
     &::after {
       font-family: "Montserrat", sans-serif;
-      content: "Vascos Animalistas VG";
+      content: " Vascos Animalistas VG";
       font-size: 6rem;
       font-weight: 700;
       color: var(--text-red);

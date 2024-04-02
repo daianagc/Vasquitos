@@ -4,8 +4,9 @@ import { setSubscription } from "../../api/subscriptions/subscriptions";
 import { useRef, useState } from "react";
 import { EmailIcon } from "../../public/icons/EmailIcon";
 import useIsMobile from "../../hooks/is-mobile";
+import rescued3 from "../../public/images/lucy.jpg";
 import rescued4 from "../../public/images/uma.jpg";
-import rescued5 from "../../public/images/gaspar.jpg";
+import rescued5 from "../../public/images/linda.jpg";
 import { ToastContainer, toast } from "react-toastify";
 
 export const Partners = () => {
@@ -52,8 +53,8 @@ export const Partners = () => {
       <div className="content partners-content">
         <h1 className="title-h1">Convertite en socio</h1>
         <p className="paragraph partners-special-paragraph">
-          Con tu aporte mensual, nos ayudás a seguir rescatando y cuidando a los
-          perritos que más lo necesitan.
+          Asociándote nos ayudás a seguir rescatando y cuidando a los perritos
+          que más lo necesitan.
         </p>
         <div>
           <span className="title-h2">Tu aporte de </span>
@@ -63,10 +64,21 @@ export const Partners = () => {
         <div className="cards-wrapper">
           <div className="card">
             <h2 className="card-icon">🐾</h2>
-            <h2 className="title-h2">Aportes mensuales</h2>
+            <h2 className="title-h2">Alimentos</h2>
             <p className="paragraph">
-              Con tu aporte mensual, nos ayudás a seguir rescatando y cuidando a
-              los perritos que más lo necesitan.
+              Necesario para que tengan la mejor calidad de vida posible.
+            </p>
+            <img
+              className="rescued-partner-image"
+              src={rescued3}
+              alt="Imagen de un vasquito"
+            />
+          </div>
+          <div className="card">
+            <h2 className="card-icon">💊</h2>
+            <h2 className="title-h2">Medicamentos</h2>
+            <p className="paragraph">
+              Importante para tratamientos y eventualidades de salud.
             </p>
             <img
               className="rescued-partner-image"
@@ -75,11 +87,10 @@ export const Partners = () => {
             />
           </div>
           <div className="card">
-            <h2 className="card-icon">❤️</h2>
-            <h2 className="title-h2">Aportes únicos</h2>
+            <h2 className="card-icon">🏡</h2>
+            <h2 className="title-h2">Mantenimiento</h2>
             <p className="paragraph">
-              Con tu aporte único, nos ayudás a seguir rescatando y cuidando a
-              los perritos que más lo necesitan.
+              Para que tengan un lugar seguro y cómodo para vivir.
             </p>
             <img
               className="rescued-partner-image"
