@@ -1,0 +1,9 @@
+@media (width < 899px) {
+  .vjs_video_3-dimensions {
+    height: 16.2rem !important;
+  }
+
+  .video-js {
+    height: 16.2rem !important;
+  }
+}

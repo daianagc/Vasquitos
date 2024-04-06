@@ -35,11 +35,17 @@
   gap: 1rem;
 }
 
-p {
+p,
+a {
+  color: var(--text-white);
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 550;
   font-size: 1.5rem;
+}
+
+a:hover {
+  color: var(--text-red);
 }
 
 .container-signature {

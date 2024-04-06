@@ -4,8 +4,9 @@
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  overflow-y: hidden;
-  padding: 6rem 0;
+  overflow-x: hidden;
+  height: 70rem;
+  width: 100%;
 }
 
 .sponsors-title h2 {
@@ -15,11 +16,15 @@
   font-size: 5rem;
 }
 
+.sponsor-carrousel {
+  width: 100%;
+}
+
 .sponsors-parrafo p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   color: var(--text-gray);
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 450;
 }
 
@@ -31,11 +36,28 @@
 }
 
 .carousel-card {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  background-color: var(--background-black) !important;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  height: 35rem;
+  padding: 2rem;
+  width: 20%;
+
+  img {
+    object-fit: fill;
+    height: 70%;
+    width: 80%;
+  }
+
+  p {
+    color: var(--text-white);
+    font-size: 2rem;
+    font-weight: bold;
+  }
 
   &:hover {
     transform: scale(0.9);
@@ -48,12 +70,6 @@
   background: rgb(41, 40, 40);
 }
 
-.carousel-card > img {
-  height: 80%;
-  width: 80%;
-  border-radius: 10%;
-}
-
 .carousel-track {
   display: flex;
   position: relative;
@@ -64,14 +80,11 @@
   gap: 16px;
   width: 200%;
   height: 100%;
+  animation: slide 40s linear infinite; /* Increase the duration to cover all the content */
 }
 
-.carousel-track {
-  animation: slide 20s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
+.carousel-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes slide {
@@ -87,18 +100,23 @@
 @media (max-width: 899px) {
   .sponsors-section {
     padding: 3rem 0;
+    height: 55rem;
     width: 100%;
   }
   .sponsors-title h2 {
     font-size: 4rem;
   }
 
+  .sponsors-parrafo {
+    width: 80%;
+  }
+
   .carousel-track {
-    width: 100%;
+    width: 200%;
 
     .carousel-card {
-      height: 18rem;
-      width: 16rem;
+      height: 25rem;
+      width: 22rem;
     }
   }
 

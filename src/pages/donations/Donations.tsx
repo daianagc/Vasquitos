@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
 import useIsMobile from "../../hooks/is-mobile";
+import { ToastContainer, toast } from "react-toastify";
+import logoProvincia from "../../public/images/logo-provincia.jpg";
+import logoMercadopago from "../../public/images/logo-mercadopago.png";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
   const isMobile = useIsMobile();
   const { mutate, isPending, isSuccess } = useMutation({
@@ -13,11 +17,6 @@ export const Donations = () => {
   });
   const specialButtonId = "VASQUITOS-1000";
   const donationsButtons = [
-    {
-      id: "VASQUITOS-3000",
-      unit_price: 3000,
-      tagTitle: "Donar tres mil pesos",
-    },
     {
       id: "VASQUITOS-5000",
       unit_price: 5000,
@@ -33,7 +32,14 @@ export const Donations = () => {
       unit_price: 15000,
       tagTitle: "Donar quince mil pesos",
     },
+    {
+      id: "VASQUITOS-20000",
+      unit_price: 20000,
+      tagTitle: "Donar veinte mil pesos",
+    },
   ];
+  const cbu = "0140400901699005513935";
+  const alias = "LOSVASQUITOS.VG";
 
   const handleFlexibleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -56,11 +62,20 @@ export const Donations = () => {
       { id, title, unit_price },
       {
         onSuccess: (data) => {
+          if (inputRef) inputRef.current!.value = "";
+
           window.location.href = data;
         },
         onError: (error) => {
-          // Handle the error here
           console.error(error);
+
+          toast.error(
+            "Ocurrió un error al realizar la donación Inténtelo nuevamente más tarde.",
+            {
+              position: "bottom-right",
+              className: "toast-success",
+            }
+          );
         },
         onSettled: () => {
           setLoadingButtonId(null);
@@ -73,6 +88,21 @@ export const Donations = () => {
     return (isPending || isSuccess) && loadingButtonId === id;
   };
 
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.success("Texto copiado", {
+        position: "bottom-right",
+        className: "toast-error",
+      });
+    } catch (err) {
+      toast.error("Hubo un error al copiar el texto", {
+        position: "bottom-right",
+        className: "toast-error",
+      });
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -80,16 +110,54 @@ export const Donations = () => {
           <h1 className="title-h1">Doná a los Vasquitos 🐶</h1>
           <p className="paragraph">
             Este dinero, tan necesario para el refugio, será utilizado para
-            medicamentos, alimentos, mantención edilicia, y para todas las
+            medicamentos, alimentos, mantención edilicia y para todas las
             mejoras necesarias para que los vasquitos puedan vivir como se
             merecen, de la mejor forma posible. Desde ya MUCHÍSIMAS GRACIAS por
             tu esfuerzo. <strong>Para ellos es muy valioso.</strong>
           </p>
+          <div className="card account-card">
+            <div className="donation-header">
+              <h2 className="title-h2">Banco Provincia</h2>
+              <img src={logoProvincia} alt="Logo del Banco Provincia" />
+            </div>
+            <div className="account-main-data">
+              <div className="account-row">
+                <p>CBU: </p>
+                <p className="paragraph">{cbu}</p>
+                <button className="copy-button" onClick={() => handleCopy(cbu)}>
+                  Copiar
+                </button>
+              </div>
+              <div className="account-row">
+                <p>Alias: </p>
+                <p className="paragraph">{alias}</p>
+                <button
+                  className="copy-button"
+                  onClick={() => handleCopy(alias)}
+                >
+                  Copiar
+                </button>
+              </div>
+              <div className="account-row">
+                <p>Integrante: </p>
+                <p className="paragraph">REFUGIO VASCOS ANIMALIASTAS VG</p>
+              </div>
+              <div className="account-row">
+                <p>CUIL/CUIT: </p>
+                <p className="paragraph">33-71699383-9</p>
+              </div>
+            </div>
+          </div>
           <div className="donations-main-section">
+            <div className="donation-header mercadopago-header">
+              <h2 className="title-h2">Mercado Pago</h2>
+              <img src={logoMercadopago} alt="Logo de Mercadopago" />
+            </div>
             <div className="buttons-wrapper">
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
+                  disabled={isPending || isSuccess}
                   className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}
@@ -111,6 +179,7 @@ export const Donations = () => {
                 </p>
                 <input
                   className="donation-input"
+                  ref={inputRef}
                   type="number"
                   min={0}
                   placeholder={
@@ -123,7 +192,7 @@ export const Donations = () => {
               </div>
               <button
                 type="button"
-                disabled={!flexibleAmount}
+                disabled={!flexibleAmount || isPending || isSuccess}
                 title="¡Hace click para donar y hacer felices a los vasquitos!"
                 onClick={() =>
                   handlePreference({
@@ -139,6 +208,7 @@ export const Donations = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

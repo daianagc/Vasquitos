@@ -11,7 +11,7 @@
 .donations-main-section {
   align-items: center;
   background-attachment: fixed;
-  background-image: url("/src/public/img/dogs-running.jpg");
+  background-image: url("/src/public/images/dogs-running.jpg");
   background-size: cover;
   border-radius: 1.5rem;
   display: flex;
@@ -103,6 +103,69 @@
   }
 }
 
+.account-card {
+  gap: 1rem !important;
+  margin-bottom: 1rem;
+  padding: 2rem 6rem !important;
+  width: 40% !important;
+
+  .account-main-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 3rem;
+  }
+}
+
+.donation-header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  img {
+    border-radius: 50%;
+    width: 7rem;
+  }
+}
+
+.mercadopago-header {
+  background-color: var(--background-white);
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+}
+
+.account-row {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+
+  p:not(.paragraph) {
+    color: var(--text-black);
+    font-size: 1.7rem;
+  }
+}
+
+.copy-button {
+  align-items: center;
+  background-color: var(--background-red);
+  border-radius: 2.5rem;
+  color: var(--text-white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding: 1rem;
+
+  &:hover {
+    background-color: var(--background-black);
+  }
+}
+
 /* MOBILE */
 
 @media (width < 899px) {
@@ -117,6 +180,7 @@
   }
 
   .donations-main-section {
+    background-attachment: unset;
     padding: 2rem;
   }
 
@@ -156,5 +220,34 @@
       height: 6rem;
       width: 100%;
     }
+  }
+
+  .account-card {
+    gap: unset !important;
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+
+    .account-main-data {
+      padding: 1rem;
+    }
+  }
+
+  .donation-header {
+    img {
+      width: 4rem;
+    }
+  }
+
+  .mercadopago-header {
+    margin-bottom: 2rem;
+  }
+
+  .account-row {
+    gap: 0.5rem;
+  }
+
+  .copy-button {
+    font-size: 1rem;
+    margin-left: unset;
   }
 }

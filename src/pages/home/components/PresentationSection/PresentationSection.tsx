@@ -1,36 +1,33 @@
 import "./PresentationSection.css";
-import logo from "../../../../public/img/VASCOS-ANIMALISTAS.ico";
-import presentation from "../../../../public/img/presentation.jpeg";
+import logo from "../../../../public/images/VASCOS-ANIMALISTAS.ico";
+import presentation from "../../../../public/images/presentation.jpeg";
 import { NavLink } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
+import { useInView } from "react-intersection-observer";
+import { fadeInAnimation, fadeInLeftAnimation } from "../../../../animations";
 
 const PresentationSection = () => {
-  const fadeInLeft = useSpring({
-    from: { opacity: 0, transform: "translate3d(-100%,0,0)" },
-    to: { opacity: 1, transform: "translate3d(0%,0,0)" },
-    config: { duration: 1000 }, // Configure the duration of the animation
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
-  const fadeIn = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: { duration: 2500 }, // Configure the duration of the animation
-  });
+  const fadeInLeft = useSpring(fadeInLeftAnimation(inView));
+  const fadeIn = useSpring(fadeInAnimation);
 
   return (
-    <section className="principal-section">
-      <animated.h1 style={fadeInLeft}>Bienvenidos al refugio </animated.h1>
+    <section ref={ref} className="principal-section">
+      <animated.h1 style={fadeInLeft}>Bienvenidos a </animated.h1>
       <div className="presentation-main">
         <div className="container-principal">
           <img src={logo} alt="Logo del refugio" />
           <div className="container-parrafo">
             <p>
-              We are a dedicated team of volunteers who rescue, rehabilitate,
-              and rehome dogs in need.
+              Somos un refugio de gran trayectoria que rescata, rehabilita y
+              reubica perros en situación de calle.
             </p>
           </div>
           <div className="container-button">
             <NavLink to="/nosotros" className="button-ver">
-              ¡Hacé click y conocenos!
+              Un poco de nuestra historia
             </NavLink>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import "./Contact.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import imagenContacto from "../../public/img/imagen-contacto.jpg";
+import imagenContacto from "../../public/images/imagen-contacto.jpg";
 import { useMutation } from "@tanstack/react-query";
 import { sendEmail } from "../../api/contact/contact";
 import { Inputs } from "./types/inputs.type";

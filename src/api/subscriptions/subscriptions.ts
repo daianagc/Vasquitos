@@ -10,6 +10,11 @@ export const setSubscription = async (payer_email: string) => {
         body: JSON.stringify({ payer_email }),
       }
     );
+
+    if (!response.ok) {
+      throw response;
+    }
+
     const data = await response.json();
 
     return data;

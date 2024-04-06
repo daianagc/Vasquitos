@@ -1,7 +1,7 @@
 .donations-section {
   background-size: cover;
   background-attachment: fixed;
-  background-image: url(/src/public/img/dogs-donaciones.jpg);
+  background-image: url(/src/public/images/dogs-donaciones.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -9,6 +9,7 @@
   width: 100%;
   padding: 8rem;
   position: relative;
+  overflow-x: hidden;
 }
 
 .donations-title h2 {
@@ -59,6 +60,7 @@
 
 @media (max-width: 899px) {
   .donations-section {
+    background-attachment: unset;
     padding: 3rem 2rem 5rem 2rem;
   }
 

@@ -22,6 +22,11 @@ export const setPreference = async ({
         }),
       }
     );
+
+    if (!response.ok) {
+      throw response;
+    }
+
     const data = await response.json();
 
     return data;

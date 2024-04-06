@@ -12,7 +12,7 @@
   color: var(--text-secondary-red);
   font-style: italic;
   text-align: center;
-  width: 60%;
+  width: 45%;
 }
 
 .section {
@@ -22,18 +22,131 @@
   width: 100%;
 }
 
+.objetives {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: justify;
+  position: relative;
+
+  li {
+    border-left: 2px solid var(--text-red);
+    color: var(--text-black);
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 550;
+    left: 0;
+    position: relative;
+    transition: 0.5s;
+
+    span {
+      display: inline-block;
+      padding-left: 12px;
+      padding: 8px;
+      position: relative;
+      transition: 0.5s;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &::before {
+      background: var(--text-red);
+      content: "";
+      height: 100%;
+      position: absolute;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: 0.5s;
+      width: 100%;
+    }
+
+    &:hover {
+      left: 1rem;
+
+      span {
+        color: var(--text-white);
+      }
+    }
+  }
+}
+
 .about-us-content {
-  gap: 4rem;
+  gap: 3.5rem;
   padding: 3rem 5rem;
   width: 100%;
 
-  .about-us-cover {
-    border-radius: 2rem;
-    height: 35rem;
-    margin-top: 1rem;
+  .phrase-wrapper {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    .image-wrapper {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+
+      .about-us-cover {
+        border-radius: 2rem;
+        height: 30rem;
+        margin-top: 1rem;
+        object-fit: contain;
+      }
+
+      p {
+        color: var(--text-gray);
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.history-paragraph {
+  white-space: pre-line;
+  margin-bottom: 0.5rem;
+}
+
+.backyard-image {
+  border-radius: 1rem;
+  height: 24rem;
+  float: left;
+  margin: 1rem 2rem 1rem 0;
+  object-fit: cover;
+  width: 28%;
+}
+
+.special-image-wrapper {
+  float: right;
+  margin: 0 0 0 2rem;
+
+  .blanca-image {
+    border-radius: 1rem;
+    height: 24rem;
+    float: right;
     object-fit: cover;
     width: 100%;
   }
+
+  p {
+    color: var(--text-gray);
+    font-size: 1.3rem;
+    top: 1rem;
+    text-align: center;
+
+    position: relative;
+  }
+}
+
+.institucional-video {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .values-wrapper {
@@ -93,6 +206,7 @@
     .member-name {
       color: var(--text-red);
       font-size: 1.8rem;
+      width: 75%;
     }
 
     .member-role {
@@ -117,6 +231,55 @@
 
     .about-us-cover {
       height: 22rem;
+    }
+  }
+
+  .objetives {
+    line-height: 2.2rem;
+    padding: 0 1.5rem;
+    li {
+      font-size: 1.5rem;
+    }
+  }
+
+  .phrase-wrapper {
+    flex-direction: column;
+    gap: 1rem !important;
+    width: 100%;
+
+    .main-paragraph {
+      width: 100%;
+    }
+
+    .image-wrapper {
+      .about-us-cover {
+        width: 100%;
+      }
+    }
+  }
+
+  .history-paragraph {
+    margin-bottom: 1.5rem;
+  }
+
+  .backyard-image {
+    float: none;
+    width: 100%;
+  }
+
+  .special-image-wrapper {
+    float: none;
+    margin: unset;
+
+    .blanca-image {
+      float: none;
+      width: 100%;
+    }
+
+    p {
+      float: none;
+      margin: 1rem;
+      top: unset;
     }
   }
 

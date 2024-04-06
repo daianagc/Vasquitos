@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logoVascos from "../../../public/img/VASCOS-ANIMALISTAS.ico";
+import logoVascos from "../../../public/images/VASCOS-ANIMALISTAS.ico";
 import { useState } from "react";
 import useIsMobile from "../../../hooks/is-mobile";
 
@@ -12,6 +12,7 @@ const Navbar = () => {
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestros-vasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
+    { to: "/#patrocinadores", label: "Patrocinadores" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -42,10 +43,18 @@ const Navbar = () => {
             </NavLink>
           </li>
           {items.map((item, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              style={{
+                display:
+                  isMobile && item.label === "Patrocinadores" ? "none" : "",
+              }}
+            >
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                  isActive && item.label !== "Patrocinadores"
+                    ? "nav-link active"
+                    : "nav-link"
                 }
                 to={item.to}
                 onClick={() => setIsOpen(false)}
