@@ -10,7 +10,7 @@ const Navbar = () => {
   const items = [
     { to: "/", label: "Inicio" },
     { to: "/nosotros", label: "Nosotros" },
-    { to: "/nuestrosvasquitos", label: "Nuestros Vasquitos" },
+    { to: "/nuestros-vasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
     { to: "/contacto", label: "Contacto" },
   ];

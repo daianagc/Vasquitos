@@ -1,0 +1,149 @@
+.title-principal {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    color: var(--text-black);
+    font-size: 5rem;
+}
+
+.container-dogs {
+    padding: 3rem 9rem;
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 26%);
+
+}
+
+
+.cards-dogs {
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 1rem #00000026;
+    width: 80%;
+}
+
+.img-dogs {
+    height: 22rem;
+    object-fit: cover;
+    width: 93%;
+    /* border-radius: 3rem; */
+    margin: 7px;
+}
+
+
+.img-dogs:hover {
+    padding: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+/*MODAL*/
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    background: rgb(255 255 255 / 0%);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 14%);
+
+}
+
+.modal-content {
+    color: black
+}
+
+
+.modal-content {
+    background-color: white;
+    padding: 43px;
+    width: 47%;
+    height: 51%;
+    border-radius: 3rem;
+}
+
+.description-dogs {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.close-button {
+    position: relative;
+    left: 98%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 2rem;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-black);
+    font-size: 3rem;
+}
+
+.adopt-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adoptar,
+.apadrina {
+    font-family: "Montserrat", sans-serif;
+    width: 36%;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    font-weight: 550;
+    right: 10px;
+    background-color: var(--background-red);
+    color: var(--text-white);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.2rem;
+    margin: 2rem;
+
+}
+
+.adoptar:hover,
+.apadrina:hover {
+    background-color: var(--background-black);
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+    .container-dogs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1.5rem;
+        margin-left: 0.5rem;
+        gap: 3.5rem;
+
+
+    }
+
+    .cards-dogs {
+        width: 50%;
+    }
+
+    .title-principal {
+        margin-left: 0;
+
+    }
+
+    .modal-container {}
+
+    .modal-content {
+        width: 61%;
+        height: 55%;
+    }
+
+
+}
