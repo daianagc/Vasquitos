@@ -30,7 +30,10 @@ export const Partners = () => {
 
     mutate(payer_email, {
       onSuccess: (response) => {
-        if (inputRef) inputRef.current!.value = "";
+        if (inputRef) {
+          inputRef.current!.value = "";
+          setPayerEmail("");
+        }
 
         if (response.url) window.location.href = response.url;
       },
