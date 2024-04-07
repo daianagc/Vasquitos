@@ -9,7 +9,7 @@ import { Donations } from "./pages/donations/Donations.tsx";
 import { Partners } from "./pages/partners/Partners.tsx";
 import { Contact } from "./pages/contact/Contact.tsx";
 import { AboutUs } from "./pages/about-us/AboutUs.tsx";
-import OurDogs from "./pages/our-dogs/OurDogs.tsx";
+import { OurDogs } from "./pages/our-dogs/OurDogs.tsx";
 
 const router = createBrowserRouter([
   {

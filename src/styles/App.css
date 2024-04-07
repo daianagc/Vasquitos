@@ -55,6 +55,50 @@ main {
   font-size: 1.5rem;
 }
 
+.primary-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 550;
+  color: var(--text-white);
+  background-color: var(--background-red);
+  cursor: pointer;
+  border-radius: 1.5rem;
+  padding: 2rem 4rem;
+  width: 100%;
+}
+
+.primary-button:hover {
+  background-color: var(--background-black);
+}
+
+.secondary-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 550;
+  color: var(--text-white);
+  background-color: var(--background-black);
+  cursor: pointer;
+  border-radius: 1.5rem;
+  padding: 2rem 4rem;
+  width: 100%;
+}
+
+.secondary-button:hover {
+  background-color: var(--background-red);
+}
+
+.tertiary-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 550;
+  color: var(--text-white);
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  padding: 2rem 4rem;
+  width: 100%;
+}
+
 @media (width < 899px) {
   main {
     flex-grow: unset;
