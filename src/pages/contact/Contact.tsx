@@ -5,15 +5,24 @@ import imagenContacto from "../../public/images/imagen-contacto.jpg";
 import { useMutation } from "@tanstack/react-query";
 import { sendEmail } from "../../api/contact/contact";
 import { Inputs } from "./types/inputs.type";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useEffect } from "react";
 
 export const Contact = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const message = queryParams.get("message") || "";
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+    setValue,
+  } = useForm<Inputs>({
+    defaultValues: {
+      contactMessage: message,
+    },
+  });
   const { mutate, isPending } = useMutation({
     mutationFn: sendEmail,
   });
@@ -27,6 +36,10 @@ export const Contact = () => {
     value: 10,
     message: "El mensaje debe tener al menos 10 caracteres",
   };
+
+  useEffect(() => {
+    setValue("contactMessage", message);
+  }, [message, setValue]);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutate(data, {

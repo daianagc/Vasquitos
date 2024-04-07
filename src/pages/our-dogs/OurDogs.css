@@ -162,10 +162,20 @@ h2 {
     font-size: 2rem;
   }
 
+  .close-icon {
+    border-radius: 50%;
+    border: var(--text-black) solid 0.3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+  }
+
   .modal-content {
     border-radius: unset;
     height: 100%;
     overflow-y: scroll;
+    padding: 6rem 2rem 2rem 2rem;
     width: 100%;
   }
 

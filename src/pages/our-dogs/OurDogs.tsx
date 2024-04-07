@@ -6,11 +6,16 @@ import useOutsideClick from "../../hooks/outside-click";
 import { Dog } from "./interfaces/dog.interface";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { DogStatus } from "./enums/dog-status.enum";
+import useIsMobile from "../../hooks/is-mobile";
+import { CloseIcon } from "../../public/icons/CloseIcon";
+import { useNavigate } from "react-router-dom";
 
 export function OurDogs() {
   const [showModal, setShowModal] = useState(false);
   const dogRef: MutableRefObject<null | Dog> = useRef(null);
   const ref = useRef(null);
+  const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   const handleOpenModal = (dog: Dog) => {
     dogRef.current = dog;
@@ -24,6 +29,16 @@ export function OurDogs() {
     queryKey: ["dogs"],
     queryFn: getDogs,
   });
+
+  const goToContact = (isSponsor: boolean = false) => {
+    const dogName = dogRef.current?.name;
+    const message = `Me gustaría ${
+      isSponsor ? "apadrinar" : "adoptar"
+    } a ${dogName}...`;
+    const encodedMessage = encodeURIComponent(message);
+
+    navigate(`/contacto?message=${encodedMessage}`);
+  };
 
   if (isPending) return <Spinner />;
 
@@ -51,6 +66,13 @@ export function OurDogs() {
             <div className="modal-content" ref={ref}>
               <div className="modal-main">
                 <div className="top-description-row">
+                  <CloseIcon
+                    style={{ display: isMobile ? "block" : "none" }}
+                    className="close-icon"
+                    width="35"
+                    height="35"
+                    onClick={handleCloseModal}
+                  />
                   <img
                     src={dogRef.current?.image}
                     className="modal-image"
@@ -64,16 +86,25 @@ export function OurDogs() {
                   </div>
                 </div>
                 <div className="adopt-buttons">
-                  <button type="button" className="primary-button">
+                  <button
+                    type="button"
+                    className="primary-button"
+                    onClick={() => goToContact(true)}
+                  >
                     Apadrinar
-                  </button>
-                  <button type="button" className="secondary-button">
-                    Adoptar
                   </button>
                   <button
                     type="button"
+                    className="secondary-button"
+                    onClick={() => goToContact()}
+                  >
+                    Adoptar
+                  </button>
+                  <button
+                    style={{ display: isMobile ? "none" : "block" }}
+                    type="button"
                     className="tertiary-button"
-                    onClick={() => setShowModal(false)}
+                    onClick={handleCloseModal}
                   >
                     Cerrar
                   </button>
