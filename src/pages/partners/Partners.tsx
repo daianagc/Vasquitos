@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 export const Partners = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [payerEmail, setPayerEmail] = useState("");
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: setSubscription,
   });
   const isMobile = useIsMobile();

@@ -14,7 +14,7 @@ export const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: sendEmail,
   });
   const navigate = useNavigate();
