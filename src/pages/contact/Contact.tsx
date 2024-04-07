@@ -14,7 +14,7 @@ export const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: sendEmail,
   });
   const navigate = useNavigate();
@@ -109,7 +109,7 @@ export const Contact = () => {
               <button
                 className="form-button"
                 type="submit"
-                disabled={isSuccess}
+                disabled={isPending}
               >
                 {isPending ? "Enviando..." : "Enviar"}
               </button>
