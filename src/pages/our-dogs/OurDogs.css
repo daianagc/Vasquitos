@@ -34,13 +34,12 @@
 }
 
 .img-dogs {
-  aspect-ratio: 16/9;
-  border-radius: 1rem;
+  border-radius: 2rem;
   cursor: pointer;
   height: 22rem;
   object-fit: cover;
-  width: 93%;
-  margin: 7px;
+  width: 100%;
+  padding: 1.3rem;
   transition: padding 0.4s ease-in-out;
 }
 
@@ -49,7 +48,7 @@
 }
 
 .cards-dogs:hover .img-dogs {
-  padding: 1.3rem;
+  padding: unset;
 }
 
 /*MODAL*/
@@ -97,7 +96,6 @@
 }
 
 .modal-image {
-  aspect-ratio: 16/9;
   border-radius: 1rem;
   /* object-fit: contain; */
   width: 60%;
