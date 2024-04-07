@@ -39,7 +39,7 @@
 /*MODAL*/
 
 .modal-container {
-    position: fixed;
+    <<<<<<< HEAD position: fixed;
     top: 0;
     left: 0;
     height: 105%;
@@ -50,6 +50,146 @@
     background: rgb(255 255 255 / 0%);
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 14%);
 
+    =======align-items: center;
+    backdrop-filter: blur(0.8rem);
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 14%);
+    display: flex;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    justify-content: center;
+    left: 0;
+    padding-top: 7.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal-content {
+    color: black;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 3rem;
+    position: relative;
+    width: 55%;
+}
+
+.modal-main {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.top-description-row {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.modal-image {
+    border-radius: 1rem;
+    /* object-fit: contain; */
+    width: 60%;
+}
+
+.description-dogs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+
+    .dog-description-paragraph {
+        font-size: 1.5rem !important;
+        font-weight: normal !important;
+        text-align: justify !important;
+        text-indent: 1rem;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-black);
+    font-size: 3rem;
+}
+
+.adopt-buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.adoptar:hover,
+.apadrina:hover {
+    background-color: var(--background-black);
+}
+
+/* MOBILE */
+
+@media (width < 899px) {
+    .title-principal {
+        font-size: 3rem;
+    }
+
+    .our-dogs {
+        padding: 2rem;
+    }
+
+    .container-dogs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title-principal {
+        margin-left: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .close-icon {
+        border-radius: 50%;
+        border: var(--text-black) solid 0.3rem;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 2%;
+    }
+
+    .modal-content {
+        border-radius: unset;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 6rem 2rem 2rem 2rem;
+        width: 100%;
+    }
+
+    .modal-main {
+        padding: unset;
+    }
+
+    .modal-image {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .top-description-row,
+    .adopt-buttons {
+        flex-direction: column;
+    }
+
+    >>>>>>>bd1df927eead688e3c4c76ea487aa3ab2a97d5f2
 }
 
 .modal-content {

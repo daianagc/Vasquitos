@@ -59,7 +59,7 @@ export const AboutUs = () => {
       role: "Vocal suplente",
     },
     {
-      name: "Ana Tomás",
+      name: "Ana Tomas",
       role: "Revisora de cuentas titular",
     },
     {
@@ -74,7 +74,7 @@ export const AboutUs = () => {
         <div className="section main-section">
           <h1 className="title-h1">Vascos Animalistas VG</h1>
           <div className="phrase-wrapper">
-            <p className="paragraph main-paragraph">
+            <p className="paragraph main-paragraph justify">
               "En nuestro refugio de perros, nos dedicamos con pasión y
               dedicación a brindar amor, cuidado y un hogar temporal a perros
               sin hogar. Nuestro equipo está comprometido con el bienestar de
@@ -103,10 +103,10 @@ export const AboutUs = () => {
               src={imagenPatio}
               alt="Imagen del refugio"
             />
-            <p className="paragraph history-paragraph">
-              {`En la pintoresca ciudad costera de Villa Gesell, se encuentra un refugio especial que se caracteriza en su mayoría por darle lugar a perros ancianos, como así también casos de abandono y maltrato, conocido como "Vascos Animalistas". Fundado por Irene Gamboa Tapia, este refugio es un faro de esperanza y compasión para los caninos deedad avanzada que han sido abandonados o desplazados. \n`}
+            <p className="paragraph history-paragraph justify">
+              {`En la pintoresca ciudad costera de Villa Gesell, se encuentra un refugio especial que se caracteriza en su mayoría por darle lugar a perros ancianos, como así también casos de abandono y maltrato, conocido como "Vascos Animalistas". Fundado por Irene Gamboa Tapia, este refugio es un faro de esperanza y compasión para los caninos de edad avanzada que han sido abandonados o desplazados. \n`}
             </p>
-            <p className="paragraph history-paragraph">
+            <p className="paragraph history-paragraph justify">
               {`La historia de Vascos Animalistas comenzó cuando Irene, una amante de los animales con un profundo amor por los perros, se enfrentó a la triste realidad de muchos de estos compañeros peludos en su comunidad. Determinada a marcar la diferencia decidió tomar medidas y fundar un refugio dedicado exclusivamente a cuidarlos y protegerlos. \n
             Tras el fallecimiento de Irene, Blanca Samprosqui tomó las riendas del refugio, continuando su legado y compromiso con los perros. Con su liderazgo, el refugio siguió siendo un lugar de amor y cuidado para los residentes caninos que necesitaban amparo y protección. \n`}
             </p>
@@ -118,7 +118,7 @@ export const AboutUs = () => {
               />
               <p>Blanca Samprosqui</p>
             </div>
-            <p className="paragraph" style={{ whiteSpace: "pre-line" }}>
+            <p className="paragraph justify" style={{ whiteSpace: "pre-line" }}>
               {`Recientemente, a principios de febrero, lamentablemente, Blanca también falleció, dejando un vacío en la comunidad de Vascos Animalistas. Sin embargo, la dedicación y el compromiso con la misión del refugio continúan gracias al esfuerzo de una nueva comisión que ha asumido la responsabilidad de mantener vivo el legado de Irene y Blanca. \n
               Esta nueva comisión, formada por individuos comprometidos con la causa de los perros víctimas de abandono y maltrato, problemas de salud y longevidad, se esfuerza por continuar brindando cuidado y protección a los residentes caninos de Vascos Animalistas. A pesar de los desafíos que enfrentan, como la falta de recursos y el duelo por la pérdida de sus líderes anteriores, están decididos a seguir adelante y asegurarse de que el refugio siga siendo un lugar de amor y esperanza para los perros de Villa Gesell y más allá. \n 
             La historia de Vascos Animalistas es un testimonio conmovedor del poder del amor y la compasión para transformar vidas, tanto humanas como caninas, y aunque han enfrentado pérdidas significativas, su compromiso con la causa sigue siendo inquebrantable.`}
@@ -172,7 +172,7 @@ export const AboutUs = () => {
             {values.map((value) => (
               <div className="value" key={value.title}>
                 <h3 className="value-title">{value.title}</h3>
-                <p className="value-paragraph">{value.paragraph}</p>
+                <p className="value-paragraph justify">{value.paragraph}</p>
                 <img
                   className="rescued-image"
                   src={value.image}

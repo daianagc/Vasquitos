@@ -62,7 +62,10 @@ export const Donations = () => {
       { id, title, unit_price },
       {
         onSuccess: (data) => {
-          if (inputRef) inputRef.current!.value = "";
+          if (inputRef) {
+            inputRef.current!.value = "";
+            setFlexibleAmount(0);
+          }
 
           window.location.href = data;
         },
@@ -157,7 +160,7 @@ export const Donations = () => {
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
-                  disabled={isPending || isSuccess}
+                  disabled={!flexibleAmount || isPending}
                   className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}

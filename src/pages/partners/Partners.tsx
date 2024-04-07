@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 export const Partners = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [payerEmail, setPayerEmail] = useState("");
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: setSubscription,
   });
   const isMobile = useIsMobile();
@@ -30,7 +30,10 @@ export const Partners = () => {
 
     mutate(payer_email, {
       onSuccess: (response) => {
-        if (inputRef) inputRef.current!.value = "";
+        if (inputRef) {
+          inputRef.current!.value = "";
+          setPayerEmail("");
+        }
 
         if (response.url) window.location.href = response.url;
       },
@@ -123,7 +126,7 @@ export const Partners = () => {
             className="partner-button"
             type="button"
             title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
-            disabled={!payerEmail || isPending || isSuccess}
+            disabled={!payerEmail || isPending}
             onClick={onSubscription}
           >
             {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
