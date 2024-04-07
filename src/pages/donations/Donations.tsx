@@ -157,7 +157,7 @@ export const Donations = () => {
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
-                  disabled={isPending || isSuccess}
+                  disabled={isPending}
                   className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}

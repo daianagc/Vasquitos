@@ -123,7 +123,7 @@ export const Partners = () => {
             className="partner-button"
             type="button"
             title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
-            disabled={!payerEmail || isPending || isSuccess}
+            disabled={!payerEmail || isPending}
             onClick={onSubscription}
           >
             {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}

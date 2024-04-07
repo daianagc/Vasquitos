@@ -109,7 +109,7 @@ export const Contact = () => {
               <button
                 className="form-button"
                 type="submit"
-                disabled={isSuccess}
+                disabled={isPending}
               >
                 {isPending ? "Enviando..." : "Enviar"}
               </button>
