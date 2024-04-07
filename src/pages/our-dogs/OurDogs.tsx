@@ -25,11 +25,6 @@ export function OurDogs() {
     queryFn: getDogs,
   });
 
-  // const showDescription = () => {
-  //   return data.data?.find((dog: Dog) => dog.id === dogRef.current?.id)
-  //     ?.description;
-  // };
-
   if (isPending) return <Spinner />;
 
   return (
@@ -54,23 +49,34 @@ export function OurDogs() {
         {showModal && (
           <div className="modal-container">
             <div className="modal-content" ref={ref}>
-              <button className="close-button" onClick={handleCloseModal}>
-                X
-              </button>
               <div className="modal-main">
-                <img
-                  src={dogRef.current?.image}
-                  className="img-dogs"
-                  alt="Imagen de un/una vasquitx"
-                />
-                <div className="description-wrapper">
+                <div className="top-description-row">
+                  <img
+                    src={dogRef.current?.image}
+                    className="modal-image"
+                    alt="Imagen de un/una vasquitx"
+                  />
                   <div className="description-dogs">
-                    {dogRef.current?.description}
+                    <h2>{dogRef.current?.name}</h2>
+                    <p className="paragraph dog-description-paragraph">
+                      {dogRef.current?.description}
+                    </p>
                   </div>
-                  <div className="adopt-button">
-                    <button className="apadrina">APADRINA</button>
-                    <button className="adoptar">ADOPTAR</button>
-                  </div>
+                </div>
+                <div className="adopt-buttons">
+                  <button type="button" className="primary-button">
+                    Apadrinar
+                  </button>
+                  <button type="button" className="secondary-button">
+                    Adoptar
+                  </button>
+                  <button
+                    type="button"
+                    className="tertiary-button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Cerrar
+                  </button>
                 </div>
               </div>
             </div>
