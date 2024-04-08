@@ -65,7 +65,7 @@ export function OurDogs() {
           <div className="modal-container">
             <div className="modal-content" ref={ref}>
               <div className="modal-main">
-                <div className="top-description-row">
+                <div className="close-container">
                   <CloseIcon
                     style={{ display: isMobile ? "block" : "none" }}
                     className="close-icon"
@@ -73,6 +73,8 @@ export function OurDogs() {
                     height="35"
                     onClick={handleCloseModal}
                   />
+                </div>
+                <div className="top-description-row">
                   <img
                     src={dogRef.current?.image}
                     className="modal-image"

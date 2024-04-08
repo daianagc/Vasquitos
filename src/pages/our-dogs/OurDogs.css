@@ -67,6 +67,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .modal-content {
@@ -166,21 +167,30 @@ h2 {
     border-radius: 50%;
     border: var(--text-black) solid 0.3rem;
     cursor: pointer;
-    position: absolute;
-    right: 5%;
-    top: 2%;
+    margin-left: auto;
   }
 
   .modal-content {
     border-radius: unset;
     height: 100%;
     overflow-y: scroll;
-    padding: 6rem 2rem 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
     width: 100%;
   }
 
   .modal-main {
+    gap: unset;
     padding: unset;
+  }
+
+  .close-container {
+    background-color: var(--background-white);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    position: sticky;
+    padding: 1rem 0;
+    top: 0;
+    width: 100%;
   }
 
   .modal-image {
@@ -191,5 +201,9 @@ h2 {
   .top-description-row,
   .adopt-buttons {
     flex-direction: column;
+  }
+
+  .description-dogs {
+    margin-bottom: 3rem;
   }
 }
