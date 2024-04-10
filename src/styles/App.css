@@ -99,6 +99,13 @@ main {
   width: 100%;
 }
 
+.error-message {
+  color: var(--text-red);
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
 @media (width < 899px) {
   main {
     flex-grow: unset;
@@ -137,5 +144,9 @@ main {
 
   .video-js {
     height: 16.2rem !important;
+  }
+
+  .error-message {
+    font-size: 1.5rem;
   }
 }

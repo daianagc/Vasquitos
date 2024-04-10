@@ -230,6 +230,62 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    <<<<<<< HEAD=======flex-direction: column;
+}
+
+.title-principal {
+    margin-left: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.close-icon {
+    border-radius: 50%;
+    border: var(--text-black) solid 0.3rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.modal-content {
+    border-radius: unset;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0 2rem 2rem 2rem;
+    width: 100%;
+}
+
+.modal-main {
+    gap: unset;
+    padding: unset;
+}
+
+.close-container {
+    background-color: var(--background-white);
+    height: -webkit-fill-available;
+    height: -moz-available;
+    position: sticky;
+    padding: 1rem 0;
+    top: 0;
+    width: 100%;
+}
+
+.modal-image {
+    object-fit: cover;
+    width: 100%;
+}
+
+.top-description-row,
+.adopt-buttons {
+    flex-direction: column;
+}
+
+.description-dogs {
+    margin-bottom: 3rem;
+}
+
+>>>>>>>9590192602029b0fad064da8e4904a5936ad680e
 }
 
 .adoptar,

@@ -35,39 +35,60 @@
   font-size: 5rem;
 }
 
-.form-wrapper {
-  align-items: center;
+.rescued-partner-image {
+  height: 27rem !important;
+  object-fit: cover;
+  width: 100% !important;
+}
+
+.form-wrapper-partners {
+  background-color: var(--background-white);
+  border-radius: 1.5rem;
+  box-shadow: 0 0.5rem 1rem #00000026;
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  width: 100%;
-  .input-wrapper {
-    position: relative;
-    width: 50%;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding: 3rem;
+  width: 80%;
 
-    .icon-wrapper {
-      font-size: 3rem;
-      left: 3rem;
-      position: absolute;
-      top: 1.5rem;
-      z-index: 2;
-    }
+  form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 
-    .form-input {
-      border-radius: 30px;
-      font-size: 2.5rem;
-      height: 7rem;
-      padding: 2rem 2rem 2rem 7rem;
-      position: relative;
-      text-align: center;
-      width: 100%;
-      z-index: 1;
+    .input-wrapper {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 80%;
 
-      &::placeholder {
-        position: relative;
-        right: 2rem;
+      p {
+        padding-left: 2rem;
       }
     }
+  }
+}
+
+.wrapped-inputs {
+  display: flex;
+  gap: 3rem;
+  width: 80%;
+}
+
+.submit-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+
+  .info {
+    font-size: 1.5rem;
   }
 
   .partner-button {
@@ -76,9 +97,8 @@
     font-size: 2.5rem;
     font-weight: bold;
     height: 7rem;
-    margin: 3rem 0;
     padding: 1rem 2rem;
-    width: 27%;
+    width: 80%;
 
     &:disabled {
       cursor: not-allowed;
@@ -94,12 +114,6 @@
       background-color: var(--background-black);
     }
   }
-}
-
-.rescued-partner-image {
-  height: 27rem !important;
-  object-fit: cover;
-  width: 100% !important;
 }
 
 /* MOBILE */
@@ -123,28 +137,34 @@
     }
   }
 
-  .form-wrapper {
-    flex-direction: column;
+  .form-wrapper-partners {
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 100%;
 
-    .input-wrapper {
-      margin-top: 2rem;
-      width: 100%;
+    form {
+      .input-wrapper {
+        align-items: center;
+        width: 100%;
 
-      .icon-wrapper {
-        left: 2rem;
-        top: 2rem;
-      }
-
-      .form-input {
-        font-size: 2rem;
-        padding-left: 6rem;
+        p {
+          padding-left: 0;
+        }
       }
     }
+  }
 
+  .submit-container {
     .partner-button {
       font-size: 2rem;
       margin: unset;
       width: 100%;
     }
+  }
+
+  .wrapped-inputs {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
   }
 }

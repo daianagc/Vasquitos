@@ -1,52 +1,38 @@
-import { useMutation } from "@tanstack/react-query";
 import "./Partners.css";
-import { setSubscription } from "../../api/subscriptions/subscriptions";
-import { useRef, useState } from "react";
-import { EmailIcon } from "../../public/icons/EmailIcon";
-import useIsMobile from "../../hooks/is-mobile";
 import rescued3 from "../../public/images/lucy.jpg";
 import rescued4 from "../../public/images/uma.jpg";
 import rescued5 from "../../public/images/linda.jpg";
 import { ToastContainer, toast } from "react-toastify";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Inputs } from "./types/inputs.type";
+import { useMutation } from "@tanstack/react-query";
+import { createPartner } from "../../api/partners/createPartner";
 
 export const Partners = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [payerEmail, setPayerEmail] = useState("");
-  const { mutate, isPending } = useMutation({
-    mutationFn: setSubscription,
-  });
-  const isMobile = useIsMobile();
-
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-    isValidEmail ? setPayerEmail(email) : setPayerEmail("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const required = "Este campo es requerido";
+  const pattern = {
+    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+    message: "Email inválido",
   };
+  const { mutate, isPending } = useMutation({
+    mutationFn: createPartner,
+  });
 
-  const onSubscription = () => {
-    //"test_user_327558032@testuser.com";
-    const payer_email = payerEmail.trim();
-
-    mutate(payer_email, {
-      onSuccess: (response) => {
-        if (inputRef) {
-          inputRef.current!.value = "";
-          setPayerEmail("");
-        }
-
-        if (response.url) window.location.href = response.url;
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    mutate(data, {
+      onSuccess: () => {
+        window.location.href = import.meta.env.VITE_SUBSCRIPTION_URL;
       },
-      onError: (error) => {
-        console.error(error);
-
-        toast.error(
-          "Ocurrió un error al subscribirse. Inténtelo nuevamente más tarde.",
-          {
-            position: "bottom-right",
-            className: "toast-success",
-          }
-        );
+      onError: () => {
+        toast.error("Ocurrió un error. Inténtelo nuevamente más tarde.", {
+          position: "bottom-right",
+          className: "toast-success",
+        });
       },
     });
   };
@@ -102,35 +88,96 @@ export const Partners = () => {
             />
           </div>
         </div>
-        <div className="form-wrapper">
-          <div className="input-wrapper">
-            <div className="icon-wrapper">
-              <EmailIcon
-                width={isMobile ? "30" : "40"}
-                height={isMobile ? "30" : "40"}
-              />
+        <div className="form-wrapper-partners">
+          <h2>Completá el siguiente formulario</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Nombre</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="Ingresá tu nombre"
+                  {...register("name", { required })}
+                />
+                {errors.name && (
+                  <span className="error-message">{errors.name.message}</span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Apellido</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="Ingresá tu apellido"
+                  {...register("last_name", { required })}
+                />
+                {errors.last_name && (
+                  <span className="error-message">
+                    {errors.last_name.message}
+                  </span>
+                )}
+              </div>
             </div>
-            <input
-              className="form-input"
-              ref={inputRef}
-              type="email"
-              name="payerEmail"
-              id="payer_email"
-              placeholder={
-                isMobile ? "Ingresa tu email" : "Primero ingresa tu email aquí"
-              }
-              onChange={handleEmail}
-            />
-          </div>
-          <button
-            className="partner-button"
-            type="button"
-            title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
-            disabled={!payerEmail || isPending}
-            onClick={onSubscription}
-          >
-            {isPending ? "Redirigiendo..." : "¡Quiero ser socio!"}
-          </button>
+            <div className="input-wrapper">
+              <p className="paragraph">Email</p>
+              <input
+                className="form-input"
+                type="email"
+                placeholder="Ingresá tu email"
+                {...register("email", {
+                  required,
+                  pattern,
+                })}
+              />
+              {errors.email && (
+                <span className="error-message">{errors.email.message}</span>
+              )}
+            </div>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Teléfono</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="Ingresá tu teléfono"
+                  {...register("phone", {
+                    required,
+                  })}
+                />
+                {errors.phone && (
+                  <span className="error-message">{errors.phone.message}</span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">DNI</p>
+                <input
+                  className="form-input"
+                  type="number"
+                  placeholder="Ingresá tu DNI"
+                  {...register("dni", {
+                    required,
+                  })}
+                />
+                {errors.dni && (
+                  <span className="error-message">{errors.dni.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="submit-container">
+              <h4 className="info">
+                Luego serás redirigido a Mercado Pago para completar la
+                subscripción.
+              </h4>
+              <button
+                className="partner-button"
+                title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
+                disabled={isPending}
+              >
+                {isPending ? "Guardando..." : "¡Quiero ser socio!"}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
       <ToastContainer />
