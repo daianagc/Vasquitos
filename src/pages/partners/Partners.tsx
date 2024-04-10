@@ -42,7 +42,7 @@ export const Partners = () => {
   return (
     <div className="container">
       <div className="content partners-content">
-        <h1 className="title-h1">Convertite en socio</h1>
+        <h1 className="title-h1">Convertite en socix</h1>
         <p className="paragraph partners-special-paragraph">
           Asociándote nos ayudás a seguir rescatando y cuidando a los perritos
           que más lo necesitan.
@@ -136,6 +136,36 @@ export const Partners = () => {
                 )}
               </div>
               <div className="input-wrapper">
+                <p className="paragraph">Ciudad</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("city", {
+                    required,
+                  })}
+                />
+                {errors.city && (
+                  <span className="error-message">{errors.city.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Provincia</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("province", {
+                    required,
+                  })}
+                />
+                {errors.province && (
+                  <span className="error-message">
+                    {errors.province.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
                 <p className="paragraph">Email</p>
                 <input
                   className="form-input"
@@ -215,10 +245,10 @@ export const Partners = () => {
               </h4>
               <button
                 className="partner-button"
-                title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
+                title="¡Hace click para hacerte socix y hacer felices a los vasquitos!"
                 disabled={isPending}
               >
-                {isPending ? "Guardando..." : "¡Quiero ser socio!"}
+                {isPending ? "Guardando..." : "¡Quiero ser socix!"}
               </button>
             </div>
           </form>

@@ -5,6 +5,8 @@ export type Inputs = {
   phone: string;
   dni: number;
   address: string;
+  city: string;
+  province: string;
   nationality: string;
   age: number;
 };
