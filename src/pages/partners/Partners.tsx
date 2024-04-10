@@ -13,6 +13,7 @@ export const Partners = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
   const required = "Este campo es requerido";
   const pattern = {
@@ -26,6 +27,7 @@ export const Partners = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutate(data, {
       onSuccess: () => {
+        reset();
         window.location.href = import.meta.env.VITE_SUBSCRIPTION_URL;
       },
       onError: () => {
@@ -97,7 +99,6 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu nombre"
                   {...register("name", { required })}
                 />
                 {errors.name && (
@@ -109,7 +110,6 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu apellido"
                   {...register("last_name", { required })}
                 />
                 {errors.last_name && (
@@ -119,20 +119,36 @@ export const Partners = () => {
                 )}
               </div>
             </div>
-            <div className="input-wrapper">
-              <p className="paragraph">Email</p>
-              <input
-                className="form-input"
-                type="email"
-                placeholder="Ingresá tu email"
-                {...register("email", {
-                  required,
-                  pattern,
-                })}
-              />
-              {errors.email && (
-                <span className="error-message">{errors.email.message}</span>
-              )}
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Domicilio</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("address", {
+                    required,
+                  })}
+                />
+                {errors.address && (
+                  <span className="error-message">
+                    {errors.address.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Email</p>
+                <input
+                  className="form-input"
+                  type="email"
+                  {...register("email", {
+                    required,
+                    pattern,
+                  })}
+                />
+                {errors.email && (
+                  <span className="error-message">{errors.email.message}</span>
+                )}
+              </div>
             </div>
             <div className="wrapped-inputs">
               <div className="input-wrapper">
@@ -140,7 +156,6 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu teléfono"
                   {...register("phone", {
                     required,
                   })}
@@ -154,13 +169,42 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="number"
-                  placeholder="Ingresá tu DNI"
                   {...register("dni", {
                     required,
                   })}
                 />
                 {errors.dni && (
                   <span className="error-message">{errors.dni.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Nacionalidad</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("nationality", {
+                    required,
+                  })}
+                />
+                {errors.nationality && (
+                  <span className="error-message">
+                    {errors.nationality.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Edad</p>
+                <input
+                  className="form-input"
+                  type="number"
+                  {...register("age", {
+                    required,
+                  })}
+                />
+                {errors.age && (
+                  <span className="error-message">{errors.age.message}</span>
                 )}
               </div>
             </div>
