@@ -128,6 +128,7 @@
 
 .custom-select select {
   appearance: none;
+  background-color: var(--background-white) !important;
   cursor: pointer;
   outline: 0;
 }
