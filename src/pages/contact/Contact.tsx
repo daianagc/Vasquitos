@@ -81,7 +81,7 @@ export const Contact = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresa tu nombre y apellido"
+                  placeholder="Ingresa tu(s) nombre(s) y apellido(s)"
                   {...register("fullName", { required })}
                 />
                 {errors.fullName && (
