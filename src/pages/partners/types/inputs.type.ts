@@ -4,4 +4,9 @@ export type Inputs = {
   email: string;
   phone: string;
   dni: number;
+  address: string;
+  city: string;
+  province: string;
+  nationality: string;
+  age: number;
 };

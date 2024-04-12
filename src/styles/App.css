@@ -107,6 +107,19 @@ main {
   width: 100%;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  background-color: var(--background-white) !important;
+  -webkit-background-clip: text;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
 @media (width < 899px) {
   main {
     flex-grow: unset;
