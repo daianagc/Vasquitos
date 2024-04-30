@@ -7,16 +7,15 @@ import { ToastContainer /*, toast*/ } from "react-toastify";
 import { Inputs } from "./types/inputs.type";
 import { useMutation } from "@tanstack/react-query";
 import { createPartner } from "../../api/partners/createPartner";
-<<<<<<< HEAD
-=======
 import { useEffect, useState } from "react"; */
->>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
 
 export const Partners = () => {
   /* const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
+    reset,
   } = useForm<Inputs>();
   const required = "Este campo es requerido";
   const pattern = {
@@ -26,8 +25,6 @@ export const Partners = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: createPartner,
   });
-<<<<<<< HEAD
-=======
   const [provinces, setProvinces] = useState<{ id: number; nombre: string }[]>(
     []
   ); */
@@ -65,11 +62,11 @@ export const Partners = () => {
   useEffect(() => {
     setValue("city", "Villa Gesell");
   }, [setValue, cities]); */
->>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
 
   /* const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutate(data, {
       onSuccess: () => {
+        reset();
         window.location.href = import.meta.env.VITE_SUBSCRIPTION_URL;
       },
       onError: () => {
@@ -81,8 +78,6 @@ export const Partners = () => {
     });
   }; */
 
-<<<<<<< HEAD
-=======
   /* const handleProvinceChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
@@ -98,11 +93,10 @@ export const Partners = () => {
       .catch((error) => console.error(error));
   }; */
 
->>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
   return (
     <div className="container">
       <div className="content partners-content">
-        <h1 className="title-h1">Convertite en socio</h1>
+        <h1 className="title-h1">Convertite en socix</h1>
         <p className="paragraph partners-special-paragraph">
           Asociándote nos ayudás a seguir rescatando y cuidando a los perritos
           que más lo necesitan.
@@ -175,8 +169,8 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu nombre"
                   {...register("name", { required })}
+                  placeholder="Ingresá tu(s) nombre(s)"
                 />
                 {errors.name && (
                   <span className="error-message">{errors.name.message}</span>
@@ -187,8 +181,8 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu apellido"
                   {...register("last_name", { required })}
+                  placeholder="Ingresá tu(s) apellido(s)"
                 />
                 {errors.last_name && (
                   <span className="error-message">
@@ -197,20 +191,84 @@ export const Partners = () => {
                 )}
               </div>
             </div>
-            <div className="input-wrapper">
-              <p className="paragraph">Email</p>
-              <input
-                className="form-input"
-                type="email"
-                placeholder="Ingresá tu email"
-                {...register("email", {
-                  required,
-                  pattern,
-                })}
-              />
-              {errors.email && (
-                <span className="error-message">{errors.email.message}</span>
-              )}
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Provincia</p>
+                <div className="custom-select">
+                  <select
+                    className="form-input"
+                    {...register("province", {
+                      required,
+                    })}
+                    onChange={handleProvinceChange}
+                  >
+                    {provinces.map((province) => (
+                      <option key={province.id} value={province.nombre}>
+                        {province.nombre}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {errors.province && (
+                  <span className="error-message">
+                    {errors.province.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Ciudad</p>
+                <div className="custom-select">
+                  <select
+                    className="form-input"
+                    {...register("city", {
+                      required,
+                    })}
+                    disabled={cities.length === 0}
+                  >
+                    {cities.map((city) => (
+                      <option key={city.id} value={city.nombre}>
+                        {city.nombre}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {errors.city && (
+                  <span className="error-message">{errors.city.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Domicilio</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("address", {
+                    required,
+                  })}
+                  placeholder="Ingresá tu dirección"
+                />
+                {errors.address && (
+                  <span className="error-message">
+                    {errors.address.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Email</p>
+                <input
+                  className="form-input"
+                  type="email"
+                  {...register("email", {
+                    required,
+                    pattern,
+                  })}
+                  placeholder="Ingresá tu correo electrónico"
+                />
+                {errors.email && (
+                  <span className="error-message">{errors.email.message}</span>
+                )}
+              </div>
             </div>
             <div className="wrapped-inputs">
               <div className="input-wrapper">
@@ -218,10 +276,10 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="text"
-                  placeholder="Ingresá tu teléfono"
                   {...register("phone", {
                     required,
                   })}
+                  placeholder="Ingresá tu número de teléfono"
                 />
                 {errors.phone && (
                   <span className="error-message">{errors.phone.message}</span>
@@ -232,13 +290,45 @@ export const Partners = () => {
                 <input
                   className="form-input"
                   type="number"
-                  placeholder="Ingresá tu DNI"
                   {...register("dni", {
                     required,
                   })}
+                  placeholder="Ingresá tu número de documento"
                 />
                 {errors.dni && (
                   <span className="error-message">{errors.dni.message}</span>
+                )}
+              </div>
+            </div>
+            <div className="wrapped-inputs">
+              <div className="input-wrapper">
+                <p className="paragraph">Nacionalidad</p>
+                <input
+                  className="form-input"
+                  type="text"
+                  {...register("nationality", {
+                    required,
+                  })}
+                  placeholder="Ingresá tu nacionalidad"
+                />
+                {errors.nationality && (
+                  <span className="error-message">
+                    {errors.nationality.message}
+                  </span>
+                )}
+              </div>
+              <div className="input-wrapper">
+                <p className="paragraph">Edad</p>
+                <input
+                  className="form-input"
+                  type="number"
+                  {...register("age", {
+                    required,
+                  })}
+                  placeholder="Ingresá tu edad"
+                />
+                {errors.age && (
+                  <span className="error-message">{errors.age.message}</span>
                 )}
               </div>
             </div>
@@ -249,10 +339,10 @@ export const Partners = () => {
               </h4>
               <button
                 className="partner-button"
-                title="¡Hace click para hacerte socio y hacer felices a los vasquitos!"
+                title="¡Hace click para hacerte socix y hacer felices a los vasquitos!"
                 disabled={isPending}
               >
-                {isPending ? "Guardando..." : "¡Quiero ser socio!"}
+                {isPending ? "Guardando..." : "¡Quiero ser socix!"}
               </button>
             </div>
           </form>
