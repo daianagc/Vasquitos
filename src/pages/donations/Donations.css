@@ -107,7 +107,7 @@
   gap: 1rem !important;
   margin-bottom: 1rem;
   padding: 2rem 6rem !important;
-  width: 40% !important;
+  width: 50% !important;
 
   .account-main-data {
     display: flex;
@@ -146,6 +146,13 @@
     color: var(--text-black);
     font-size: 1.7rem;
   }
+}
+
+.second-column {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .copy-button {
@@ -243,6 +250,7 @@
   }
 
   .account-row {
+    flex-direction: column;
     gap: 0.5rem;
   }
 
