@@ -31,6 +31,14 @@
   width: 30%;
 }
 
+.special-card {
+  width: 80%;
+}
+
+.title-link {
+  color: var(--text-secondary-red);
+}
+
 .card-icon {
   font-size: 5rem;
 }
@@ -207,5 +215,9 @@
 
   .custom-select::before {
     top: 2.5rem;
+  }
+
+  .special-card {
+    width: 100%;
   }
 }

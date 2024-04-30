@@ -126,24 +126,31 @@ export const Donations = () => {
             <div className="account-main-data">
               <div className="account-row">
                 <p>CBU: </p>
-                <p className="paragraph">{cbu}</p>
-                <button className="copy-button" onClick={() => handleCopy(cbu)}>
-                  Copiar
-                </button>
+                <div className="second-column">
+                  <p className="paragraph">{cbu}</p>
+                  <button
+                    className="copy-button"
+                    onClick={() => handleCopy(cbu)}
+                  >
+                    Copiar
+                  </button>
+                </div>
               </div>
               <div className="account-row">
                 <p>Alias: </p>
-                <p className="paragraph">{alias}</p>
-                <button
-                  className="copy-button"
-                  onClick={() => handleCopy(alias)}
-                >
-                  Copiar
-                </button>
+                <div className="second-column">
+                  <p className="paragraph">{alias}</p>
+                  <button
+                    className="copy-button"
+                    onClick={() => handleCopy(alias)}
+                  >
+                    Copiar
+                  </button>
+                </div>
               </div>
               <div className="account-row">
                 <p>Integrante: </p>
-                <p className="paragraph">REFUGIO VASCOS ANIMALIASTAS VG</p>
+                <p className="paragraph">REFUGIO VASCOS ANIMALISTAS VG</p>
               </div>
               <div className="account-row">
                 <p>CUIL/CUIT: </p>
@@ -160,7 +167,7 @@ export const Donations = () => {
               {donationsButtons.map(({ id, unit_price, tagTitle }) => (
                 <button
                   type="button"
-                  disabled={!flexibleAmount || isPending}
+                  disabled={isPending}
                   className={checkLoading(id) ? "loading-text" : ""}
                   title={tagTitle}
                   key={id}

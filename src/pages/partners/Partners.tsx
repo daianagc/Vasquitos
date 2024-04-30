@@ -2,14 +2,18 @@ import "./Partners.css";
 import rescued3 from "../../public/images/lucy.jpg";
 import rescued4 from "../../public/images/uma.jpg";
 import rescued5 from "../../public/images/linda.jpg";
-import { ToastContainer, toast } from "react-toastify";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { ToastContainer /*, toast*/ } from "react-toastify";
+/* import { SubmitHandler, useForm } from "react-hook-form";
 import { Inputs } from "./types/inputs.type";
 import { useMutation } from "@tanstack/react-query";
 import { createPartner } from "../../api/partners/createPartner";
+<<<<<<< HEAD
+=======
+import { useEffect, useState } from "react"; */
+>>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
 
 export const Partners = () => {
-  const {
+  /* const {
     register,
     handleSubmit,
     formState: { errors },
@@ -22,8 +26,48 @@ export const Partners = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: createPartner,
   });
+<<<<<<< HEAD
+=======
+  const [provinces, setProvinces] = useState<{ id: number; nombre: string }[]>(
+    []
+  ); */
+  /* const [cities, setCities] = useState<{ id: number; nombre: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    fetch("https://apis.datos.gob.ar/georef/api/provincias", { signal })
+      .then((response) => response.json())
+      .then((json) => {
+        setProvinces(json.provincias);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error.name !== "AbortError") {
+          console.error(error.message);
+        }
+      });
+
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setValue("province", "Buenos Aires");
+      handleProvinceChange({
+        target: { value: "Buenos Aires" },
+      } as unknown as React.ChangeEvent<HTMLSelectElement>);
+    }
+  }, [setValue, isLoading]);
+
+  useEffect(() => {
+    setValue("city", "Villa Gesell");
+  }, [setValue, cities]); */
+>>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
+
+  /* const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutate(data, {
       onSuccess: () => {
         window.location.href = import.meta.env.VITE_SUBSCRIPTION_URL;
@@ -35,8 +79,26 @@ export const Partners = () => {
         });
       },
     });
-  };
+  }; */
 
+<<<<<<< HEAD
+=======
+  /* const handleProvinceChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedProvinceId = event.target.value;
+
+    fetch(
+      `https://apis.datos.gob.ar/georef/api/municipios?provincia=${selectedProvinceId}&campos=id,nombre&max=200`
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        setCities(json.municipios);
+      })
+      .catch((error) => console.error(error));
+  }; */
+
+>>>>>>> 82abe1502488df9113f5a911a15bf3d61c8c61d5
   return (
     <div className="container">
       <div className="content partners-content">
@@ -88,7 +150,23 @@ export const Partners = () => {
             />
           </div>
         </div>
-        <div className="form-wrapper-partners">
+        <div className="card special-card">
+          <h3 className="title-h2">
+            Próximamente estaremos habilitando el formulario de socio 👷.
+            Mientras tanto, podés enviar un mensaje a nuestro WhatsApp para más
+            información,{" "}
+            <a
+              className="title-h2 title-link"
+              href="https://wa.me/542255417409"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              haciendo click aquí
+            </a>
+            .
+          </h3>
+        </div>
+        {/* <div className="form-wrapper-partners">
           <h2>Completá el siguiente formulario</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="wrapped-inputs">
@@ -178,7 +256,7 @@ export const Partners = () => {
               </button>
             </div>
           </form>
-        </div>
+        </div> */}
       </div>
       <ToastContainer />
     </div>
