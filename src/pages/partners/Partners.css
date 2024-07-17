@@ -96,7 +96,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   width: 100%;
 
   .info {
@@ -110,7 +110,7 @@
     font-weight: bold;
     height: 7rem;
     padding: 1rem 2rem;
-    width: 80%;
+    width: 40%;
 
     &:disabled {
       cursor: not-allowed;
@@ -122,9 +122,21 @@
       color: var(--text-white);
     }
 
-    &:not(:disabled):hover {
+    &:not(:disabled):hover, &:not(:disabled):hover .partner-link {
       background-color: var(--background-black);
     }
+  }
+
+  .partner-link {
+    background-color: var(--background-red);
+    border: none;
+    color: var(--text-white);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
   }
 }
 
