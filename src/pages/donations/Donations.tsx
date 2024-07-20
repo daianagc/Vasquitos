@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
-import useIsMobile from "../../hooks/is-mobile";
 import { ToastContainer, toast } from "react-toastify";
 import logoProvincia from "../../public/images/logo-provincia.jpg";
 import logoMercadopago from "../../public/images/logo-mercadopago.png";
@@ -12,7 +11,6 @@ export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
-  const isMobile = useIsMobile();
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: setPreference,
   });
