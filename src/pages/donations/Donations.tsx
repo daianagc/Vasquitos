@@ -2,16 +2,15 @@ import { useRef, useState } from "react";
 import { setPreference } from "../../api/preferences/preferences";
 import "./Donations.css";
 import { useMutation } from "@tanstack/react-query";
-import useIsMobile from "../../hooks/is-mobile";
 import { ToastContainer, toast } from "react-toastify";
 import logoProvincia from "../../public/images/logo-provincia.jpg";
 import logoMercadopago from "../../public/images/logo-mercadopago.png";
+import logoDonarOnline from "../../public/images/donar-online.jpg";
 
 export const Donations = () => {
   const [flexibleAmount, setFlexibleAmount] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const [loadingButtonId, setLoadingButtonId] = useState<string | null>(null);
-  const isMobile = useIsMobile();
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: setPreference,
   });
@@ -106,6 +105,10 @@ export const Donations = () => {
     }
   };
 
+  const goTo = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <>
       <div className="container">
@@ -118,103 +121,121 @@ export const Donations = () => {
             merecen, de la mejor forma posible. Desde ya MUCHÍSIMAS GRACIAS por
             tu esfuerzo. <strong>Para ellos es muy valioso.</strong>
           </p>
-          <div className="card account-card">
-            <div className="donation-header">
-              <h2 className="title-h2">Banco Provincia</h2>
-              <img src={logoProvincia} alt="Logo del Banco Provincia" />
-            </div>
-            <div className="account-main-data">
-              <div className="account-row">
-                <p>CBU: </p>
-                <div className="second-column">
-                  <p className="paragraph">{cbu}</p>
-                  <button
-                    className="copy-button"
-                    onClick={() => handleCopy(cbu)}
-                  >
-                    Copiar
-                  </button>
-                </div>
-              </div>
-              <div className="account-row">
-                <p>Alias: </p>
-                <div className="second-column">
-                  <p className="paragraph">{alias}</p>
-                  <button
-                    className="copy-button"
-                    onClick={() => handleCopy(alias)}
-                  >
-                    Copiar
-                  </button>
-                </div>
-              </div>
-              <div className="account-row">
-                <p>Integrante: </p>
-                <p className="paragraph">REFUGIO VASCOS ANIMALISTAS VG</p>
-              </div>
-              <div className="account-row">
-                <p>CUIL/CUIT: </p>
-                <p className="paragraph">33-71699383-9</p>
-              </div>
-            </div>
-          </div>
           <div className="donations-main-section">
-            <div className="donation-header mercadopago-header">
-              <h2 className="title-h2">Mercado Pago</h2>
-              <img src={logoMercadopago} alt="Logo de Mercadopago" />
+            <div className="card account-card">
+              <div className="donation-header">
+                <h2 className="title-h2">Banco Provincia</h2>
+                <img src={logoProvincia} alt="Logo del Banco Provincia" />
+              </div>
+              <div className="account-main-data">
+                <div className="account-row">
+                  <p>CBU: </p>
+                  <div className="second-column">
+                    <p className="paragraph">{cbu}</p>
+                    <button
+                      className="copy-button"
+                      onClick={() => handleCopy(cbu)}
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                </div>
+                <div className="account-row">
+                  <p>Alias: </p>
+                  <div className="second-column">
+                    <p className="paragraph">{alias}</p>
+                    <button
+                      className="copy-button"
+                      onClick={() => handleCopy(alias)}
+                    >
+                      Copiar
+                    </button>
+                  </div>
+                </div>
+                <div className="account-row">
+                  <p>Integrante: </p>
+                  <p className="paragraph">REFUGIO VASCOS ANIMALISTAS VG</p>
+                </div>
+                <div className="account-row">
+                  <p>CUIL/CUIT: </p>
+                  <p className="paragraph">33-71699383-9</p>
+                </div>
+              </div>
             </div>
-            <div className="buttons-wrapper">
-              {donationsButtons.map(({ id, unit_price, tagTitle }) => (
+            <div className="card account-card">
+              <div className="donation-header">
+                <h2 className="title-h2">Donar Online</h2>
+                <img src={logoDonarOnline} alt="Logo del Donar Online" />
+              </div>
+              <div className="account-main-data">
+                <button
+                  className="special-button secondary-button"
+                  type="button"
+                  title="¡Hace click para donar y hacer felices a los vasquitos!"
+                  onClick={() => goTo(import.meta.env.VITE_DONATIONS_URL)}
+                >
+                  {"Ir a Donar Online"}
+                </button>
+              </div>
+            </div>
+            <div className="card account-card">
+              <div className="donation-header mercadopago-header">
+                <h2 className="title-h2">Mercado Pago</h2>
+                <img src={logoMercadopago} alt="Logo de Mercadopago" />
+              </div>
+              <div className="buttons-wrapper">
+                {donationsButtons.map(({ id, unit_price, tagTitle }) => (
+                  <button
+                    type="button"
+                    disabled={isPending}
+                    className={
+                      checkLoading(id)
+                        ? "special-button loading-text"
+                        : "special-button"
+                    }
+                    title={tagTitle}
+                    key={id}
+                    onClick={() => handlePreference({ id, unit_price })}
+                  >
+                    {loadingButtonId === id
+                      ? "Redirigiendo..."
+                      : `$${unit_price}`}
+                  </button>
+                ))}
+              </div>
+              <div className="input-container">
+                <div className="input-wrapper">
+                  <p
+                    className="dollar-icon"
+                    style={{ display: flexibleAmount ? "unset" : "none" }}
+                  >
+                    $
+                  </p>
+                  <input
+                    className="donation-input"
+                    ref={inputRef}
+                    type="number"
+                    min={0}
+                    placeholder={"Podes donar otro monto acá"}
+                    onChange={handleFlexibleAmount}
+                  />
+                </div>
                 <button
                   type="button"
-                  disabled={isPending}
-                  className={checkLoading(id) ? "loading-text" : ""}
-                  title={tagTitle}
-                  key={id}
-                  onClick={() => handlePreference({ id, unit_price })}
-                >
-                  {loadingButtonId === id
-                    ? "Redirigiendo..."
-                    : `$${unit_price}`}
-                </button>
-              ))}
-            </div>
-            <div className="input-container">
-              <div className="input-wrapper">
-                <p
-                  className="dollar-icon"
-                  style={{ display: flexibleAmount ? "unset" : "none" }}
-                >
-                  $
-                </p>
-                <input
-                  className="donation-input"
-                  ref={inputRef}
-                  type="number"
-                  min={0}
-                  placeholder={
-                    isMobile
-                      ? "Podes donar otro monto acá"
-                      : "¿Te gustaría donar otro monto? ¡Hacelo acá!"
+                  disabled={!flexibleAmount || isPending || isSuccess}
+                  title="¡Hace click para donar y hacer felices a los vasquitos!"
+                  onClick={() =>
+                    handlePreference({
+                      id: specialButtonId,
+                      unit_price: flexibleAmount,
+                    })
                   }
-                  onChange={handleFlexibleAmount}
-                />
+                >
+                  {loadingButtonId === specialButtonId
+                    ? "Redirigiendo..."
+                    : "Donar"}
+                </button>
               </div>
-              <button
-                type="button"
-                disabled={!flexibleAmount || isPending || isSuccess}
-                title="¡Hace click para donar y hacer felices a los vasquitos!"
-                onClick={() =>
-                  handlePreference({
-                    id: specialButtonId,
-                    unit_price: flexibleAmount,
-                  })
-                }
-              >
-                {loadingButtonId === specialButtonId
-                  ? "Redirigiendo..."
-                  : "Donar"}
-              </button>
             </div>
           </div>
         </div>
