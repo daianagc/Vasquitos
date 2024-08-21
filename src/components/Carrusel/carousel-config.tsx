@@ -1,6 +1,7 @@
 import imagenCevige from "../../public/images/cevige-logo.jpg";
 import imagenMuni from "../../public/images/logo-municipalidad.jpg";
 import imagenGeselec from "../../public/images/logo-geselect.jpg";
+import imagenFarmaciaDelSol from "../../public/images/logo-famarciadelsol.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -24,6 +25,11 @@ const originalCards: CardDetail[] = [
     imgUrl: imagenGeselec,
     title: "Geselec",
     url: "https://josebats.wixsite.com/geselec/",
+  },
+  {
+    imgUrl: imagenFarmaciaDelSol,
+    title: "Farmacia Del Sol",
+    url: "https://www.facebook.com/farmacia.delsol/?locale=es_LA",
   },
 ];
 
