@@ -1,5 +1,6 @@
 import imagenCevige from "../../public/images/cevige-logo.jpg";
 import imagenMuni from "../../public/images/logo-municipalidad.jpg";
+import imagenGeselec from "../../public/images/logo-geselect.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -18,6 +19,11 @@ const originalCards: CardDetail[] = [
     imgUrl: imagenMuni,
     title: "Municipalidad de Villa Gesell",
     url: "https://www.gesell.gob.ar/",
+  },
+  {
+    imgUrl: imagenGeselec,
+    title: "Geselec",
+    url: "https://josebats.wixsite.com/geselec/",
   },
 ];
 

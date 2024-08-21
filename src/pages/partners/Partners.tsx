@@ -57,19 +57,25 @@ export const Partners = () => {
             />
           </div>
         </div>
-    
-          <div className="submit-container">
-              <h4 className="info">
-                Serás redirigidx a Donar Online para completar la
-                subscripción.
-              </h4>
-              <button
-                className="partner-button"
-                title="¡Hace click para hacerte socix y hacer felices a los vasquitos!"
-              >
-                <a className="partner-link" href={partnerLink} target="_blank" rel="noopener noreferrer">{ "¡Quiero ser socix!"}</a>
-              </button>
-            </div>
+
+        <div className="submit-container">
+          <h4 className="info">
+            Serás redirigidx a Donar Online para completar la subscripción.
+          </h4>
+          <button
+            className="partner-button"
+            title="¡Hace click para hacerte socix y hacer felices a los vasquitos!"
+          >
+            <a
+              className="partner-link"
+              href={partnerLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {"¡Quiero ser socix!"}
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   );
