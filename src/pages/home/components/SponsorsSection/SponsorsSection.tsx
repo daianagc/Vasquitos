@@ -3,6 +3,7 @@ import AutoplayCarousel from "../../../../components/Carrusel/AutoplayCarousel";
 import "./SponsorsSection.css";
 import { useSpring, animated } from "@react-spring/web";
 import { fadeInLeftAnimation } from "../../../../animations";
+import { cards } from "../../../../components/Carrusel/carousel-config";
 
 const SponsorsSection = () => {
   const [ref, inView] = useInView({
@@ -23,9 +24,7 @@ const SponsorsSection = () => {
           patrocinadores. <b>Su ayuda es fundamental para el refugio.</b>
         </animated.p>
       </div>
-      <div className="sponsors-carrusel">
-        <AutoplayCarousel />
-      </div>
+      <AutoplayCarousel cards={cards} />
     </section>
   );
 };

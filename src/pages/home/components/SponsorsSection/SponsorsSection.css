@@ -16,10 +16,6 @@
   font-size: 5rem;
 }
 
-.sponsor-carrousel {
-  width: 100%;
-}
-
 .sponsors-parrafo p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -35,45 +31,9 @@
   overflow-x: hidden;
 }
 
-.carousel-card {
-  align-items: center;
-  background-color: var(--background-black) !important;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  height: 35rem;
-  padding: 2rem;
-  width: 20%;
-
-  img {
-    object-fit: fill;
-    height: 70%;
-    width: 80%;
-  }
-
-  p {
-    color: var(--text-white);
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  &:hover {
-    transform: scale(0.9);
-    box-shadow: 5px 5px 8px rgba(222, 222, 222, 0.362),
-      10px 10px 8px rgba(152, 133, 133, 0.392),
-      15px 15px 8px rgba(139, 154, 139, 0.303);
-  }
-
-  border-radius: 10%;
-  background: rgb(41, 40, 40);
-}
-
 .carousel-track {
   display: flex;
   position: relative;
-  left: 0;
   justify-content: center;
   align-items: center;
   height: 80px;
@@ -87,13 +47,49 @@
   animation-play-state: paused;
 }
 
+.carousel-card {
+  align-items: center;
+  background-color: var(--background-black) !important;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  height: 35rem;
+  padding: 2rem;
+  width: 100%;
+
+  img {
+    object-fit: scale-down;
+    height: 70%;
+    width: 80%;
+  }
+
+  p {
+    color: var(--text-white);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &:hover {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 8px rgba(222, 222, 222, 0.362),
+      10px 10px 8px rgba(152, 133, 133, 0.392),
+      15px 15px 8px rgba(139, 154, 139, 0.303);
+  }
+
+  border-radius: 10%;
+  background: rgb(41, 40, 40);
+}
+
 @keyframes slide {
   0% {
     left: 0;
   }
 
   100% {
-    left: -100%;
+    left: -50%;
   }
 }
 
@@ -112,8 +108,6 @@
   }
 
   .carousel-track {
-    width: 200%;
-
     .carousel-card {
       height: 25rem;
       width: 22rem;
@@ -126,7 +120,7 @@
     }
 
     100% {
-      left: -40%;
+      left: -50%;
     }
   }
 }
