@@ -3,10 +3,7 @@ import AutoplayCarousel from "../../../../components/Carrusel/AutoplayCarousel";
 import "./SponsorsSection.css";
 import { useSpring, animated } from "@react-spring/web";
 import { fadeInLeftAnimation } from "../../../../animations";
-import {
-  firstRowCards,
-  secondRowCards,
-} from "../../../../components/Carrusel/carousel-config";
+import { firstRowCards } from "../../../../components/Carrusel/carousel-config";
 
 const SponsorsSection = () => {
   const [ref, inView] = useInView({
