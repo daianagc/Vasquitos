@@ -92,7 +92,5 @@ export const firstRowCards: CardDetail[] = firstRowSponsors.concat(
   firstRowSponsors,
   firstRowSponsors,
   firstRowSponsors,
-  firstRowSponsors,
-  firstRowSponsors,
   firstRowSponsors
 );
