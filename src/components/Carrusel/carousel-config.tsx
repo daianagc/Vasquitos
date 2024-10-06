@@ -57,7 +57,7 @@ const firstRowSponsors: CardDetail[] = [
   },
   {
     imgUrl: imagenPasteleraDelBosque,
-    title: "Pastelera Del Bosque",
+    title: "La Pastelera Del Bosque",
     url: "https://www.instagram.com/lapasteleradelbosque/?hl=es",
   },
   {
