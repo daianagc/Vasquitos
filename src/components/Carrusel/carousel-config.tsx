@@ -9,6 +9,7 @@ import imagenAlbaYJulio from "../../public/images/logo-alba-y-julio.jpg";
 import imagenLaComarca from "../../public/images/logo-la-comarca.jpg";
 import imagenElGalpon from "../../public/images/logo-el-galpon.jpg";
 import imagenDeliciasAnaby from "../../public/images/logo-delicias-anaby.jpg";
+import imagenCachavacha from "../../public/images/logo-cachavacha.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -73,7 +74,7 @@ const firstRowSponsors: CardDetail[] = [
   {
     imgUrl: imagenLaComarca,
     title: "La Comarca",
-    url: "https://www.instagram.com/lacomarcavillagesell/",
+    url: "https://www.instagram.com/lacomarcalfajores/",
   },
   {
     imgUrl: imagenElGalpon,
@@ -85,10 +86,14 @@ const firstRowSponsors: CardDetail[] = [
     title: "Delicias Anaby",
     url: "https://www.instagram.com/deliciasanaby/",
   },
+  {
+    imgUrl: imagenCachavacha,
+    title: "Cachavacha",
+    url: "https://www.facebook.com/cachavacha.cafeteria/?locale=es_LA",
+  },
 ];
 
 export const firstRowCards: CardDetail[] = firstRowSponsors.concat(
-  firstRowSponsors,
   firstRowSponsors,
   firstRowSponsors,
   firstRowSponsors,
