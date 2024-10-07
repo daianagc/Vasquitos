@@ -10,6 +10,7 @@ import imagenLaComarca from "../../public/images/logo-la-comarca.jpg";
 import imagenElGalpon from "../../public/images/logo-el-galpon.jpg";
 import imagenDeliciasAnaby from "../../public/images/logo-delicias-anaby.jpg";
 import imagenCachavacha from "../../public/images/logo-cachavacha.jpg";
+import imagenAnabella from "../../public/images/logo-anabella.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -54,7 +55,7 @@ const firstRowSponsors: CardDetail[] = [
   {
     imgUrl: imagenJazminMacetas,
     title: "Jazmin Macetas",
-    url: "https://www.instagram.com/jazminmacetas/",
+    url: "https://www.instagram.com/jazminmacetass?igsh=MWtiMHA2eWVidjFnYg==",
   },
   {
     imgUrl: imagenPasteleraDelBosque,
@@ -90,6 +91,11 @@ const firstRowSponsors: CardDetail[] = [
     imgUrl: imagenCachavacha,
     title: "Cachavacha",
     url: "https://www.facebook.com/cachavacha.cafeteria/?locale=es_LA",
+  },
+  {
+    imgUrl: imagenAnabella,
+    title: "Lenceria Anabella",
+    url: "https://www.instagram.com/lenceriaanabella/?hl=es",
   },
 ];
 
