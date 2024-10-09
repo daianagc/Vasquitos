@@ -11,6 +11,8 @@ import imagenElGalpon from "../../public/images/logo-el-galpon.jpg";
 import imagenDeliciasAnaby from "../../public/images/logo-delicias-anaby.jpg";
 import imagenCachavacha from "../../public/images/logo-cachavacha.jpg";
 import imagenAnabella from "../../public/images/logo-anabella.jpg";
+import imagenSecretariaDeCultura from "../../public/images/sec-cul-logo.jpg";
+import imagenDelicias from "../../public/images/logo-delicias.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -96,6 +98,16 @@ const firstRowSponsors: CardDetail[] = [
     imgUrl: imagenAnabella,
     title: "Lenceria Anabella",
     url: "https://www.instagram.com/lenceriaanabella/?hl=es",
+  },
+  {
+    imgUrl: imagenSecretariaDeCultura,
+    title: "Secretaría de Cultura, Educación y Deportes",
+    url: "https://www.instagram.com/culturavillagesell/?hl=es",
+  },
+  {
+    imgUrl: imagenDelicias,
+    title: "Panaderia Delicias",
+    url: "https://www.facebook.com/profile.php?id=100054517357963",
   },
 ];
 

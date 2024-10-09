@@ -108,6 +108,8 @@
   }
 
   .carousel-track {
+    animation: slide 60s linear infinite; /* Increase the duration to cover all the content */
+
     .carousel-card {
       height: 25rem;
       width: 22rem;
