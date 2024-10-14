@@ -12,7 +12,7 @@ const Navbar = () => {
     { to: "/nosotros", label: "Nosotros" },
     { to: "/nuestros-vasquitos", label: "Nuestros Vasquitos" },
     { to: "/socios", label: "Socios" },
-    { to: "/#patrocinadores", label: "Patrocinadores" },
+    { to: "/patrocinadores", label: "Patrocinadores" },
     { to: "/contacto", label: "Contacto" },
   ];
 
@@ -43,18 +43,10 @@ const Navbar = () => {
             </NavLink>
           </li>
           {items.map((item, index) => (
-            <li
-              key={index}
-              style={{
-                display:
-                  isMobile && item.label === "Patrocinadores" ? "none" : "",
-              }}
-            >
+            <li key={index}>
               <NavLink
                 className={({ isActive }) =>
-                  isActive && item.label !== "Patrocinadores"
-                    ? "nav-link active"
-                    : "nav-link"
+                  isActive ? "nav-link active" : "nav-link"
                 }
                 to={item.to}
                 onClick={() => setIsOpen(false)}

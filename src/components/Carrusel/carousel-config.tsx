@@ -32,7 +32,7 @@ export interface CardItemProps extends CardDetail {
   onTouchEnd: (event: React.TouchEvent) => void;
 }
 
-const firstRowSponsors: CardDetail[] = [
+export const sponsors: CardDetail[] = [
   {
     imgUrl: imagenCevige,
     title: "Cevige Ltda",
@@ -111,9 +111,9 @@ const firstRowSponsors: CardDetail[] = [
   },
 ];
 
-export const firstRowCards: CardDetail[] = firstRowSponsors.concat(
-  firstRowSponsors,
-  firstRowSponsors,
-  firstRowSponsors,
-  firstRowSponsors
+export const firstRowCards: CardDetail[] = sponsors.concat(
+  sponsors,
+  sponsors,
+  sponsors,
+  sponsors
 );

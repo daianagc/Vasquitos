@@ -10,6 +10,7 @@ import { Partners } from "./pages/partners/Partners.tsx";
 import { Contact } from "./pages/contact/Contact.tsx";
 import { AboutUs } from "./pages/about-us/AboutUs.tsx";
 import { OurDogs } from "./pages/our-dogs/OurDogs.tsx";
+import Sponsors from "./pages/sponsors/Sponsors";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "contacto",
         element: <Contact />,
+      },
+      {
+        path: "patrocinadores",
+        element: <Sponsors />,
       },
     ],
   },
