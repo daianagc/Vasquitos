@@ -11,7 +11,7 @@ const Sponsors = () => {
   };
 
   return (
-    <section className="sponsors-section">
+    <section className="sponsors-page">
       <h2 className="sponsors-title">Nuestros Patrocinadores</h2>
       <h2 className="sponsors-title">💪👏👇</h2>
       <div className="sponsors-paragraph">
