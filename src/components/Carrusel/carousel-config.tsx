@@ -13,6 +13,7 @@ import imagenCachavacha from "../../public/images/logo-cachavacha.jpg";
 import imagenAnabella from "../../public/images/logo-anabella.jpg";
 import imagenSecretariaDeCultura from "../../public/images/sec-cul-logo.jpg";
 import imagenDelicias from "../../public/images/logo-delicias.jpg";
+import imagenLlanos from "../../public/images/logo-llanos.jpg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -108,6 +109,11 @@ export const sponsors: CardDetail[] = [
     imgUrl: imagenDelicias,
     title: "Panaderia Delicias",
     url: "https://www.facebook.com/profile.php?id=100054517357963",
+  },
+  {
+    imgUrl: imagenLlanos,
+    title: "Farmacia Llanos",
+    url: "https://www.instagram.com/fciallanos/",
   },
 ];
 
