@@ -14,6 +14,7 @@ import imagenAnabella from "../../public/images/logo-anabella.jpg";
 import imagenSecretariaDeCultura from "../../public/images/sec-cul-logo.jpg";
 import imagenDelicias from "../../public/images/logo-delicias.jpg";
 import imagenLlanos from "../../public/images/logo-llanos.jpg";
+import imagenMinelka from "../../public/images/logo-minelka.jpeg";
 
 export interface CardDetail {
   imgUrl: string;
@@ -114,6 +115,11 @@ export const sponsors: CardDetail[] = [
     imgUrl: imagenLlanos,
     title: "Farmacia Llanos",
     url: "https://www.instagram.com/fciallanos/",
+  },
+  {
+    imgUrl: imagenMinelka,
+    title: "Minelka",
+    url: "https://wa.me/542267527169",
   },
 ];
 
