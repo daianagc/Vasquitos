@@ -26,8 +26,8 @@ export default function AutoplayCarousel({ cards }: { cards: CardDetail[] }) {
           return (
             <CarouselItem
               key={i}
-              imgUrl={cardDetail.imgUrl}
-              title={cardDetail.title}
+              logo={cardDetail.logo}
+              name={cardDetail.name}
               url={cardDetail.url}
               isDragging={isDragging}
               onMouseDown={handleMouseDown}

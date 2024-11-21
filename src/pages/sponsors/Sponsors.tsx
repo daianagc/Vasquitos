@@ -1,14 +1,30 @@
 import "./Sponsors.css";
-import { sponsors } from "../../components/Carrusel/carousel-config";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getSponsors } from "../../api/sponsors/getSponsors";
+import { Spinner } from "../../components/Spinner/Spinner";
+import { CardDetail } from "../../components/Carrusel/carousel-config";
 
 const Sponsors = () => {
-  const orderedSponsors = sponsors.sort((a, b) =>
-    a.title.localeCompare(b.title)
-  );
-
+  let sponsors: CardDetail[] = [];
+  const queryClient = useQueryClient();
+  const { data, isPending } = useQuery({
+    queryKey: ["sponsors"],
+    queryFn: getSponsors,
+    refetchOnWindowFocus: false,
+    initialData: () => queryClient.getQueryData(["sponsors"]),
+    staleTime: queryClient.getQueryData(["sponsors"]) ? Infinity : 0,
+  });
   const goToUrl = (url: string | undefined) => {
     if (url) window.open(url, "_blank");
   };
+
+  if (isPending) return <Spinner />;
+
+  if (data) {
+    sponsors = (data as CardDetail[]).sort((a: CardDetail, b: CardDetail) =>
+      a.name.localeCompare(b.name)
+    );
+  }
 
   return (
     <section className="sponsors-page">
@@ -27,19 +43,19 @@ const Sponsors = () => {
         </p>
       </div>
       <div className="sponsors-container">
-        {orderedSponsors.map((sponsor, i) => {
+        {sponsors.map((sponsor, i) => {
           return (
             <div
               key={i}
               className="sponsor-card"
-              title={`Hace click y conoce más sobre ${sponsor.title}`}
+              title={`Hace click y conoce más sobre ${sponsor.name}`}
             >
               <img
-                src={sponsor.imgUrl}
-                alt={sponsor.title}
+                src={sponsor.logo}
+                alt={sponsor.name}
                 onClick={() => goToUrl(sponsor.url)}
               ></img>
-              <p>{sponsor.title}</p>
+              <p>{sponsor.name}</p>
             </div>
           );
         })}

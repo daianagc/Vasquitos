@@ -2,9 +2,8 @@ import { useState } from "react";
 import { CardItemProps } from "./carousel-config";
 
 export default function CarouselItem({
-  key,
-  imgUrl,
-  title,
+  logo,
+  name,
   url,
   isDragging,
   onMouseDown,
@@ -40,7 +39,6 @@ export default function CarouselItem({
     <div
       className="carousel-card"
       title="Visitá su página web"
-      key={key}
       onMouseDown={handleMouseDown}
       onMouseMove={onMouseMove}
       onMouseUp={handleMouseUp}
@@ -51,13 +49,13 @@ export default function CarouselItem({
       style={{ cursor: isDragging ? "grabbing" : "grab" }}
     >
       <img
-        src={imgUrl}
-        alt={title}
+        src={logo}
+        alt={name}
         onMouseDown={(e) => e.preventDefault()}
         onMouseMove={(e) => e.preventDefault()}
         onMouseUp={(e) => e.preventDefault()}
       ></img>
-      <p>{title}</p>
+      <p>{name}</p>
     </div>
   );
 }
