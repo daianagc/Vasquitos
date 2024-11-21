@@ -3,13 +3,34 @@ import AutoplayCarousel from "../../../../components/Carrusel/AutoplayCarousel";
 import "./SponsorsSection.css";
 import { useSpring, animated } from "@react-spring/web";
 import { fadeInLeftAnimation } from "../../../../animations";
-import { firstRowCards } from "../../../../components/Carrusel/carousel-config";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getSponsors } from "../../../../api/sponsors/getSponsors";
+import { Spinner } from "../../../../components/Spinner/Spinner";
+import {
+  CardDetail,
+  repeatCards,
+} from "../../../../components/Carrusel/carousel-config";
 
 const SponsorsSection = () => {
+  let sponsors: CardDetail[] = [];
   const [ref, inView] = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
   const fadeInFromLeft = useSpring(fadeInLeftAnimation(inView));
+  const queryClient = useQueryClient();
+  const { data, isPending } = useQuery({
+    queryKey: ["sponsors"],
+    queryFn: getSponsors,
+    refetchOnWindowFocus: false,
+    initialData: () => queryClient.getQueryData(["sponsors"]),
+    staleTime: queryClient.getQueryData(["sponsors"]) ? Infinity : 0,
+  });
+
+  if (isPending) return <Spinner />;
+
+  if (data) {
+    sponsors = repeatCards(data as CardDetail[]);
+  }
 
   return (
     <section ref={ref} className="sponsors-section" id="patrocinadores">
@@ -24,7 +45,7 @@ const SponsorsSection = () => {
           patrocinadores. <b>Su ayuda es fundamental para el refugio.</b>
         </animated.p>
       </div>
-      <AutoplayCarousel cards={firstRowCards} />
+      <AutoplayCarousel cards={sponsors} />
     </section>
   );
 };
